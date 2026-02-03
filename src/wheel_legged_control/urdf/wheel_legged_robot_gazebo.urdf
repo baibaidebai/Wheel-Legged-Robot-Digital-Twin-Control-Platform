@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="wheel_legged_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- 包含原始URDF -->
+  <xacro:include filename="$(find wheel_legged_control)/urdf/wheel_legged_robot_base.urdf.xacro"/>
+
+  <!-- Gazebo插件配置 -->
+  
+  <!-- 关节状态发布器 -->
+  <gazebo>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <namespace>/wheel_legged_robot</namespace>
+        <remapping>joint_states:=joint_states</remapping>
+      </ros>
+      <update_rate>50</update_rate>
+    </plugin>
+  </gazebo>
+
+  <!-- 关节位置控制器 -->
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>$(find wheel_legged_control)/config/wheel_legged_control.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- IMU传感器 -->
+  <gazebo reference="base_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>imu/data</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <ros>
+          <namespace>/wheel_legged_robot</namespace>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+  <!-- 轮子摩擦力设置 -->
+  <gazebo reference="l_wheel_Link">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+
+  <gazebo reference="r_wheel_Link">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+
+  <!-- 基座材质 -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- 腿部材质 -->
+  <gazebo reference="lf0_Link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="lf1_Link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="rf0_Link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="rf1_Link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+</robot>

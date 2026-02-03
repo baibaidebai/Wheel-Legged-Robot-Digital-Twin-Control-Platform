@@ -1,0 +1,114 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    # 控制器列表
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+# 关节状态广播器配置
+joint_state_broadcaster:
+  ros__parameters:
+    joints:
+      - lf0_Joint
+      - lf1_Joint
+      - rf0_Joint
+      - rf1_Joint
+      - l_wheel_Joint
+      - r_wheel_Joint
+
+# 位置控制器配置
+position_controller:
+  ros__parameters:
+    joints:
+      - lf0_Joint
+      - lf1_Joint
+      - rf0_Joint
+      - rf1_Joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+# 速度控制器配置（用于轮子）
+velocity_controller:
+  ros__parameters:
+    joints:
+      - l_wheel_Joint
+      - r_wheel_Joint
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+# Gazebo仿真参数
+gazebo_params:
+  ros__parameters:
+    # 物理引擎参数
+    physics:
+      max_step_size: 0.001
+      real_time_factor: 1.0
+      real_time_update_rate: 1000
+    
+    # 接触参数
+    contact:
+      surface_layer: 0.01
+      max_correcting_vel: 2000.0
+      cfm: 0.00001
+      erp: 0.2
+
+# IMU传感器参数
+imu_sensor:
+  ros__parameters:
+    frame_id: "base_link"
+    update_rate: 100.0
+    gaussian_noise: 0.01
+    
+# 机器人参数
+robot_params:
+  ros__parameters:
+    # 关节限制
+    joint_limits:
+      lf0_Joint:
+        min_position: -0.3363
+        max_position: 1.3479
+        max_velocity: 10.0
+        max_effort: 30.0
+      lf1_Joint:
+        min_position: -1.0
+        max_position: 1.25
+        max_velocity: 10.0
+        max_effort: 30.0
+      rf0_Joint:
+        min_position: -1.3479
+        max_position: 0.3363
+        max_velocity: 10.0
+        max_effort: 30.0
+      rf1_Joint:
+        min_position: -1.25
+        max_position: 1.0
+        max_velocity: 10.0
+        max_effort: 30.0
+      l_wheel_Joint:
+        max_velocity: 10.0
+        max_effort: 5.0
+      r_wheel_Joint:
+        max_velocity: 10.0
+        max_effort: 5.0
+    
+    # 默认关节位置
+    default_positions:
+      lf0_Joint: 0.0
+      lf1_Joint: 0.0
+      rf0_Joint: 0.0
+      rf1_Joint: 0.0
+      l_wheel_Joint: 0.0
+      r_wheel_Joint: 0.0
