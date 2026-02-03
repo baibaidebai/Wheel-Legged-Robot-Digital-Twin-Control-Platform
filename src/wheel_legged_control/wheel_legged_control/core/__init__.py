@@ -4,5 +4,13 @@
 包含数字孪生映射器、关节控制器、状态同步器等核心组件。
 """
 
-# 核心组件将在后续任务中实现
-__all__ = []
+from .urdf_loader import URDFLoader, RobotModel, JointInfo, LinkInfo, URDFParseError, load_robot_from_directory
+
+__all__ = [
+    'URDFLoader',
+    'RobotModel', 
+    'JointInfo',
+    'LinkInfo',
+    'URDFParseError',
+    'load_robot_from_directory'
+]
