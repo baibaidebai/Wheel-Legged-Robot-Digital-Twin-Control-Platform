@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>wheel_legged_control</name>
+  <version>0.1.0</version>
+  <description>轮腿机器人孪生控制系统 - 基于ROS2的仿真控制平台</description>
+  
+  <!-- 维护者信息 -->
+  <maintainer email="developer@example.com">项目开发团队</maintainer>
+  
+  <!-- 许可证 -->
+  <license>MIT</license>
+  
+  <!-- 项目URL -->
+  <url type="website">https://github.com/your-org/wheel-legged-robot-twin-control</url>
+  <url type="bugtracker">https://github.com/your-org/wheel-legged-robot-twin-control/issues</url>
+  <url type="repository">https://github.com/your-org/wheel-legged-robot-twin-control</url>
+  
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  
+  <!-- ROS2核心依赖 -->
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>control_msgs</depend>
+  
+  <!-- Gazebo仿真依赖 -->
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  
+  <!-- 数学和算法库 -->
+  <depend>eigen3_cmake_module</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  
+  <!-- Python绑定 -->
+  <build_depend>pybind11_vendor</build_depend>
+  
+  <!-- 测试依赖 -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>launch_testing</test_depend>
+  <test_depend>launch_testing_ament_cmake</test_depend>
+  
+  <!-- 导出信息 -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
