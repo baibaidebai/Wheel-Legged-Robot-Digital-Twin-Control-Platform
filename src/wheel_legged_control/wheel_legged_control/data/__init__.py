@@ -5,10 +5,27 @@
 """
 
 from .data_recorder import DataRecorder, RecordingConfig, DataPoint, create_default_recorder
+from .data_player import (
+    DataPlayer,
+    PlaybackConfig,
+    PlaybackState,
+    PlaybackMode,
+    PlaybackStatus,
+    create_default_player
+)
 
 __all__ = [
+    # 数据记录器
     'DataRecorder',
     'RecordingConfig', 
     'DataPoint',
-    'create_default_recorder'
+    'create_default_recorder',
+    
+    # 数据回放器
+    'DataPlayer',
+    'PlaybackConfig',
+    'PlaybackState',
+    'PlaybackMode', 
+    'PlaybackStatus',
+    'create_default_player'
 ]
