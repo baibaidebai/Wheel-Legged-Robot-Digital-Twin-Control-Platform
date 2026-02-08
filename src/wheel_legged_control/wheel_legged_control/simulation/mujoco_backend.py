@@ -669,7 +669,8 @@ class MuJoCoSimulationBackend(BaseSimulationBackend):
         elif mode == 'rgb_array':
             # 离屏渲染
             if self.render_context is None or self.camera is None:
-                return np.zeros((self.config.render_height, self.config.render_width, 3), dtype=np.uint8)
+                # 渲染系统不可用，返回简单的状态可视化
+                return self._create_fallback_visualization()
             
             try:
                 # 创建视口
@@ -693,9 +694,64 @@ class MuJoCoSimulationBackend(BaseSimulationBackend):
                 
             except Exception as e:
                 self.logger.error(f"❌ 渲染失败: {e}")
-                return np.zeros((self.config.render_height, self.config.render_width, 3), dtype=np.uint8)
+                return self._create_fallback_visualization()
         
         return None
+    
+    def _create_fallback_visualization(self) -> np.ndarray:
+        """创建备用可视化（当OpenGL不可用时）"""
+        # 创建一个简单的状态显示图像
+        img = np.ones((self.config.render_height, self.config.render_width, 3), dtype=np.uint8) * 40  # 深灰色背景
+        
+        # 添加一些文本信息（使用简单的像素绘制）
+        # 这里我们创建一个简单的状态指示器
+        
+        # 绘制标题区域
+        img[0:60, :] = [60, 60, 80]  # 深蓝色标题栏
+        
+        # 绘制状态信息区域
+        y_offset = 80
+        line_height = 30
+        
+        # 显示仿真时间
+        img[y_offset:y_offset+20, 20:200] = [0, 200, 0]  # 绿色条表示运行中
+        y_offset += line_height
+        
+        # 显示关节状态（用颜色条表示）
+        for i, (joint_name, position) in enumerate(list(self.joint_positions.items())[:6]):
+            # 归一化位置到0-1
+            normalized = (position + 3.14) / (2 * 3.14)  # 假设范围是-pi到pi
+            normalized = max(0, min(1, normalized))
+            
+            # 绘制进度条
+            bar_width = int(normalized * 300)
+            img[y_offset:y_offset+15, 20:20+bar_width] = [0, 150, 255]  # 蓝色进度条
+            y_offset += 20
+        
+        # 添加提示信息区域
+        info_y = self.config.render_height - 100
+        img[info_y:info_y+80, :] = [80, 40, 40]  # 深红色信息栏
+        
+        # 在中心添加一个简单的机器人轮廓
+        center_x = self.config.render_width // 2
+        center_y = self.config.render_height // 2
+        
+        # 绘制机器人基座（矩形）
+        base_w, base_h = 100, 60
+        img[center_y-base_h//2:center_y+base_h//2, center_x-base_w//2:center_x+base_w//2] = [200, 200, 200]
+        
+        # 绘制轮子（圆形近似）
+        wheel_radius = 20
+        for wheel_x in [center_x - 60, center_x + 60]:
+            wheel_y = center_y + 40
+            for dy in range(-wheel_radius, wheel_radius):
+                for dx in range(-wheel_radius, wheel_radius):
+                    if dx*dx + dy*dy < wheel_radius*wheel_radius:
+                        y, x = wheel_y + dy, wheel_x + dx
+                        if 0 <= y < self.config.render_height and 0 <= x < self.config.render_width:
+                            img[y, x] = [100, 100, 100]
+        
+        return img
     
     def close(self):
         """关闭仿真环境"""

@@ -8,7 +8,15 @@
 
 from .simulation_manager import SimulationManager, SimulationBackend, SimulationConfig, BaseSimulationBackend, create_simulation_manager
 from .backend_registry import BackendRegistry, get_backend_registry, register_custom_backend
-from .config_manager import ConfigManager
+
+# 尝试导入配置管理器（需要PyYAML）
+try:
+    from .config_manager import ConfigManager
+    CONFIG_MANAGER_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️  ConfigManager不可用 (缺少PyYAML): {e}")
+    ConfigManager = None
+    CONFIG_MANAGER_AVAILABLE = False
 
 # 尝试导入后端（可选）
 try:
