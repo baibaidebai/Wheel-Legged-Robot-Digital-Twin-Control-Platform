@@ -38,7 +38,7 @@ try:
         LQRController = None
         
     from wheel_legged_control.core.urdf_loader import URDFLoader
-    from wheel_legged_control.gui.control_panel import RobotVisualizationWidget, JointControlWidget
+    from wheel_legged_control.gui.control_panel import JointControlWidget
     
     # 验证URDFLoader是否可用
     if URDFLoader is None:
@@ -582,6 +582,8 @@ class SimulationPage(QWidget):
         self.robot_model = None
         self.joint_controls = {}
         self.current_joint_angles = {}
+        self.sim_running = True  # 仿真运行状态
+        self.render_enabled = True  # 渲染启用状态
         self.setup_ui()
         self.initialize_simulation()
         
@@ -701,9 +703,36 @@ class SimulationPage(QWidget):
         panel = QWidget()
         layout = QVBoxLayout()
         
-        # 机器人可视化
-        self.robot_viz = RobotVisualizationWidget()
-        layout.addWidget(self.robot_viz)
+        # MuJoCo真实物理仿真可视化
+        viz_group = QGroupBox("MuJoCo物理仿真")
+        viz_layout = QVBoxLayout()
+        
+        # 创建渲染显示标签
+        self.render_label = QLabel()
+        self.render_label.setMinimumSize(800, 600)
+        self.render_label.setStyleSheet("background-color: #1e1e1e; border: 2px solid #555;")
+        self.render_label.setAlignment(Qt.AlignCenter)
+        self.render_label.setText("正在初始化MuJoCo仿真...")
+        viz_layout.addWidget(self.render_label)
+        
+        # 渲染控制按钮
+        render_control_layout = QHBoxLayout()
+        
+        self.toggle_render_button = QPushButton("🎥 启用渲染")
+        self.toggle_render_button.setCheckable(True)
+        self.toggle_render_button.setChecked(True)
+        self.toggle_render_button.clicked.connect(self.toggle_rendering)
+        render_control_layout.addWidget(self.toggle_render_button)
+        
+        self.camera_reset_button = QPushButton("📷 重置相机")
+        self.camera_reset_button.clicked.connect(self.reset_camera)
+        render_control_layout.addWidget(self.camera_reset_button)
+        
+        render_control_layout.addStretch()
+        viz_layout.addLayout(render_control_layout)
+        
+        viz_group.setLayout(viz_layout)
+        layout.addWidget(viz_group)
         
         panel.setLayout(layout)
         return panel
@@ -753,12 +782,25 @@ class SimulationPage(QWidget):
                 算法: {self.config['algorithm']}
                 状态: 运行中
                 """)
+                
+                # 启动渲染定时器
+                self.render_timer = QTimer()
+                self.render_timer.timeout.connect(self.update_rendering)
+                self.render_timer.start(33)  # 约30 FPS
+                
+                # 启动仿真定时器
+                self.sim_timer = QTimer()
+                self.sim_timer.timeout.connect(self.step_simulation)
+                self.sim_timer.start(int(self.config['dt'] * 1000))  # 转换为毫秒
+                
             else:
                 self.status_label.setText("仿真初始化失败")
                 
         except Exception as e:
             self.status_label.setText(f"初始化错误: {e}")
             QMessageBox.critical(self, "初始化失败", f"仿真初始化失败:\n{e}")
+            import traceback
+            traceback.print_exc()
             
     def load_robot_model(self):
         """加载机器人模型"""
@@ -803,27 +845,96 @@ class SimulationPage(QWidget):
         """关节角度改变"""
         self.current_joint_angles[joint_name] = angle
         
-        # 更新可视化
-        import math
-        angle_degrees = {name: math.degrees(angle) for name, angle in self.current_joint_angles.items()}
-        self.robot_viz.update_joint_angles(angle_degrees)
-        
         # 如果是手动模式，发送到仿真器
         if self.config.get('algorithm') == 'manual' and self.simulation_manager:
             try:
                 self.simulation_manager.set_joint_positions(self.current_joint_angles)
             except Exception as e:
                 print(f"设置关节位置失败: {e}")
+    
+    def step_simulation(self):
+        """执行仿真步进"""
+        if self.simulation_manager and hasattr(self, 'sim_running') and self.sim_running:
+            try:
+                # 执行一步仿真
+                self.simulation_manager.step()
+                
+                # 更新FPS显示
+                if hasattr(self, 'last_step_time'):
+                    import time
+                    current_time = time.time()
+                    fps = 1.0 / (current_time - self.last_step_time) if current_time > self.last_step_time else 0
+                    self.fps_label.setText(f"FPS: {fps:.1f}")
+                    self.last_step_time = current_time
+                else:
+                    import time
+                    self.last_step_time = time.time()
+                    
+            except Exception as e:
+                print(f"仿真步进失败: {e}")
+    
+    def update_rendering(self):
+        """更新渲染显示"""
+        if self.simulation_manager and hasattr(self, 'render_enabled') and self.render_enabled:
+            try:
+                # 从仿真管理器获取渲染图像
+                rgb_array = self.simulation_manager.render(mode='rgb_array')
+                
+                if rgb_array is not None and rgb_array.size > 0:
+                    # 转换为QPixmap并显示
+                    from PyQt5.QtGui import QImage
+                    height, width, channel = rgb_array.shape
+                    bytes_per_line = 3 * width
+                    q_image = QImage(rgb_array.data, width, height, bytes_per_line, QImage.Format_RGB888)
+                    pixmap = QPixmap.fromImage(q_image)
+                    
+                    # 缩放到标签大小
+                    scaled_pixmap = pixmap.scaled(
+                        self.render_label.size(),
+                        Qt.KeepAspectRatio,
+                        Qt.SmoothTransformation
+                    )
+                    self.render_label.setPixmap(scaled_pixmap)
+                else:
+                    self.render_label.setText("渲染数据不可用")
+                    
+            except Exception as e:
+                self.render_label.setText(f"渲染错误: {e}")
+                print(f"渲染更新失败: {e}")
+    
+    def toggle_rendering(self):
+        """切换渲染状态"""
+        self.render_enabled = self.toggle_render_button.isChecked()
+        if self.render_enabled:
+            self.toggle_render_button.setText("🎥 禁用渲染")
+            self.render_label.setText("正在渲染...")
+        else:
+            self.toggle_render_button.setText("🎥 启用渲染")
+            self.render_label.setText("渲染已禁用")
+    
+    def reset_camera(self):
+        """重置相机"""
+        # 这里可以添加重置相机视角的逻辑
+        self.status_label.setText("相机已重置")
                 
     def toggle_simulation(self):
         """切换仿真状态"""
-        # 这里实现播放/暂停逻辑
+        if not hasattr(self, 'sim_running'):
+            self.sim_running = True
+            self.render_enabled = True
+            
         if self.play_pause_button.text() == "⏸️ 暂停":
             self.play_pause_button.setText("▶️ 播放")
             self.status_label.setText("仿真已暂停")
+            self.sim_running = False
+            if hasattr(self, 'sim_timer'):
+                self.sim_timer.stop()
         else:
             self.play_pause_button.setText("⏸️ 暂停")
             self.status_label.setText("仿真运行中")
+            self.sim_running = True
+            if hasattr(self, 'sim_timer'):
+                self.sim_timer.start(int(self.config['dt'] * 1000))
             
     def reset_simulation(self):
         """重置仿真"""
@@ -835,7 +946,6 @@ class SimulationPage(QWidget):
             control.set_angle(0.0)
             self.current_joint_angles[joint_name] = 0.0
             
-        self.robot_viz.update_joint_angles({name: 0.0 for name in self.current_joint_angles.keys()})
         self.status_label.setText("仿真已重置")
         
     def start_algorithm(self):
@@ -859,6 +969,13 @@ class SimulationPage(QWidget):
         )
         
         if reply == QMessageBox.Yes:
+            # 停止定时器
+            if hasattr(self, 'render_timer'):
+                self.render_timer.stop()
+            if hasattr(self, 'sim_timer'):
+                self.sim_timer.stop()
+                
+            # 关闭仿真管理器
             if self.simulation_manager:
                 self.simulation_manager.close()
             self.back_to_config.emit()
