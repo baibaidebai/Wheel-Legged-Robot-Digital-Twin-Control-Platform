@@ -819,8 +819,7 @@
       link="laser" />
   </joint>
   <!-- Gazebo plugins -->
-  <!-- 
-  <gazebo>
+  <!-- <gazebo>
     <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
       <topicName>/imu/data</topicName>
       <frameName>imu_link</frameName>
@@ -829,7 +828,6 @@
       <gaussianNoise>0.0</gaussianNoise>
     </plugin>
   </gazebo>
-  -->
 
   <!-- Left front drive joint (revolute) -->
   <gazebo reference="left_front_joint_link">
@@ -842,7 +840,7 @@
     <provideFeedback>1</provideFeedback>
   </gazebo>
 
-  <!-- Left back drive joint -->
+  <!-- 左后驱动关节 -->
   <gazebo reference="left_back_joint_link">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>1</provideFeedback>
@@ -853,7 +851,7 @@
     <provideFeedback>1</provideFeedback>
   </gazebo>
 
-  <!-- Left wheel (continuous) -->
+  <!-- 左轮（continuous） -->
   <gazebo reference="left_wheel_joint_link">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>1</provideFeedback>
@@ -863,7 +861,7 @@
     <kd>100.0</kd>
   </gazebo>
 
-  <!-- Same for right side (copy from left and rename) -->
+  <!-- 同样为右侧添加（略，照抄左边改名） -->
   <!-- Left front drive joint (revolute) -->
   <gazebo reference="right_front_joint_link">
     <implicitSpringDamper>1</implicitSpringDamper>
@@ -875,7 +873,7 @@
     <provideFeedback>1</provideFeedback>
   </gazebo>
 
-  <!-- Right back drive joint -->
+  <!-- 左后驱动关节 -->
   <gazebo reference="right_back_joint_link">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>1</provideFeedback>
@@ -886,7 +884,7 @@
     <provideFeedback>1</provideFeedback>
   </gazebo>
 
-  <!-- Right wheel (continuous) -->
+  <!-- 左轮（continuous） -->
   <gazebo reference="right_wheel_joint_link">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>1</provideFeedback>
@@ -897,7 +895,7 @@
   </gazebo>
 
 
-  <!-- base_link contact parameters -->
+  <!-- base_link 接触参数 -->
   <gazebo reference="base_link">
     <mu1>0.9</mu1>
     <mu2>0.9</mu2>
