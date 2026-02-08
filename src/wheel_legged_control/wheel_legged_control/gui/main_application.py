@@ -29,11 +29,31 @@ try:
         SimulationManager, SimulationBackend, SimulationConfig,
         ConfigManager, get_backend_registry, create_simulation_manager
     )
-    from wheel_legged_control.algorithms import AlgorithmManager, LQRController
+    # 尝试导入算法模块，如果失败则跳过
+    try:
+        from wheel_legged_control.algorithms import AlgorithmManager, LQRController
+    except ImportError as alg_error:
+        print(f"警告: 算法模块导入失败 - {alg_error}")
+        AlgorithmManager = None
+        LQRController = None
+        
     from wheel_legged_control.core.urdf_loader import URDFLoader
     from wheel_legged_control.gui.control_panel import RobotVisualizationWidget, JointControlWidget
+    
+    # 验证URDFLoader是否可用
+    if URDFLoader is None:
+        raise ImportError("URDFLoader is None")
+        
 except ImportError as e:
     print(f"警告: 导入模块失败 - {e}")
+    
+    # 尝试单独导入URDFLoader
+    try:
+        from wheel_legged_control.core.urdf_loader import URDFLoader
+        print("✅ URDFLoader单独导入成功")
+    except ImportError as e2:
+        print(f"❌ URDFLoader单独导入也失败: {e2}")
+        URDFLoader = None
 
 
 class ConfigurationPage(QWidget):
@@ -355,6 +375,11 @@ class ConfigurationPage(QWidget):
         model_path = self.model_combo.currentData()
         if model_path and Path(model_path).exists():
             try:
+                # 检查URDFLoader是否可用
+                if 'URDFLoader' not in globals() or URDFLoader is None:
+                    self.model_info_label.setText("URDFLoader不可用")
+                    return
+                    
                 loader = URDFLoader()
                 robot = loader.load_urdf(model_path)
                 info = f"关节数: {len(robot.joints)}, 链接数: {len(robot.links)}"
@@ -738,6 +763,11 @@ class SimulationPage(QWidget):
     def load_robot_model(self):
         """加载机器人模型"""
         try:
+            # 检查URDFLoader是否可用
+            if 'URDFLoader' not in globals() or URDFLoader is None:
+                print("❌ URDFLoader不可用，无法加载机器人模型")
+                return
+                
             loader = URDFLoader()
             self.robot_model = loader.load_urdf(self.config['model_path'])
             

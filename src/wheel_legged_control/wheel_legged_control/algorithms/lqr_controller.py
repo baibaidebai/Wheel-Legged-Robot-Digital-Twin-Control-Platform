@@ -7,7 +7,15 @@ LQR控制器通过最小化二次代价函数来计算最优控制增益。
 """
 
 import numpy as np
-import scipy.linalg
+# 尝试导入scipy，如果失败则提供替代方案
+try:
+    import scipy.linalg
+    SCIPY_AVAILABLE = True
+except ImportError as e:
+    print(f"警告: SciPy不可用 - {e}")
+    print("LQR控制器将使用NumPy的线性代数功能（功能受限）")
+    SCIPY_AVAILABLE = False
+    
 import logging
 from typing import Dict, List, Tuple, Optional, Any
 from dataclasses import dataclass, field
@@ -92,7 +100,12 @@ class LinearSystemModel:
             M[:n, n:] = self.B_continuous * self.dt
             
             # 计算矩阵指数
-            exp_M = scipy.linalg.expm(M)
+            if SCIPY_AVAILABLE:
+                exp_M = scipy.linalg.expm(M)
+            else:
+                # 使用NumPy的近似方法（泰勒展开）
+                print("警告: 使用NumPy近似计算矩阵指数")
+                exp_M = np.eye(M.shape[0]) + M * dt + 0.5 * np.dot(M, M) * dt**2
             
             # 提取离散化矩阵
             self.A_discrete = exp_M[:n, :n]
@@ -267,8 +280,13 @@ class LQRController(BaseAlgorithm):
             P: Riccati方程的解
         """
         try:
-            # 使用scipy求解DARE
-            P = scipy.linalg.solve_discrete_are(A, B, Q, R)
+            if SCIPY_AVAILABLE:
+                # 使用scipy求解DARE
+                P = scipy.linalg.solve_discrete_are(A, B, Q, R)
+            else:
+                # 使用迭代方法求解DARE（简化版本）
+                print("警告: 使用迭代方法求解DARE（SciPy不可用）")
+                P = self._solve_dare_iterative(A, B, Q, R)
             
             # 验证解的性质
             if not np.allclose(P, P.T):
