@@ -34,6 +34,10 @@ struct WheelConstraint {
     Eigen::Vector3d contact_point;    ///< 接触点位置
     Eigen::Vector3d normal_vector;    ///< 法向量
     double friction_coefficient;      ///< 摩擦系数
+    
+    WheelConstraint() : contact_point(Eigen::Vector3d::Zero()), 
+                       normal_vector(Eigen::Vector3d::UnitZ()), 
+                       friction_coefficient(0.8) {}
 };
 
 /**
@@ -43,6 +47,8 @@ struct LegConstraint {
     std::string leg_name;            ///< 腿部名称
     std::vector<std::string> joints; ///< 关节列表
     Eigen::MatrixXd jacobian;        ///< 雅可比矩阵
+    
+    LegConstraint() : jacobian(Eigen::MatrixXd::Identity(3, 2)) {}
 };
 
 /**
@@ -52,6 +58,9 @@ struct CouplingConstraint {
     std::vector<std::string> joint_names; ///< 关节名称列表
     Eigen::MatrixXd constraint_matrix;    ///< 约束矩阵
     ConstraintType constraint_type;       ///< 约束类型
+    
+    CouplingConstraint() : constraint_matrix(Eigen::MatrixXd::Identity(2, 2)),
+                          constraint_type(ConstraintType::HOLONOMIC) {}
 };
 
 /**
@@ -72,6 +81,9 @@ struct TaskSpaceState {
     Eigen::Quaterniond base_orientation;                  ///< 基座姿态
     std::map<std::string, Eigen::Vector3d> wheel_positions; ///< 轮子位置
     std::map<std::string, Eigen::Vector3d> leg_end_positions; ///< 腿端位置
+    
+    TaskSpaceState() : base_position(Eigen::Vector3d::Zero()),
+                      base_orientation(Eigen::Quaterniond::Identity()) {}
 };
 
 /**
@@ -81,6 +93,8 @@ struct ValidationResult {
     bool is_valid;              ///< 是否有效
     std::string error_message;  ///< 错误信息
     double consistency_error;   ///< 一致性误差
+    
+    ValidationResult() : is_valid(false), consistency_error(0.0) {}
 };
 
 /**

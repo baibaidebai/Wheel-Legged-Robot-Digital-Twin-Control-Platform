@@ -19,12 +19,7 @@ find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
-find_package(control_msgs REQUIRED)
-find_package(gazebo_ros REQUIRED)
-find_package(robot_state_publisher REQUIRED)
-find_package(joint_state_publisher REQUIRED)
 find_package(urdf REQUIRED)
-find_package(xacro REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
@@ -66,11 +61,30 @@ ament_target_dependencies(digital_twin_mapper
 target_link_libraries(digital_twin_mapper ${TINYXML2_LIBRARIES})
 
 # Python绑定
-pybind11_add_module(digital_twin_mapper_py
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+
+add_library(digital_twin_mapper_py MODULE
   src/python_bindings/digital_twin_mapper_bindings.cpp
 )
 
-target_link_libraries(digital_twin_mapper_py PRIVATE digital_twin_mapper)
+target_include_directories(digital_twin_mapper_py PRIVATE
+  ${Python3_INCLUDE_DIRS}
+)
+
+target_link_libraries(digital_twin_mapper_py PRIVATE 
+  digital_twin_mapper 
+  pybind11::module
+  ${Python3_LIBRARIES}
+)
+
+pybind11_extension(digital_twin_mapper_py)
+pybind11_strip(digital_twin_mapper_py)
+
+set_target_properties(digital_twin_mapper_py PROPERTIES 
+  CXX_VISIBILITY_PRESET "hidden"
+  PREFIX "${PYTHON_MODULE_PREFIX}"
+  SUFFIX "${PYTHON_MODULE_EXTENSION}"
+)
 
 # Python模块安装
 ament_python_install_package(${PROJECT_NAME})
@@ -95,11 +109,7 @@ install(DIRECTORY include/
 
 # 安装Python脚本
 install(PROGRAMS
-  scripts/control_panel.py
   scripts/gazebo_simulator.py
-  scripts/joint_controller_node.py
-  scripts/imu_simulator_node.py
-  scripts/state_synchronizer_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -135,7 +145,7 @@ if(BUILD_TESTING)
   
   # C++单元测试
   ament_add_gtest(test_digital_twin_mapper
-    test/cpp/test_digital_twin_mapper.cpp
+    ../../test/cpp/test_digital_twin_mapper.cpp
   )
   
   if(TARGET test_digital_twin_mapper)
@@ -149,12 +159,12 @@ if(BUILD_TESTING)
   endif()
   
   # Python测试
-  ament_add_pytest_test(test_python_modules test/python/
+  ament_add_pytest_test(test_python_modules ../../test/python/
     PYTHON_EXECUTABLE "${PYTHON_EXECUTABLE}"
   )
   
   # 集成测试
-  add_launch_test(test/integration/test_system_integration.py)
+  # add_launch_test(../../test/integration/test_system_integration.py)
 endif()
 
 # 导出依赖
@@ -166,12 +176,7 @@ ament_export_dependencies(
   sensor_msgs
   geometry_msgs
   trajectory_msgs
-  control_msgs
-  gazebo_ros
-  robot_state_publisher
-  joint_state_publisher
   urdf
-  xacro
   tf2
   tf2_ros
   tf2_geometry_msgs

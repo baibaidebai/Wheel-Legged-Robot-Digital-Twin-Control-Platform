@@ -26,22 +26,44 @@ PYBIND11_MODULE(digital_twin_mapper_py, m) {
     py::class_<WheelConstraint>(m, "WheelConstraint")
         .def(py::init<>())
         .def_readwrite("wheel_name", &WheelConstraint::wheel_name)
-        .def_readwrite("contact_point", &WheelConstraint::contact_point)
-        .def_readwrite("normal_vector", &WheelConstraint::normal_vector)
-        .def_readwrite("friction_coefficient", &WheelConstraint::friction_coefficient);
+        .def_readwrite("friction_coefficient", &WheelConstraint::friction_coefficient)
+        .def("set_contact_point", [](WheelConstraint& wc, double x, double y, double z) {
+            wc.contact_point = Eigen::Vector3d(x, y, z);
+        })
+        .def("get_contact_point", [](const WheelConstraint& wc) {
+            return std::make_tuple(wc.contact_point.x(), wc.contact_point.y(), wc.contact_point.z());
+        })
+        .def("set_normal_vector", [](WheelConstraint& wc, double x, double y, double z) {
+            wc.normal_vector = Eigen::Vector3d(x, y, z);
+        })
+        .def("get_normal_vector", [](const WheelConstraint& wc) {
+            return std::make_tuple(wc.normal_vector.x(), wc.normal_vector.y(), wc.normal_vector.z());
+        });
     
     // 腿部约束结构
     py::class_<LegConstraint>(m, "LegConstraint")
         .def(py::init<>())
+        .def(py::init([](const std::string& name, const std::vector<std::string>& joints, 
+                        const Eigen::MatrixXd& jacobian) {
+            LegConstraint lc;
+            lc.leg_name = name;
+            lc.joints = joints;
+            lc.jacobian = jacobian;
+            return lc;
+        }))
         .def_readwrite("leg_name", &LegConstraint::leg_name)
         .def_readwrite("joints", &LegConstraint::joints)
-        .def_readwrite("jacobian", &LegConstraint::jacobian);
+        .def_property("jacobian",
+            [](const LegConstraint& lc) { return lc.jacobian; },
+            [](LegConstraint& lc, const Eigen::MatrixXd& jac) { lc.jacobian = jac; });
     
     // 耦合约束结构
     py::class_<CouplingConstraint>(m, "CouplingConstraint")
         .def(py::init<>())
         .def_readwrite("joint_names", &CouplingConstraint::joint_names)
-        .def_readwrite("constraint_matrix", &CouplingConstraint::constraint_matrix)
+        .def_property("constraint_matrix",
+            [](const CouplingConstraint& cc) { return cc.constraint_matrix; },
+            [](CouplingConstraint& cc, const Eigen::MatrixXd& cm) { cc.constraint_matrix = cm; })
         .def_readwrite("constraint_type", &CouplingConstraint::constraint_type);
     
     // 约束模型类
@@ -54,8 +76,18 @@ PYBIND11_MODULE(digital_twin_mapper_py, m) {
     // 任务空间状态结构
     py::class_<TaskSpaceState>(m, "TaskSpaceState")
         .def(py::init<>())
-        .def_readwrite("base_position", &TaskSpaceState::base_position)
-        .def_readwrite("base_orientation", &TaskSpaceState::base_orientation)
+        .def(py::init([](const Eigen::Vector3d& pos, const Eigen::Quaterniond& orient) {
+            TaskSpaceState state;
+            state.base_position = pos;
+            state.base_orientation = orient;
+            return state;
+        }))
+        .def_property("base_position",
+            [](const TaskSpaceState& ts) { return ts.base_position; },
+            [](TaskSpaceState& ts, const Eigen::Vector3d& pos) { ts.base_position = pos; })
+        .def_property("base_orientation",
+            [](const TaskSpaceState& ts) { return ts.base_orientation; },
+            [](TaskSpaceState& ts, const Eigen::Quaterniond& orient) { ts.base_orientation = orient; })
         .def_readwrite("wheel_positions", &TaskSpaceState::wheel_positions)
         .def_readwrite("leg_end_positions", &TaskSpaceState::leg_end_positions);
     
