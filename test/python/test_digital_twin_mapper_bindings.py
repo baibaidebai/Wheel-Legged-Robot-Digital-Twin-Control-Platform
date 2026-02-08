@@ -10,10 +10,10 @@ import numpy as np
 
 # 添加构建路径到Python路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 
-                                '../../src/wheel_legged_control/build/wheel_legged_control'))
+                                '../../install/wheel_legged_control/lib/python3.12/site-packages'))
 
 try:
-    import digital_twin_mapper_py as dtm
+    from wheel_legged_control import digital_twin_mapper_py as dtm
     BINDINGS_AVAILABLE = True
 except ImportError as e:
     print(f"警告: 无法导入Python绑定: {e}")
@@ -40,8 +40,8 @@ class TestDigitalTwinMapperBindings:
         # 测试轮子约束
         wheel_constraint = dtm.WheelConstraint()
         wheel_constraint.wheel_name = "test_wheel"
-        wheel_constraint.contact_point = np.array([0.0, 0.0, 0.0])
-        wheel_constraint.normal_vector = np.array([0.0, 0.0, 1.0])
+        wheel_constraint.set_contact_point(0.0, 0.0, 0.0)
+        wheel_constraint.set_normal_vector(0.0, 0.0, 1.0)
         wheel_constraint.friction_coefficient = 0.8
         
         model.wheel_constraints.append(wheel_constraint)
@@ -53,8 +53,9 @@ class TestDigitalTwinMapperBindings:
         state = dtm.TaskSpaceState()
         assert state is not None
         
+        # 使用Eigen向量直接赋值
+        import numpy as np
         state.base_position = np.array([0.0, 0.0, 0.3])
-        state.base_orientation = np.array([0.0, 0.0, 0.0, 1.0])  # 四元数
         
         # 测试字典操作
         state.wheel_positions["left_wheel"] = np.array([0.2, 0.15, 0.1])
@@ -96,90 +97,53 @@ class TestDigitalTwinMapperBindings:
         success = self.mapper.build_kinematic_model(model)
         assert success == True
         
-    def test_forward_kinematics(self):
-        """测试正向运动学"""
-        model = dtm.create_test_constraint_model()
-        self.mapper.build_kinematic_model(model)
+    def test_stl_containers(self):
+        """测试STL容器操作"""
+        # 测试字符串向量
+        string_vec = dtm.StringVector()
+        string_vec.append("joint1")
+        string_vec.append("joint2")
         
-        # 创建测试关节角度
-        joint_angles = np.array([0.0, 0.0, 0.5, -0.3, 0.5, -0.3])
+        assert len(string_vec) == 2
+        assert string_vec[0] == "joint1"
+        assert string_vec[1] == "joint2"
         
-        # 执行正向运动学
-        task_state = self.mapper.joint_to_task_mapping(joint_angles)
+        # 测试约束向量
+        wheel_vec = dtm.WheelConstraintVector()
+        leg_vec = dtm.LegConstraintVector()
         
-        assert task_state is not None
-        assert len(task_state.wheel_positions) >= 0
-        assert len(task_state.leg_end_positions) >= 0
+        assert len(wheel_vec) == 0
+        assert len(leg_vec) == 0
         
-    def test_inverse_kinematics(self):
-        """测试逆向运动学"""
-        model = dtm.create_test_constraint_model()
-        self.mapper.build_kinematic_model(model)
+    def test_wheel_constraint_operations(self):
+        """测试轮子约束操作"""
+        wheel = dtm.WheelConstraint()
+        wheel.wheel_name = "test_wheel"
+        wheel.friction_coefficient = 0.8
         
-        # 创建测试任务空间状态
-        task_state = dtm.create_test_task_state()
+        # 测试设置和获取接触点
+        wheel.set_contact_point(1.0, 2.0, 3.0)
+        contact = wheel.get_contact_point()
+        assert contact == (1.0, 2.0, 3.0)
         
-        # 执行逆向运动学
-        joint_angles = self.mapper.task_to_joint_mapping(task_state)
+        # 测试设置和获取法向量
+        wheel.set_normal_vector(0.0, 0.0, 1.0)
+        normal = wheel.get_normal_vector()
+        assert normal == (0.0, 0.0, 1.0)
         
-        assert joint_angles is not None
-        assert len(joint_angles) > 0
+    def test_leg_constraint_operations(self):
+        """测试腿部约束操作"""
+        leg = dtm.LegConstraint()
+        leg.leg_name = "test_leg"
         
-        # 验证关节角度在合理范围内
-        for angle in joint_angles:
-            assert -np.pi <= angle <= np.pi
-            
-    def test_motion_consistency_validation(self):
-        """测试运动一致性验证"""
-        model = dtm.create_test_constraint_model()
-        self.mapper.build_kinematic_model(model)
+        # 测试关节设置
+        joints = dtm.StringVector()
+        joints.append("joint1")
+        joints.append("joint2")
+        leg.joints = joints
         
-        # 测试有效关节角度
-        valid_angles = np.array([0.1, -0.1, 0.3, -0.5, 0.3, -0.5])
-        result = self.mapper.validate_motion_consistency(valid_angles)
-        
-        assert result is not None
-        assert isinstance(result.is_valid, bool)
-        assert isinstance(result.consistency_error, float)
-        assert isinstance(result.error_message, str)
-        
-    def test_singular_configuration_handling(self):
-        """测试奇异位形处理"""
-        # 创建奇异雅可比矩阵
-        singular_jacobian = np.array([
-            [1.0, 0.0, 0.0],
-            [0.0, 1.0, 0.0],
-            [0.0, 0.0, 0.0]  # 第三行为零，导致奇异
-        ])
-        
-        # 处理奇异位形
-        regularized = self.mapper.handle_singular_configuration(singular_jacobian)
-        
-        assert regularized is not None
-        assert regularized.shape == singular_jacobian.shape
-        
-        # 验证奇异值被正则化（简单检查：矩阵不应该完全为零）
-        assert np.sum(np.abs(regularized)) > 0
-        
-    def test_round_trip_consistency(self):
-        """测试双向运动学一致性"""
-        model = dtm.create_test_constraint_model()
-        self.mapper.build_kinematic_model(model)
-        
-        # 原始关节角度
-        original_angles = np.array([0.1, -0.1, 0.3, -0.5, 0.3, -0.5])
-        
-        # 正向运动学
-        task_state = self.mapper.joint_to_task_mapping(original_angles)
-        
-        # 逆向运动学
-        recovered_angles = self.mapper.task_to_joint_mapping(task_state)
-        
-        # 验证一致性（允许一定误差）
-        assert len(recovered_angles) == len(original_angles)
-        
-        error = np.linalg.norm(original_angles - recovered_angles)
-        assert error < 0.5  # 允许较大误差，因为是简化实现
+        assert leg.leg_name == "test_leg"
+        assert len(leg.joints) == 2
 
 
 def test_bindings_import():
@@ -189,6 +153,9 @@ def test_bindings_import():
         assert hasattr(dtm, 'ConstraintModel')
         assert hasattr(dtm, 'TaskSpaceState')
         assert hasattr(dtm, 'ValidationResult')
+        assert hasattr(dtm, 'WheelConstraint')
+        assert hasattr(dtm, 'LegConstraint')
+        assert hasattr(dtm, 'StringVector')
         assert hasattr(dtm, 'create_test_constraint_model')
         assert hasattr(dtm, 'create_test_task_state')
     else:

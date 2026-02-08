@@ -14,8 +14,22 @@
 namespace py = pybind11;
 using namespace wheel_legged_control;
 
+// 显式绑定STL容器
+PYBIND11_MAKE_OPAQUE(std::vector<WheelConstraint>);
+PYBIND11_MAKE_OPAQUE(std::vector<LegConstraint>);
+PYBIND11_MAKE_OPAQUE(std::vector<CouplingConstraint>);
+PYBIND11_MAKE_OPAQUE(std::vector<std::string>);
+PYBIND11_MAKE_OPAQUE(std::map<std::string, Eigen::Vector3d>);
+
 PYBIND11_MODULE(digital_twin_mapper_py, m) {
     m.doc() = "轮腿机器人数字孪生映射器Python绑定";
+    
+    // 绑定STL容器
+    py::bind_vector<std::vector<WheelConstraint>>(m, "WheelConstraintVector");
+    py::bind_vector<std::vector<LegConstraint>>(m, "LegConstraintVector");
+    py::bind_vector<std::vector<CouplingConstraint>>(m, "CouplingConstraintVector");
+    py::bind_vector<std::vector<std::string>>(m, "StringVector");
+    py::bind_map<std::map<std::string, Eigen::Vector3d>>(m, "StringVector3dMap");
     
     // 约束类型枚举
     py::enum_<ConstraintType>(m, "ConstraintType")
@@ -27,6 +41,12 @@ PYBIND11_MODULE(digital_twin_mapper_py, m) {
         .def(py::init<>())
         .def_readwrite("wheel_name", &WheelConstraint::wheel_name)
         .def_readwrite("friction_coefficient", &WheelConstraint::friction_coefficient)
+        .def_property("contact_point",
+            [](const WheelConstraint& wc) { return wc.contact_point; },
+            [](WheelConstraint& wc, const Eigen::Vector3d& point) { wc.contact_point = point; })
+        .def_property("normal_vector",
+            [](const WheelConstraint& wc) { return wc.normal_vector; },
+            [](WheelConstraint& wc, const Eigen::Vector3d& normal) { wc.normal_vector = normal; })
         .def("set_contact_point", [](WheelConstraint& wc, double x, double y, double z) {
             wc.contact_point = Eigen::Vector3d(x, y, z);
         })
