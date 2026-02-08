@@ -255,7 +255,7 @@ class TestLQRController(unittest.TestCase):
         self.lqr.update_weights(Q_weights=new_Q_weights)
         
         # 检查权重是否更新
-        self.assertEqual(self.lqr.config.Q_weights, new_Q_weights)
+        self.assertEqual(self.lqr.lqr_config.Q_weights, new_Q_weights)
         
         # 检查增益是否重新计算
         self.assertFalse(np.allclose(self.lqr.K_gain, original_gain))

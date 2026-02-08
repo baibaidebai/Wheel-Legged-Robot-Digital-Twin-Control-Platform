@@ -156,8 +156,18 @@ class LQRController(BaseAlgorithm):
             config: LQR配置参数
             system_model: 线性系统模型
         """
-        super().__init__()
-        self.config = config
+        # 创建算法配置用于BaseAlgorithm
+        from wheel_legged_control.algorithms.algorithm_manager import AlgorithmConfig, AlgorithmType
+        algorithm_config = AlgorithmConfig(
+            name="LQR控制器",
+            algorithm_type=AlgorithmType.CONTROL,
+            parameters=config.__dict__.copy(),
+            enabled=True,
+            priority=1,
+            timeout=1.0
+        )
+        super().__init__(algorithm_config)
+        self.lqr_config = config
         self.system_model = system_model
         self.logger = logging.getLogger(__name__)
         
@@ -183,14 +193,14 @@ class LQRController(BaseAlgorithm):
     def _build_weight_matrices(self):
         """构建权重矩阵Q和R"""
         # 状态权重矩阵Q
-        self.Q = np.diag(self.config.Q_weights)
+        self.Q = np.diag(self.lqr_config.Q_weights)
         
         # 控制权重矩阵R
-        self.R = np.diag(self.config.R_weights)
+        self.R = np.diag(self.lqr_config.R_weights)
         
         # 验证权重矩阵
-        assert self.Q.shape == (self.config.state_dim, self.config.state_dim)
-        assert self.R.shape == (self.config.control_dim, self.config.control_dim)
+        assert self.Q.shape == (self.lqr_config.state_dim, self.lqr_config.state_dim)
+        assert self.R.shape == (self.lqr_config.control_dim, self.lqr_config.control_dim)
         assert np.all(np.linalg.eigvals(self.Q) >= 0), "Q矩阵必须半正定"
         assert np.all(np.linalg.eigvals(self.R) > 0), "R矩阵必须正定"
     
@@ -204,10 +214,10 @@ class LQRController(BaseAlgorithm):
         self.system_model = system_model
         
         # 验证维度匹配
-        assert system_model.n_states == self.config.state_dim, \
-            f"状态维度不匹配: {system_model.n_states} vs {self.config.state_dim}"
-        assert system_model.n_controls == self.config.control_dim, \
-            f"控制维度不匹配: {system_model.n_controls} vs {self.config.control_dim}"
+        assert system_model.n_states == self.lqr_config.state_dim, \
+            f"状态维度不匹配: {system_model.n_states} vs {self.lqr_config.state_dim}"
+        assert system_model.n_controls == self.lqr_config.control_dim, \
+            f"控制维度不匹配: {system_model.n_controls} vs {self.lqr_config.control_dim}"
         
         # 计算LQR增益
         self._compute_lqr_gain()
@@ -236,7 +246,7 @@ class LQRController(BaseAlgorithm):
             self.K_gain = np.linalg.solve(temp, B.T @ self.P_matrix @ A)
             
             # 检查闭环稳定性
-            if self.config.check_stability:
+            if self.lqr_config.check_stability:
                 self._check_closed_loop_stability(A, B)
             
             self.logger.info(f"LQR增益计算完成，增益矩阵形状: {self.K_gain.shape}")
@@ -289,7 +299,7 @@ class LQRController(BaseAlgorithm):
         n = A.shape[0]
         P = np.eye(n)  # 初始猜测
         
-        for i in range(self.config.max_iterations):
+        for i in range(self.lqr_config.max_iterations):
             P_prev = P.copy()
             
             # Riccati迭代
@@ -302,11 +312,11 @@ class LQRController(BaseAlgorithm):
                 break
             
             # 检查收敛
-            if np.linalg.norm(P - P_prev) < self.config.tolerance:
+            if np.linalg.norm(P - P_prev) < self.lqr_config.tolerance:
                 self.logger.info(f"DARE迭代收敛，迭代次数: {i+1}")
                 break
         else:
-            self.logger.warning(f"DARE迭代未收敛，最大迭代次数: {self.config.max_iterations}")
+            self.logger.warning(f"DARE迭代未收敛，最大迭代次数: {self.lqr_config.max_iterations}")
         
         return P
     
@@ -359,17 +369,17 @@ class LQRController(BaseAlgorithm):
             reference_state: 参考状态
             reference_control: 参考控制输入（可选）
         """
-        assert len(reference_state) == self.config.state_dim, \
-            f"参考状态维度错误: {len(reference_state)} vs {self.config.state_dim}"
+        assert len(reference_state) == self.lqr_config.state_dim, \
+            f"参考状态维度错误: {len(reference_state)} vs {self.lqr_config.state_dim}"
         
         self.reference_state = reference_state.copy()
         
         if reference_control is not None:
-            assert len(reference_control) == self.config.control_dim, \
-                f"参考控制维度错误: {len(reference_control)} vs {self.config.control_dim}"
+            assert len(reference_control) == self.lqr_config.control_dim, \
+                f"参考控制维度错误: {len(reference_control)} vs {self.lqr_config.control_dim}"
             self.reference_control = reference_control.copy()
         else:
-            self.reference_control = np.zeros(self.config.control_dim)
+            self.reference_control = np.zeros(self.lqr_config.control_dim)
     
     def compute_control(self, current_state: np.ndarray) -> np.ndarray:
         """
@@ -392,8 +402,8 @@ class LQRController(BaseAlgorithm):
         
         # 应用控制限制
         control_input = np.clip(control_input, 
-                               self.config.min_control_effort, 
-                               self.config.max_control_effort)
+                               self.lqr_config.min_control_effort, 
+                               self.lqr_config.max_control_effort)
         
         # 记录历史数据
         self.control_history.append(control_input.copy())
@@ -420,9 +430,9 @@ class LQRController(BaseAlgorithm):
             R_weights: 新的控制权重
         """
         if Q_weights is not None:
-            self.config.Q_weights = Q_weights
+            self.lqr_config.Q_weights = Q_weights
         if R_weights is not None:
-            self.config.R_weights = R_weights
+            self.lqr_config.R_weights = R_weights
         
         # 重新构建权重矩阵
         self._build_weight_matrices()
@@ -463,8 +473,8 @@ class LQRController(BaseAlgorithm):
         self.control_history.clear()
         self.state_history.clear()
         self.cost_history.clear()
-        self.reference_state = np.zeros(self.config.state_dim)
-        self.reference_control = np.zeros(self.config.control_dim)
+        self.reference_state = np.zeros(self.lqr_config.state_dim)
+        self.reference_control = np.zeros(self.lqr_config.control_dim)
     
     # BaseAlgorithm接口实现
     def initialize(self, **kwargs) -> bool:
@@ -510,7 +520,7 @@ class LQRController(BaseAlgorithm):
     def get_parameters(self) -> Dict[str, Any]:
         """获取算法参数"""
         return {
-            'config': self.config.__dict__,
+            'config': self.lqr_config.__dict__,
             'Q_matrix': self.Q.tolist() if hasattr(self, 'Q') else None,
             'R_matrix': self.R.tolist() if hasattr(self, 'R') else None,
             'K_gain': self.K_gain.tolist() if self.K_gain is not None else None,
@@ -520,9 +530,9 @@ class LQRController(BaseAlgorithm):
     def set_parameters(self, parameters: Dict[str, Any]):
         """设置算法参数"""
         if 'Q_weights' in parameters:
-            self.config.Q_weights = parameters['Q_weights']
+            self.lqr_config.Q_weights = parameters['Q_weights']
         if 'R_weights' in parameters:
-            self.config.R_weights = parameters['R_weights']
+            self.lqr_config.R_weights = parameters['R_weights']
         
         # 重新构建权重矩阵
         self._build_weight_matrices()

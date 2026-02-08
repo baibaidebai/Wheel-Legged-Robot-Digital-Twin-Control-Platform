@@ -1,0 +1,46 @@
+# 轮腿机器人孪生控制系统依赖包
+# Wheel-Legged Robot Digital Twin Control Platform Dependencies
+
+# 核心科学计算库 - Core Scientific Computing
+numpy==1.26.4          # 数值计算库，兼容SciPy 1.17.0
+scipy==1.17.0          # 科学计算库，包含线性代数和优化算法
+
+# 可视化库 - Visualization
+matplotlib==3.10.8     # 绘图库，用于数据可视化和图表生成
+
+# 机器学习库 - Machine Learning (可选)
+# torch>=1.9.0         # PyTorch深度学习框架 (用于PPO训练)
+# gym>=0.21.0          # OpenAI Gym环境接口
+
+# ROS2相关 (系统级安装，不通过pip)
+# ROS2 Related (System-level installation, not via pip)
+# rclpy              # ROS2 Python客户端库
+# sensor_msgs        # ROS2传感器消息类型
+# geometry_msgs      # ROS2几何消息类型
+# std_msgs           # ROS2标准消息类型
+
+# GUI库 - GUI Libraries (系统级安装)
+# PyQt5              # GUI框架 (系统级安装)
+
+# 开发和测试工具 - Development and Testing Tools
+pytest>=6.0.0         # 测试框架
+pytest-cov>=2.0.0     # 测试覆盖率
+flake8>=3.8.0         # 代码风格检查
+
+# 文档生成 - Documentation
+# sphinx>=4.0.0       # 文档生成工具 (可选)
+# sphinx-rtd-theme    # 文档主题 (可选)
+
+# 注意事项 - Notes:
+# 1. 本项目使用Python虚拟环境来管理依赖版本
+# 2. NumPy 1.26.4与SciPy 1.17.0版本兼容，解决了之前的兼容性问题
+# 3. ROS2相关包需要通过系统包管理器安装，不能通过pip安装
+# 4. PyQt5建议通过系统包管理器安装以获得更好的系统集成
+# 5. 机器学习相关包为可选依赖，仅在使用PPO训练时需要
+
+# 安装命令 - Installation Commands:
+# pip install -r requirements.txt
+# 
+# 或在虚拟环境中安装 - Or install in virtual environment:
+# source venv/bin/activate
+# pip install -r requirements.txt
