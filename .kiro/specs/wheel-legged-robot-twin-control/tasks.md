@@ -61,14 +61,14 @@
     - 实现数据类型转换和异常处理
     - _需求: 需求 8.1, 8.2, 8.3_
   
-  - [ ] 3.3 实现仿真管理器架构
+  - [-] 3.3 实现仿真管理器架构
     - 创建SimulationManager基类和接口规范
     - 实现GazeboSimulationBackend后端适配器
     - 实现MuJoCoSimulationBackend后端适配器
     - 添加后端切换和配置管理功能
     - _需求: 需求 12.1, 12.2_
   
-  - [-] 3.4 集成MuJoCo物理引擎
+  - [x] 3.4 集成MuJoCo物理引擎
     - 安装和配置MuJoCo Python绑定(mujoco-py或dm_control)
     - 实现URDF到MuJoCo XML的模型转换
     - 配置MuJoCo仿真参数和求解器设置

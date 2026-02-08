@@ -3,6 +3,7 @@
 仿真管理器
 
 提供统一的仿真接口，支持多种物理引擎后端的动态切换。
+集成后端注册表和配置管理器，提供完善的仿真架构。
 """
 
 import numpy as np
@@ -132,43 +133,84 @@ class BaseSimulationBackend(ABC):
 
 
 class SimulationManager:
-    """仿真管理器"""
+    """仿真管理器 - 增强版本，集成后端注册表和配置管理器"""
     
-    def __init__(self, config: SimulationConfig = None):
+    def __init__(self, config: SimulationConfig = None, config_manager=None, backend_registry=None):
         self.config = config or SimulationConfig()
         self.logger = logging.getLogger(__name__)
+        
+        # 集成配置管理器和后端注册表
+        if config_manager is None:
+            try:
+                from .config_manager import ConfigManager
+                self.config_manager = ConfigManager()
+            except ImportError:
+                # 如果相对导入失败，尝试绝对导入
+                try:
+                    from wheel_legged_control.simulation.config_manager import ConfigManager
+                    self.config_manager = ConfigManager()
+                except ImportError:
+                    self.config_manager = None
+                    self.logger.warning("⚠️  配置管理器不可用")
+        else:
+            self.config_manager = config_manager
+        
+        if backend_registry is None:
+            try:
+                from .backend_registry import get_backend_registry
+                self.backend_registry = get_backend_registry()
+            except ImportError:
+                # 如果相对导入失败，尝试绝对导入
+                try:
+                    from wheel_legged_control.simulation.backend_registry import get_backend_registry
+                    self.backend_registry = get_backend_registry()
+                except ImportError:
+                    self.backend_registry = None
+                    self.logger.warning("⚠️  后端注册表不可用")
+        else:
+            self.backend_registry = backend_registry
         
         self.backend = None
         self.current_backend_type = None
         
-        # 注册的后端
-        self._backends = {}
-        self._register_backends()
+        # 性能监控
+        self.performance_stats = {
+            'total_steps': 0,
+            'total_time': 0.0,
+            'average_step_time': 0.0,
+            'backend_switches': 0
+        }
         
         self.logger.info(f"仿真管理器初始化完成，默认后端: {self.config.backend.value}")
+        self.logger.info(f"可用后端: {[b.value for b in self.backend_registry.get_available_backends()]}")
     
-    def _register_backends(self):
-        """注册可用的仿真后端"""
-        try:
-            from .mujoco_backend import MuJoCoSimulationBackend
-            self._backends[SimulationBackend.MUJOCO] = MuJoCoSimulationBackend
-            self.logger.info("✅ MuJoCo后端已注册")
-        except ImportError as e:
-            self.logger.warning(f"⚠️  MuJoCo后端不可用: {e}")
-        
-        try:
-            from .gazebo_backend import GazeboSimulationBackend
-            self._backends[SimulationBackend.GAZEBO] = GazeboSimulationBackend
-            self.logger.info("✅ Gazebo后端已注册")
-        except ImportError as e:
-            self.logger.warning(f"⚠️  Gazebo后端不可用: {e}")
-    
-    def initialize(self, model_path: str, backend: SimulationBackend = None) -> bool:
+    def initialize(self, model_path: str, backend: SimulationBackend = None, config_profile: str = None) -> bool:
         """初始化仿真环境"""
+        # 如果指定了配置档案，加载配置
+        if config_profile:
+            loaded_config = self.config_manager.load_profile(config_profile)
+            if loaded_config:
+                self.config = loaded_config
+                self.logger.info(f"✅ 已加载配置档案: {config_profile}")
+            else:
+                self.logger.warning(f"⚠️  配置档案加载失败，使用当前配置: {config_profile}")
+        
         backend = backend or self.config.backend
         
-        if backend not in self._backends:
-            self.logger.error(f"❌ 不支持的仿真后端: {backend.value}")
+        # 验证后端可用性
+        if not self.backend_registry.is_backend_available(backend):
+            available_backends = self.backend_registry.get_available_backends()
+            if available_backends:
+                backend = available_backends[0]
+                self.logger.warning(f"⚠️  指定后端不可用，切换到: {backend.value}")
+            else:
+                self.logger.error("❌ 没有可用的仿真后端")
+                return False
+        
+        # 验证配置
+        valid, message = self.backend_registry.validate_config(backend, self.config)
+        if not valid:
+            self.logger.error(f"❌ 配置验证失败: {message}")
             return False
         
         # 切换后端
@@ -176,9 +218,13 @@ class SimulationManager:
             if self.backend:
                 self.backend.close()
             
-            backend_class = self._backends[backend]
-            self.backend = backend_class(self.config)
+            self.backend = self.backend_registry.create_backend(backend, self.config)
+            if not self.backend:
+                self.logger.error(f"❌ 后端创建失败: {backend.value}")
+                return False
+            
             self.current_backend_type = backend
+            self.performance_stats['backend_switches'] += 1
             
             self.logger.info(f"🔄 切换到仿真后端: {backend.value}")
         
@@ -197,7 +243,13 @@ class SimulationManager:
             self.logger.error("❌ 仿真后端未初始化")
             return False
         
-        return self.backend.reset()
+        success = self.backend.reset()
+        if success:
+            self.performance_stats['total_steps'] = 0
+            self.performance_stats['total_time'] = 0.0
+            self.performance_stats['average_step_time'] = 0.0
+        
+        return success
     
     def step(self, action: Dict[str, float] = None) -> bool:
         """执行一步仿真"""
@@ -205,7 +257,20 @@ class SimulationManager:
             self.logger.error("❌ 仿真后端未初始化")
             return False
         
-        return self.backend.step(action)
+        import time
+        start_time = time.time()
+        
+        success = self.backend.step(action)
+        
+        if success:
+            step_time = time.time() - start_time
+            self.performance_stats['total_steps'] += 1
+            self.performance_stats['total_time'] += step_time
+            self.performance_stats['average_step_time'] = (
+                self.performance_stats['total_time'] / self.performance_stats['total_steps']
+            )
+        
+        return success
     
     def get_state(self) -> Dict[str, Any]:
         """获取当前仿真状态"""
@@ -271,11 +336,23 @@ class SimulationManager:
         
         return self.backend.render(mode)
     
-    def switch_backend(self, backend: SimulationBackend, model_path: str = None) -> bool:
+    def switch_backend(self, backend: SimulationBackend, model_path: str = None, config_profile: str = None) -> bool:
         """切换仿真后端"""
         if backend == self.current_backend_type:
             self.logger.info(f"已经在使用 {backend.value} 后端")
             return True
+        
+        # 检查后端可用性
+        if not self.backend_registry.is_backend_available(backend):
+            self.logger.error(f"❌ 后端不可用: {backend.value}")
+            return False
+        
+        # 加载新配置（如果指定）
+        if config_profile:
+            new_config = self.config_manager.load_profile(config_profile)
+            if new_config:
+                self.config = new_config
+                self.logger.info(f"✅ 已加载新配置档案: {config_profile}")
         
         # 保存当前状态
         current_state = None
@@ -305,11 +382,76 @@ class SimulationManager:
     
     def get_available_backends(self) -> List[SimulationBackend]:
         """获取可用的仿真后端"""
-        return list(self._backends.keys())
+        return self.backend_registry.get_available_backends()
     
     def get_current_backend(self) -> Optional[SimulationBackend]:
         """获取当前使用的仿真后端"""
         return self.current_backend_type
+    
+    def get_backend_info(self, backend: SimulationBackend = None) -> Dict[str, Any]:
+        """获取后端信息"""
+        if backend is None:
+            backend = self.current_backend_type
+        
+        if backend is None:
+            return {}
+        
+        info = self.backend_registry.get_backend_info(backend)
+        if info:
+            return {
+                'name': info.name,
+                'description': info.description,
+                'version': info.version,
+                'dependencies': info.dependencies,
+                'is_available': info.is_available,
+                'error_message': info.error_message
+            }
+        return {}
+    
+    def get_performance_stats(self) -> Dict[str, Any]:
+        """获取性能统计信息"""
+        stats = self.performance_stats.copy()
+        
+        if self.performance_stats['total_time'] > 0:
+            stats['simulation_frequency'] = self.performance_stats['total_steps'] / self.performance_stats['total_time']
+        else:
+            stats['simulation_frequency'] = 0.0
+        
+        return stats
+    
+    def save_current_config(self, profile_name: str) -> bool:
+        """保存当前配置为档案"""
+        return self.config_manager.save_profile(self.config, profile_name)
+    
+    def load_config_profile(self, profile_name: str) -> bool:
+        """加载配置档案"""
+        config = self.config_manager.load_profile(profile_name)
+        if config:
+            self.config = config
+            self.logger.info(f"✅ 配置档案已加载: {profile_name}")
+            return True
+        else:
+            self.logger.error(f"❌ 配置档案加载失败: {profile_name}")
+            return False
+    
+    def list_config_profiles(self) -> Dict[str, List[str]]:
+        """列出所有配置档案"""
+        return self.config_manager.list_profiles()
+    
+    def validate_current_config(self) -> Tuple[bool, List[str]]:
+        """验证当前配置"""
+        return self.config_manager.validate_config(self.config)
+    
+    def get_system_status(self) -> Dict[str, Any]:
+        """获取系统状态"""
+        return {
+            'current_backend': self.current_backend_type.value if self.current_backend_type else None,
+            'backend_initialized': self.backend is not None and self.backend.is_initialized,
+            'available_backends': [b.value for b in self.get_available_backends()],
+            'performance_stats': self.get_performance_stats(),
+            'config_valid': self.validate_current_config()[0],
+            'config_profiles': self.list_config_profiles()
+        }
     
     def close(self):
         """关闭仿真管理器"""
@@ -321,24 +463,63 @@ class SimulationManager:
         self.logger.info("仿真管理器已关闭")
 
 
-def create_simulation_manager(backend: SimulationBackend = SimulationBackend.MUJOCO, **kwargs) -> SimulationManager:
+def create_simulation_manager(backend: SimulationBackend = SimulationBackend.MUJOCO, 
+                            config_profile: str = None,
+                            **kwargs) -> SimulationManager:
     """创建仿真管理器的工厂函数"""
-    config = SimulationConfig(backend=backend, **kwargs)
+    # 如果指定了配置档案，优先使用档案配置
+    if config_profile:
+        from .config_manager import ConfigManager
+        config_manager = ConfigManager()
+        config = config_manager.load_profile(config_profile)
+        if config is None:
+            # 如果档案不存在，使用默认配置
+            config = SimulationConfig(backend=backend, **kwargs)
+    else:
+        config = SimulationConfig(backend=backend, **kwargs)
+    
     return SimulationManager(config)
 
 
 if __name__ == "__main__":
-    # 测试仿真管理器
+    # 测试增强版仿真管理器
     logging.basicConfig(level=logging.INFO)
     
-    print("🧪 测试仿真管理器")
+    print("🧪 测试增强版仿真管理器")
+    print("=" * 50)
     
-    # 创建仿真管理器
-    sim_manager = create_simulation_manager(SimulationBackend.MUJOCO)
+    # 直接创建配置，避免相对导入问题
+    config = SimulationConfig(backend=SimulationBackend.MUJOCO)
+    sim_manager = SimulationManager(config)
     
     print(f"📊 可用后端: {[b.value for b in sim_manager.get_available_backends()]}")
     print(f"🎯 当前后端: {sim_manager.get_current_backend()}")
     
+    # 测试配置档案
+    print("\n📁 配置档案:")
+    profiles = sim_manager.list_config_profiles()
+    print(f"默认档案: {profiles['default']}")
+    print(f"用户档案: {profiles['user']}")
+    
+    # 测试后端信息
+    print("\n🔍 后端信息:")
+    for backend in sim_manager.get_available_backends():
+        info = sim_manager.get_backend_info(backend)
+        print(f"{backend.value}: {info.get('name', 'N/A')} v{info.get('version', 'N/A')}")
+    
+    # 测试系统状态
+    print("\n📈 系统状态:")
+    status = sim_manager.get_system_status()
+    print(f"当前后端: {status['current_backend']}")
+    print(f"后端已初始化: {status['backend_initialized']}")
+    print(f"配置有效: {status['config_valid']}")
+    
+    # 测试性能统计
+    print("\n⚡ 性能统计:")
+    perf_stats = sim_manager.get_performance_stats()
+    for key, value in perf_stats.items():
+        print(f"{key}: {value}")
+    
     # 关闭
     sim_manager.close()
-    print("🎉 测试完成")
+    print("\n🎉 测试完成")

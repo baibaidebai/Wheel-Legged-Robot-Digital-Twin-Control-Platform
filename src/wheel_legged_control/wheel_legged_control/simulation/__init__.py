@@ -3,9 +3,12 @@
 仿真模块
 
 提供统一的仿真接口，支持多种物理引擎后端。
+集成后端注册表和配置管理器，提供完善的仿真架构。
 """
 
-from .simulation_manager import SimulationManager, SimulationBackend, SimulationConfig
+from .simulation_manager import SimulationManager, SimulationBackend, SimulationConfig, BaseSimulationBackend, create_simulation_manager
+from .backend_registry import BackendRegistry, get_backend_registry, register_custom_backend
+from .config_manager import ConfigManager
 
 # 尝试导入后端（可选）
 try:
@@ -25,7 +28,13 @@ except ImportError:
 __all__ = [
     'SimulationManager',
     'SimulationBackend', 
-    'SimulationConfig'
+    'SimulationConfig',
+    'BaseSimulationBackend',
+    'BackendRegistry',
+    'get_backend_registry',
+    'register_custom_backend',
+    'ConfigManager',
+    'create_simulation_manager'
 ]
 
 # 添加可用的后端
