@@ -1,0 +1,5057 @@
+[
+  {
+    "timestamp": 1770546540.764396,
+    "data_type": "metadata",
+    "data": {
+      "session_id": "session_1770546540_111719",
+      "start_time": 1770546540.7643383,
+      "experiment_name": "basic_demo",
+      "robot_model": "wheel_legged_robot",
+      "config": {
+        "output_directory": "./data/demo_recordings",
+        "filename_prefix": "robot_experiment",
+        "auto_timestamp": true,
+        "save_rosbag": false,
+        "save_csv": true,
+        "save_json": true,
+        "record_joint_states": true,
+        "record_imu_data": true,
+        "record_control_commands": true,
+        "record_system_states": true,
+        "max_buffer_size": 5000,
+        "flush_interval": 2.0,
+        "compression": true,
+        "include_metadata": true,
+        "metadata_fields": [
+          "timestamp",
+          "session_id",
+          "robot_model",
+          "experiment_name"
+        ]
+      },
+      "experiment_type": "basic_recording_demo",
+      "operator": "demo_user",
+      "notes": "基础功能演示"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.765602,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.0,
+        0.35355339059327373,
+        0.0,
+        3.6739403974420595e-17,
+        -0.35355339059327373,
+        0.0
+      ],
+      "velocities": [
+        0.9424777960769379,
+        1.1107207345395915,
+        2.0,
+        -0.9424777960769379,
+        -1.1107207345395917,
+        2.0
+      ],
+      "efforts": [
+        0.0,
+        3.5355339059327373,
+        0.0,
+        3.6739403974420594e-16,
+        -3.5355339059327373,
+        0.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.76563,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.1,
+        0.05,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.1,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.7842793,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.009229930207957326,
+        0.40632890006309236,
+        -0.10495100491506722,
+        -0.12010700643814033,
+        -0.3637519103415424,
+        0.09379159342264598
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.7843254,
+    "data_type": "system_state",
+    "data": {
+      "step": 0,
+      "simulation_time": 0.0,
+      "battery_voltage": 24.0,
+      "cpu_temperature": 45.0,
+      "memory_usage": 39.02945436262174,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8050027,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.018837155858794013,
+        0.37505553481522974,
+        0.04,
+        -0.018837155858794002,
+        -0.37505553481522974,
+        0.04
+      ],
+      "velocities": [
+        0.940618031434954,
+        1.0387862489162738,
+        2.0,
+        -0.940618031434954,
+        -1.0387862489162738,
+        2.0
+      ],
+      "efforts": [
+        0.18837155858794014,
+        3.7505553481522975,
+        0.4,
+        -0.18837155858794002,
+        -3.7505553481522975,
+        0.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8050308,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.004999979166692708,
+        0.9999875000260416
+      ],
+      "angular_velocity": [
+        0.09996841892833,
+        0.049964473632029466,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.0025132079766705217,
+        0.09999210442038162,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.805065,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.08174822711309686,
+        0.5182664247350885,
+        0.019991609466728823,
+        0.034911179162891215,
+        -0.4020815149646925,
+        0.06851750458484396
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.805083,
+    "data_type": "system_state",
+    "data": {
+      "step": 1,
+      "simulation_time": 0.02,
+      "battery_voltage": 23.99,
+      "cpu_temperature": 45.0314157198278,
+      "memory_usage": 34.99603964383554,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.825934,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.03759997006929128,
+        0.39507750618784515,
+        0.08,
+        -0.037599970069291284,
+        -0.3950775061878452,
+        0.08
+      ],
+      "velocities": [
+        0.9350460771503987,
+        0.9627521485447782,
+        2.0,
+        -0.9350460771503987,
+        -0.9627521485447781,
+        2.0
+      ],
+      "efforts": [
+        0.3759997006929128,
+        3.9507750618784514,
+        0.8,
+        -0.37599970069291283,
+        -3.950775061878452,
+        0.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8259706,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.009999833334166664,
+        0.9999500004166653
+      ],
+      "angular_velocity": [
+        0.09987369566060175,
+        0.0498579450130307,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.005026019088667497,
+        0.09996841892833,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8260038,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.1082086646993885,
+        0.2320398824196826,
+        -0.13715748219311424,
+        -0.03742977108271564,
+        -0.2862979639522003,
+        0.11787598226792173
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8260252,
+    "data_type": "system_state",
+    "data": {
+      "step": 2,
+      "simulation_time": 0.04,
+      "battery_voltage": 23.98,
+      "cpu_temperature": 45.062830199416766,
+      "memory_usage": 39.10555023557232,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8462663,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.05621439437571738,
+        0.4135402871372809,
+        0.12,
+        -0.0562143943757173,
+        -0.4135402871372808,
+        0.12
+      ],
+      "velocities": [
+        0.9257839231812491,
+        0.8829185052825946,
+        2.0,
+        -0.9257839231812491,
+        -0.8829185052825952,
+        2.0
+      ],
+      "efforts": [
+        0.5621439437571738,
+        4.1354028713728095,
+        1.2,
+        -0.562143943757173,
+        -4.135402871372808,
+        1.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.846358,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.01499943750632809,
+        0.9998875021093592
+      ],
+      "angular_velocity": [
+        0.0997158900260614,
+        0.04968056552600042,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.007538036533986908,
+        0.09992894726405893,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.846404,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        -0.02660607529282024,
+        0.5019526741016767,
+        0.05516286706561689,
+        -0.11036714915465592,
+        -0.3446220887777007,
+        0.16156073512749805
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.846421,
+    "data_type": "system_state",
+    "data": {
+      "step": 3,
+      "simulation_time": 0.06,
+      "battery_voltage": 23.97,
+      "cpu_temperature": 45.09424219857704,
+      "memory_usage": 39.80239001594957,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8667169,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.07460696614945643,
+        0.43037101350197177,
+        0.16,
+        -0.07460696614945637,
+        -0.43037101350197166,
+        0.16
+      ],
+      "velocities": [
+        0.9128681230177459,
+        0.7996003860471572,
+        2.0,
+        -0.912868123017746,
+        -0.7996003860471579,
+        2.0
+      ],
+      "efforts": [
+        0.7460696614945643,
+        4.303710135019718,
+        1.6,
+        -0.7460696614945638,
+        -4.303710135019717,
+        1.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8667521,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.01999866669333308,
+        0.9998000066665778
+      ],
+      "angular_velocity": [
+        0.09949510169813003,
+        0.049432587236895704,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.010048863635953913,
+        0.09987369566060175,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.866783,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.059511778562871515,
+        0.3230604433843665,
+        0.23754424664629759,
+        -0.22006425340906294,
+        -0.5418272034711591,
+        0.05794283272660515
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8668017,
+    "data_type": "system_state",
+    "data": {
+      "step": 4,
+      "simulation_time": 0.08,
+      "battery_voltage": 23.96,
+      "cpu_temperature": 45.12565047721669,
+      "memory_usage": 36.18389526496871,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.88725,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.09270509831248422,
+        0.4455032620941839,
+        0.2,
+        -0.09270509831248418,
+        -0.4455032620941839,
+        0.2
+      ],
+      "velocities": [
+        0.8963496494224668,
+        0.7131266093906595,
+        2.0,
+        -0.8963496494224669,
+        -0.7131266093906597,
+        2.0
+      ],
+      "efforts": [
+        0.9270509831248421,
+        4.455032620941839,
+        2.0,
+        -0.9270509831248418,
+        -4.455032620941839,
+        2.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.8872874,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.024997395914712332,
+        0.9996875162757026
+      ],
+      "angular_velocity": [
+        0.0992114701314478,
+        0.04911436253643444,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.012558103905862676,
+        0.09980267284282716,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.887333,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.022355944967753102,
+        0.5241093246689776,
+        0.13537047401503954,
+        -0.13694082330113694,
+        -0.514422774816508,
+        0.22840466502402257
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.887344,
+    "data_type": "system_state",
+    "data": {
+      "step": 5,
+      "simulation_time": 0.1,
+      "battery_voltage": 23.95,
+      "cpu_temperature": 45.15705379539064,
+      "memory_usage": 32.09999430068887,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9078496,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.11043736580540338,
+        0.45887731284199057,
+        0.24,
+        -0.11043736580540338,
+        -0.4588773128419906,
+        0.24
+      ],
+      "velocities": [
+        0.8762936932641194,
+        0.6238384478034547,
+        2.0,
+        -0.8762936932641194,
+        -0.6238384478034542,
+        2.0
+      ],
+      "efforts": [
+        1.1043736580540338,
+        4.588773128419906,
+        2.4,
+        -1.1043736580540338,
+        -4.5887731284199065,
+        2.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9078765,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.02999550020249566,
+        0.9995500337489875
+      ],
+      "angular_velocity": [
+        0.09886517447379141,
+        0.04872634363932886,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.015065361105586546,
+        0.0997158900260614,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.907902,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.064336817260939,
+        0.6086542834812907,
+        0.15091673515102316,
+        -0.13195615772246605,
+        -0.5304653638291786,
+        0.2200715071152733
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.907911,
+    "data_type": "system_state",
+    "data": {
+      "step": 6,
+      "simulation_time": 0.12,
+      "battery_voltage": 23.94,
+      "cpu_temperature": 45.18845091334967,
+      "memory_usage": 30.51722297167396,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9283295,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.1277337874695218,
+        0.4704403844771128,
+        0.28,
+        -0.1277337874695218,
+        -0.4704403844771127,
+        0.28
+      ],
+      "velocities": [
+        0.8527794062389659,
+        0.5320882808674461,
+        2.0,
+        -0.8527794062389659,
+        -0.5320882808674463,
+        2.0
+      ],
+      "efforts": [
+        1.277337874695218,
+        4.704403844771128,
+        2.8000000000000003,
+        -1.277337874695218,
+        -4.704403844771127,
+        2.8000000000000003
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.928364,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.034992854604336196,
+        0.9993875625234886
+      ],
+      "angular_velocity": [
+        0.09845643345292054,
+        0.0482690819416637,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.017570239310148637,
+        0.09961336091431726,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9283965,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        -0.1402122309908294,
+        0.43364591304687944,
+        0.25567189962621073,
+        -0.14948546296900675,
+        -0.45259084499608726,
+        0.1183124032192987
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.928409,
+    "data_type": "system_state",
+    "data": {
+      "step": 7,
+      "simulation_time": 0.14,
+      "battery_voltage": 23.93,
+      "cpu_temperature": 45.219840591589325,
+      "memory_usage": 33.05373815930698,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9491317,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.1445261022305146,
+        0.48014684283847153,
+        0.32,
+        -0.14452610223051449,
+        -0.4801468428384715,
+        0.32
+      ],
+      "velocities": [
+        0.8258995884952389,
+        0.43823820457486684,
+        2.0,
+        -0.825899588495239,
+        -0.43823820457486734,
+        2.0
+      ],
+      "efforts": [
+        1.445261022305146,
+        4.801468428384715,
+        3.2,
+        -1.4452610223051447,
+        -4.801468428384715,
+        3.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9491832,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.03998933418663416,
+        0.9992001066609779
+      ],
+      "angular_velocity": [
+        0.0979855052384247,
+        0.04774322723733215,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.02007234297024298,
+        0.09949510169813003,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9492311,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.2505684767134092,
+        0.34984832014731493,
+        0.43245472120372236,
+        -0.1956217148031903,
+        -0.5751593852125556,
+        0.30309382799428203
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9492493,
+    "data_type": "system_state",
+    "data": {
+      "step": 8,
+      "simulation_time": 0.16,
+      "battery_voltage": 23.92,
+      "cpu_temperature": 45.25122159089885,
+      "memory_usage": 30.554495166584466,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9698422,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.16074803849369898,
+        0.48795838096937366,
+        0.36,
+        -0.16074803849369892,
+        -0.4879583809693736,
+        0.36
+      ],
+      "velocities": [
+        0.7957603223933523,
+        0.3426586023008217,
+        2.0,
+        -0.7957603223933523,
+        -0.3426586023008225,
+        2.0
+      ],
+      "efforts": [
+        1.6074803849369899,
+        4.879583809693736,
+        3.5999999999999996,
+        -1.6074803849369892,
+        -4.879583809693736,
+        3.5999999999999996
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9698722,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.044984814037660234,
+        0.9989876708478425
+      ],
+      "angular_velocity": [
+        0.09745268727865772,
+        0.04714952679464323,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.02257127697469634,
+        0.09936113105200084,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9699016,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.16504506791302198,
+        0.42814982330347406,
+        0.3134264035698312,
+        0.06611167189790867,
+        -0.5534316949156423,
+        0.20428044802251336
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.969919,
+    "data_type": "system_state",
+    "data": {
+      "step": 9,
+      "simulation_time": 0.18,
+      "battery_voltage": 23.91,
+      "cpu_temperature": 45.282592672410125,
+      "memory_usage": 30.612961624208108,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.990214,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.17633557568774194,
+        0.4938441702975689,
+        0.4,
+        -0.1763355756877419,
+        -0.49384417029756883,
+        0.4
+      ],
+      "velocities": [
+        0.762480553847289,
+        0.24572668306931938,
+        2.0,
+        -0.7624805538472891,
+        -0.24572668306931958,
+        2.0
+      ],
+      "efforts": [
+        1.7633557568774194,
+        4.938441702975689,
+        4.0,
+        -1.7633557568774192,
+        -4.938441702975688,
+        4.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9902642,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.04997916927067833,
+        0.9987502603949663
+      ],
+      "angular_velocity": [
+        0.09685831611286311,
+        0.04648882429441257,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.02506664671286085,
+        0.0992114701314478,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.9902997,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.13453847836810912,
+        0.3926164830700361,
+        0.24318425026862384,
+        -0.05794803629325031,
+        -0.42899355416021334,
+        0.3522962699071292
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546540.990316,
+    "data_type": "system_state",
+    "data": {
+      "step": 10,
+      "simulation_time": 0.2,
+      "battery_voltage": 23.9,
+      "cpu_temperature": 45.31395259764657,
+      "memory_usage": 30.882676070353135,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0114477,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.19122719692460688,
+        0.49778098230154,
+        0.44,
+        -0.19122719692460688,
+        -0.49778098230154,
+        0.44
+      ],
+      "velocities": [
+        0.7261916228994205,
+        0.1478249928815855,
+        2.0,
+        -0.7261916228994205,
+        -0.147824992881585,
+        2.0
+      ],
+      "efforts": [
+        1.9122719692460688,
+        4.9778098230154,
+        4.4,
+        -1.9122719692460688,
+        -4.9778098230154,
+        4.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0116456,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.05497227502706773,
+        0.9984878812375985
+      ],
+      "angular_velocity": [
+        0.0962027671586086,
+        0.04576205863104588,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.02755805813692762,
+        0.09904614256966512,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0118153,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.20054889510882895,
+        0.6329780187204207,
+        0.26013243700847016,
+        -0.0512266219590686,
+        -0.49015102411360517,
+        0.4633043320354471
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0118823,
+    "data_type": "system_state",
+    "data": {
+      "step": 11,
+      "simulation_time": 0.22,
+      "battery_voltage": 23.89,
+      "cpu_temperature": 45.34530012857203,
+      "memory_usage": 39.61377684215924,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0329697,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.20536413177860657,
+        0.4997532801828658,
+        0.48,
+        -0.2053641317786066,
+        -0.4997532801828658,
+        0.48
+      ],
+      "velocities": [
+        0.6870367453813625,
+        0.049339904981763535,
+        2.0,
+        -0.6870367453813625,
+        -0.04933990498176338,
+        2.0
+      ],
+      "efforts": [
+        2.0536413177860657,
+        4.997532801828658,
+        4.8,
+        -2.053641317786066,
+        -4.997532801828658,
+        4.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0330186,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.059964006479444595,
+        0.9982005399352042
+      ],
+      "angular_velocity": [
+        0.0954864544746643,
+        0.04497026257831856,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.030045117824151413,
+        0.09886517447379141,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0330563,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.22113317469567956,
+        0.4102777942260392,
+        0.5578281104743048,
+        -0.18858865659654694,
+        -0.32285543215696655,
+        0.39863316262893983
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0330703,
+    "data_type": "system_state",
+    "data": {
+      "step": 12,
+      "simulation_time": 0.24,
+      "battery_voltage": 23.88,
+      "cpu_temperature": 45.37663402763966,
+      "memory_usage": 31.192297877772337,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0536034,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.21869058822642345,
+        0.4997532801828658,
+        0.52,
+        -0.2186905882264234,
+        -0.4997532801828658,
+        0.52
+      ],
+      "velocities": [
+        0.6451704477065167,
+        -0.04933990498176335,
+        2.0,
+        -0.6451704477065169,
+        0.04933990498176281,
+        2.0
+      ],
+      "efforts": [
+        2.1869058822642344,
+        4.997532801828658,
+        5.2,
+        -2.186905882264234,
+        -4.997532801828658,
+        5.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.053635,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0649542388347826,
+        0.9978882436713011
+      ],
+      "angular_velocity": [
+        0.09470983049947444,
+        0.04411456132174767,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.03252743303897672,
+        0.0986685944207868,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0536726,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.2780044473917054,
+        0.4565334930975119,
+        0.531984321315153,
+        -0.11876806324197227,
+        -0.39824984895782256,
+        0.6293006833906301
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0536945,
+    "data_type": "system_state",
+    "data": {
+      "step": 13,
+      "simulation_time": 0.26,
+      "battery_voltage": 23.87,
+      "cpu_temperature": 45.407953057840786,
+      "memory_usage": 32.359368537913454,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0743828,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.23115397283273675,
+        0.49778098230154,
+        0.56,
+        -0.2311539728327368,
+        -0.49778098230154,
+        0.56
+      ],
+      "velocities": [
+        0.6007579570249136,
+        -0.14782499288158563,
+        2.0,
+        -0.6007579570249136,
+        0.1478249928815858,
+        2.0
+      ],
+      "efforts": [
+        2.3115397283273675,
+        4.9778098230154,
+        5.6000000000000005,
+        -2.311539728327368,
+        -4.9778098230154,
+        5.6000000000000005
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0744274,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.06994284733753277,
+        0.9975510002532796
+      ],
+      "angular_velocity": [
+        0.09387338576538741,
+        0.043196170859641767,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.035004611795055214,
+        0.09845643345292054,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0744886,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.32754338085321305,
+        0.35540981909335134,
+        0.5413038759919353,
+        -0.16431497995089403,
+        -0.44910002402380433,
+        0.6159696632033328
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.074504,
+    "data_type": "system_state",
+    "data": {
+      "step": 14,
+      "simulation_time": 0.28,
+      "battery_voltage": 23.86,
+      "cpu_temperature": 45.439255982753714,
+      "memory_usage": 31.654146128476956,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0950248,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2427050983124842,
+        0.4938441702975689,
+        0.6,
+        -0.24270509831248419,
+        -0.4938441702975689,
+        0.6
+      ],
+      "velocities": [
+        0.5539745491471371,
+        -0.24572668306931922,
+        2.0,
+        -0.5539745491471371,
+        0.245726683069319,
+        2.0
+      ],
+      "efforts": [
+        2.4270509831248424,
+        4.938441702975689,
+        6.0,
+        -2.427050983124842,
+        -4.938441702975689,
+        6.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0950854,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.07492970727274234,
+        0.9971888181122075
+      ],
+      "angular_velocity": [
+        0.09297764858882515,
+        0.04221639627510076,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.03747626291714492,
+        0.09822872507286888,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0951242,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.11982092850076495,
+        0.5288896539175678,
+        0.6231333090683776,
+        -0.28941693035144633,
+        -0.4699907349939217,
+        0.4935846186651372
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.0951426,
+    "data_type": "system_state",
+    "data": {
+      "step": 15,
+      "simulation_time": 0.3,
+      "battery_voltage": 23.85,
+      "cpu_temperature": 45.47054156659257,
+      "memory_usage": 36.39944107238813,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1156662,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.25329837765060453,
+        0.4879583809693737,
+        0.64,
+        -0.2532983776506044,
+        -0.4879583809693738,
+        0.64
+      ],
+      "velocities": [
+        0.5050048568107739,
+        -0.34265860230082146,
+        2.0,
+        -0.5050048568107744,
+        0.3426586023008206,
+        2.0
+      ],
+      "efforts": [
+        2.5329837765060454,
+        4.879583809693737,
+        6.4,
+        -2.532983776506044,
+        -4.879583809693738,
+        6.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1157327,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0799146939691727,
+        0.9968017063026194
+      ],
+      "angular_velocity": [
+        0.09202318473658705,
+        0.04117662988142137,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.039941996102881405,
+        0.0979855052384247,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1157947,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.1997480617429816,
+        0.4515561820734741,
+        0.6793874337808237,
+        -0.18576831472012034,
+        -0.2963691730208398,
+        0.5498461360249143
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1158125,
+    "data_type": "system_state",
+    "data": {
+      "step": 16,
+      "simulation_time": 0.32,
+      "battery_voltage": 23.84,
+      "cpu_temperature": 45.501808574256074,
+      "memory_usage": 36.173528060453215,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.136462,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2628920040131591,
+        0.48014684283847153,
+        0.68,
+        -0.26289200401315904,
+        -0.48014684283847153,
+        0.68
+      ],
+      "velocities": [
+        0.4540421410193519,
+        -0.4382382045748669,
+        2.0,
+        -0.45404214101935203,
+        0.43823820457486673,
+        2.0
+      ],
+      "efforts": [
+        2.628920040131591,
+        4.801468428384715,
+        6.800000000000001,
+        -2.6289200401315904,
+        -4.801468428384715,
+        6.800000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1364892,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.08489768280241602,
+        0.9963896745022904
+      ],
+      "angular_velocity": [
+        0.09101059706849957,
+        0.04007834924354384,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.04240142198441093,
+        0.09772681235681935,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.136516,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.18843552524019497,
+        0.39626481749806874,
+        0.5952518373399991,
+        -0.3331520389859668,
+        -0.44759761485145816,
+        0.7687025779310471
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.136526,
+    "data_type": "system_state",
+    "data": {
+      "step": 17,
+      "simulation_time": 0.34,
+      "battery_voltage": 23.83,
+      "cpu_temperature": 45.5330557713763,
+      "memory_usage": 34.64155339778096,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1567569,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2714481157398059,
+        0.4704403844771127,
+        0.72,
+        -0.2714481157398058,
+        -0.4704403844771128,
+        0.72
+      ],
+      "velocities": [
+        0.40128752832944964,
+        -0.5320882808674463,
+        2.0,
+        -0.4012875283294499,
+        0.5320882808674458,
+        2.0
+      ],
+      "efforts": [
+        2.7144811573980587,
+        4.704403844771127,
+        7.199999999999999,
+        -2.7144811573980583,
+        -4.704403844771128,
+        7.199999999999999
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.156793,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.08987854919801104,
+        0.9959527330119943
+      ],
+      "angular_velocity": [
+        0.08994052515663711,
+        0.038923115078351174,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.044854152189876234,
+        0.09745268727865772,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1568494,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.413380115101212,
+        0.45410947291896386,
+        0.6696726313944387,
+        -0.22594825876192787,
+        -0.4587197944278943,
+        0.8721772634397356
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1568632,
+    "data_type": "system_state",
+    "data": {
+      "step": 18,
+      "simulation_time": 0.36,
+      "battery_voltage": 23.82,
+      "cpu_temperature": 45.56428192436741,
+      "memory_usage": 38.3877771693038,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1774702,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.27893294576647537,
+        0.4588773128419906,
+        0.76,
+        -0.2789329457664754,
+        -0.4588773128419905,
+        0.76
+      ],
+      "velocities": [
+        0.346949217096064,
+        -0.6238384478034544,
+        2.0,
+        -0.34694921709606374,
+        0.6238384478034549,
+        2.0
+      ],
+      "efforts": [
+        2.7893294576647536,
+        4.5887731284199065,
+        7.6,
+        -2.7893294576647545,
+        -4.588773128419906,
+        7.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1775117,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0948571686345573,
+        0.9954908927552453
+      ],
+      "angular_velocity": [
+        0.08881364488135446,
+        0.0377125690368052,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.047299799404744935,
+        0.0971631732914674,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.177571,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.35737507099228344,
+        0.43160522412522023,
+        0.7040781487398702,
+        -0.23167090946112268,
+        -0.43575674850405877,
+        0.8176655739103128
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1775854,
+    "data_type": "system_state",
+    "data": {
+      "step": 19,
+      "simulation_time": 0.38,
+      "battery_voltage": 23.81,
+      "cpu_temperature": 45.59548580047435,
+      "memory_usage": 37.309318711036305,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1980462,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.285316954888546,
+        0.44550326209418395,
+        0.8,
+        -0.285316954888546,
+        -0.445503262094184,
+        0.8
+      ],
+      "velocities": [
+        0.29124165580882,
+        -0.7131266093906594,
+        2.0,
+        -0.2912416558088201,
+        0.7131266093906593,
+        2.0
+      ],
+      "efforts": [
+        2.85316954888546,
+        4.455032620941839,
+        8.0,
+        -2.85316954888546,
+        -4.45503262094184,
+        8.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1981537,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.09983341664682815,
+        0.9950041652780258
+      ],
+      "angular_velocity": [
+        0.08763066800438636,
+        0.03644843137107058,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.04973797743297096,
+        0.09685831611286311,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.198267,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.23172575028479384,
+        0.2709181446229442,
+        0.7153854205854812,
+        -0.2539831225567041,
+        -0.35504715953880883,
+        0.8590207511292022
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.1982977,
+    "data_type": "system_state",
+    "data": {
+      "step": 20,
+      "simulation_time": 0.4,
+      "battery_voltage": 23.8,
+      "cpu_temperature": 45.62666616782152,
+      "memory_usage": 39.89417175220916,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.219178,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2905749483385893,
+        0.43037101350197193,
+        0.84,
+        -0.29057494833858927,
+        -0.430371013501972,
+        0.84
+      ],
+      "velocities": [
+        0.23438469676175488,
+        -0.7996003860471563,
+        2.0,
+        -0.2343846967617552,
+        0.7996003860471563,
+        2.0
+      ],
+      "efforts": [
+        2.9057494833858932,
+        4.3037101350197196,
+        8.4,
+        -2.905749483385893,
+        -4.3037101350197196,
+        8.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2192273,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.10480716882888248,
+        0.9944925627484974
+      ],
+      "angular_velocity": [
+        0.08639234171928353,
+        0.03513249848994247,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.05216830125797939,
+        0.0965381638833274,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.219255,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.1212517535741203,
+        0.38889888718051896,
+        0.8394025656970285,
+        -0.28248121305910595,
+        -0.3428142384837487,
+        0.8010765741230546
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.219265,
+    "data_type": "system_state",
+    "data": {
+      "step": 21,
+      "simulation_time": 0.42,
+      "battery_voltage": 23.79,
+      "cpu_temperature": 45.657821795461416,
+      "memory_usage": 36.5375322183256,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.239834,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.29468617521860657,
+        0.41354028713728086,
+        0.88,
+        -0.2946861752186066,
+        -0.4135402871372809,
+        0.88
+      ],
+      "velocities": [
+        0.17660272839675323,
+        -0.8829185052825949,
+        2.0,
+        -0.17660272839675314,
+        0.8829185052825946,
+        2.0
+      ],
+      "efforts": [
+        2.9468617521860656,
+        4.135402871372809,
+        8.8,
+        -2.9468617521860665,
+        -4.1354028713728095,
+        8.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2398863,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.10977830083717481,
+        0.9939560979566968
+      ],
+      "angular_velocity": [
+        0.08509944817946918,
+        0.03376664040605123,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.054590387103465046,
+        0.0962027671586086,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.239938,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.30909661708270103,
+        0.7024777810070806,
+        1.0022929594622179,
+        -0.24896453347023742,
+        -0.3929553062039728,
+        0.8591068454047375
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2399604,
+    "data_type": "system_state",
+    "data": {
+      "step": 22,
+      "simulation_time": 0.44,
+      "battery_voltage": 23.78,
+      "cpu_temperature": 45.68895145342319,
+      "memory_usage": 34.14340795515044,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2601895,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.29763441039434335,
+        0.39507750618784526,
+        0.92,
+        -0.2976344103943433,
+        -0.3950775061878453,
+        0.92
+      ],
+      "velocities": [
+        0.11812378974488158,
+        -0.9627521485447778,
+        2.0,
+        -0.1181237897448819,
+        0.9627521485447775,
+        2.0
+      ],
+      "efforts": [
+        2.9763441039434335,
+        3.9507750618784527,
+        9.200000000000001,
+        -2.976344103943433,
+        -3.950775061878453,
+        9.200000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2602222,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.11474668839366382,
+        0.9933947843142158
+      ],
+      "angular_velocity": [
+        0.08375280400421418,
+        0.03235279807847222,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.05700385249399523,
+        0.09585217890173758,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2602527,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.19235525124080832,
+        0.3025608812342163,
+        0.7783463573366955,
+        -0.22109523160439506,
+        -0.3379219801214049,
+        0.9974957927879124
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2602644,
+    "data_type": "system_state",
+    "data": {
+      "step": 23,
+      "simulation_time": 0.46,
+      "battery_voltage": 23.77,
+      "cpu_temperature": 45.72005391276126,
+      "memory_usage": 30.336498271859544,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2808952,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2994080185284815,
+        0.37505553481522985,
+        0.96,
+        -0.2994080185284815,
+        -0.37505553481522974,
+        0.96
+      ],
+      "velocities": [
+        0.059178670460513345,
+        -1.0387862489162734,
+        2.0,
+        -0.05917867046051304,
+        1.0387862489162738,
+        2.0
+      ],
+      "efforts": [
+        2.994080185284815,
+        3.7505553481522984,
+        9.6,
+        -2.994080185284815,
+        -3.7505553481522975,
+        9.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2809637,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.11971220728891936,
+        0.9928086358538663
+      ],
+      "angular_velocity": [
+        0.08235325976284275,
+        0.03089298065451672,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.05940831631540699,
+        0.0954864544746643,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2810032,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.19559277247891732,
+        0.4398466612163036,
+        0.8055842161668076,
+        -0.17707555555729954,
+        -0.4061100673488827,
+        0.8538110901055135
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.2810225,
+    "data_type": "system_state",
+    "data": {
+      "step": 24,
+      "simulation_time": 0.48,
+      "battery_voltage": 23.76,
+      "cpu_temperature": 45.751127945603784,
+      "memory_usage": 34.84001122673348,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3014915,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.3,
+        0.3535533905932738,
+        1.0,
+        -0.3,
+        -0.35355339059327384,
+        1.0
+      ],
+      "velocities": [
+        5.771012081165369e-17,
+        -1.1107207345395915,
+        2.0,
+        -1.7313036243496108e-16,
+        1.1107207345395913,
+        2.0
+      ],
+      "efforts": [
+        3.0,
+        3.5355339059327378,
+        10.0,
+        -3.0,
+        -3.5355339059327386,
+        10.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.301521,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.12467473338522769,
+        0.992197667229329
+      ],
+      "angular_velocity": [
+        0.08090169943749476,
+        0.029389262614623657,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.06180339887498948,
+        0.09510565162951536,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3015518,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.313503357011519,
+        0.35780300584544983,
+        1.06870660299047,
+        -0.25143809109039683,
+        -0.435049923250457,
+        0.9755628595866156
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3015618,
+    "data_type": "system_state",
+    "data": {
+      "step": 25,
+      "simulation_time": 0.5,
+      "battery_voltage": 23.75,
+      "cpu_temperature": 45.78217232520115,
+      "memory_usage": 35.578211295701905,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3221087,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2994080185284815,
+        0.3306559326618259,
+        1.04,
+        -0.2994080185284815,
+        -0.33065593266182614,
+        1.04
+      ],
+      "velocities": [
+        -0.05917867046051323,
+        -1.1782717128637168,
+        2.0,
+        0.059178670460512686,
+        1.1782717128637161,
+        2.0
+      ],
+      "efforts": [
+        2.994080185284815,
+        3.306559326618259,
+        10.4,
+        -2.994080185284815,
+        -3.3065593266182614,
+        10.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3221343,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.12963414261969486,
+        0.9915618937147881
+      ],
+      "angular_velocity": [
+        0.07939903986478354,
+        0.027843780824409404,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.0641887219614419,
+        0.09470983049947444,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3221586,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.14271878102287053,
+        0.4169907258196498,
+        1.0119847822021253,
+        -0.3076472744672165,
+        -0.4313514878513703,
+        1.145614738659331
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3221688,
+    "data_type": "system_state",
+    "data": {
+      "step": 26,
+      "simulation_time": 0.52,
+      "battery_voltage": 23.74,
+      "cpu_temperature": 45.813185825974415,
+      "memory_usage": 33.75527540726808,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3426094,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2976344103943433,
+        0.3064535268264882,
+        1.08,
+        -0.29763441039434335,
+        -0.30645352682648824,
+        1.08
+      ],
+      "velocities": [
+        -0.11812378974488169,
+        -1.2411725910383105,
+        2.0,
+        0.11812378974488155,
+        1.2411725910383105,
+        2.0
+      ],
+      "efforts": [
+        2.976344103943433,
+        3.0645352682648817,
+        10.8,
+        -2.9763441039434335,
+        -3.0645352682648825,
+        10.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3426487,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.1345903110073483,
+        0.9909013312045479
+      ],
+      "angular_velocity": [
+        0.07784623015670233,
+        0.026258731498064788,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.06656390890459733,
+        0.09429905358928645,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.342686,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.13934174675374644,
+        0.40459250286623927,
+        0.9721480831298454,
+        -0.35332752026268927,
+        -0.27594405107386955,
+        1.1220294502630914
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3427024,
+    "data_type": "system_state",
+    "data": {
+      "step": 27,
+      "simulation_time": 0.54,
+      "battery_voltage": 23.73,
+      "cpu_temperature": 45.84416722356367,
+      "memory_usage": 34.05275666113354,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3629398,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.29468617521860657,
+        0.28104168892606524,
+        1.12,
+        -0.29468617521860657,
+        -0.2810416889260651,
+        1.12
+      ],
+      "velocities": [
+        -0.1766027283967533,
+        -1.2991751280338955,
+        2.0,
+        0.17660272839675362,
+        1.2991751280338957,
+        2.0
+      ],
+      "efforts": [
+        2.9468617521860656,
+        2.8104168892606523,
+        11.200000000000001,
+        -2.9468617521860656,
+        -2.8104168892606514,
+        11.200000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3630373,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.1395431146442365,
+        0.9902159962126371
+      ],
+      "angular_velocity": [
+        0.07624425110114479,
+        0.02463636707741458,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.06892858463490341,
+        0.09387338576538741,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.363073,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.37884663950507635,
+        0.27499634072334495,
+        0.963054647082381,
+        -0.2683279963256209,
+        -0.4353086016122187,
+        1.1308836917726055
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3630912,
+    "data_type": "system_state",
+    "data": {
+      "step": 28,
+      "simulation_time": 0.56,
+      "battery_voltage": 23.72,
+      "cpu_temperature": 45.87511529487638,
+      "memory_usage": 36.370609076286186,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.383571,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2905749483385893,
+        0.2545207078751857,
+        1.16,
+        -0.2905749483385893,
+        -0.2545207078751856,
+        1.16
+      ],
+      "velocities": [
+        -0.23438469676175455,
+        -1.352050414335788,
+        2.0,
+        0.23438469676175486,
+        1.3520504143357885,
+        2.0
+      ],
+      "efforts": [
+        2.9057494833858932,
+        2.545207078751857,
+        11.6,
+        -2.9057494833858932,
+        -2.545207078751856,
+        11.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.383632,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.1444924297105264,
+        0.9895059058723947
+      ],
+      "angular_velocity": [
+        0.07459411454241822,
+        0.022978993031074396,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.07128237574265014,
+        0.0934328942456612,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.383672,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.3952678799777211,
+        0.18902432485360934,
+        0.9970708511189091,
+        -0.38700999824906046,
+        -0.3870578263154938,
+        1.2273958280275192
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.3836887,
+    "data_type": "system_state",
+    "data": {
+      "step": 29,
+      "simulation_time": 0.58,
+      "battery_voltage": 23.71,
+      "cpu_temperature": 45.90602881813569,
+      "memory_usage": 37.209674308511914,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4039898,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2853169548885461,
+        0.22699524986977343,
+        1.2,
+        -0.2853169548885461,
+        -0.22699524986977349,
+        1.2
+      ],
+      "velocities": [
+        -0.2912416558088199,
+        -1.3995897753453763,
+        2.0,
+        0.2912416558088198,
+        1.3995897753453763,
+        2.0
+      ],
+      "efforts": [
+        2.853169548885461,
+        2.269952498697734,
+        12.0,
+        -2.853169548885461,
+        -2.2699524986977346,
+        12.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.404026,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.14943813247359922,
+        0.9887710779360422
+      ],
+      "angular_velocity": [
+        0.07289686274214116,
+        0.021288964578253633,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.07362491053693558,
+        0.09297764858882515,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4040546,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.2058410898483029,
+        0.21929748792699688,
+        1.19119165983691,
+        -0.4344107207756091,
+        -0.32764400257553167,
+        1.1179940950443699
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4040785,
+    "data_type": "system_state",
+    "data": {
+      "step": 30,
+      "simulation_time": 0.6,
+      "battery_voltage": 23.7,
+      "cpu_temperature": 45.93690657292862,
+      "memory_usage": 32.274893830688335,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4255543,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.27893294576647537,
+        0.1985739453173903,
+        1.24,
+        -0.2789329457664755,
+        -0.1985739453173906,
+        1.24
+      ],
+      "velocities": [
+        -0.3469492170960639,
+        -1.4416055949234228,
+        2.0,
+        0.3469492170960634,
+        1.4416055949234226,
+        2.0
+      ],
+      "efforts": [
+        2.7893294576647536,
+        1.985739453173903,
+        12.4,
+        -2.789329457664755,
+        -1.9857394531739059,
+        12.4
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4255862,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.1543800992911434,
+        0.9880115307742399
+      ],
+      "angular_velocity": [
+        0.07115356772092855,
+        0.019568683341860127,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.07595581910436022,
+        0.09250772068344582,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.425616,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.21189514855852978,
+        0.3735051967770542,
+        1.15645828291921,
+        -0.14616534625737695,
+        -0.02570338382165721,
+        1.2716308445080384
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4256403,
+    "data_type": "system_state",
+    "data": {
+      "step": 31,
+      "simulation_time": 0.62,
+      "battery_voltage": 23.69,
+      "cpu_temperature": 45.9677473402543,
+      "memory_usage": 38.82116643108936,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4462156,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2714481157398058,
+        0.16936896012264566,
+        1.28,
+        -0.2714481157398059,
+        -0.1693689601226457,
+        1.28
+      ],
+      "velocities": [
+        -0.4012875283294497,
+        -1.477932055825255,
+        2.0,
+        0.4012875283294496,
+        1.477932055825255,
+        2.0
+      ],
+      "efforts": [
+        2.7144811573980583,
+        1.6936896012264566,
+        12.8,
+        -2.7144811573980587,
+        -1.693689601226457,
+        12.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4462614,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.15931820661424598,
+        0.9872272833756269
+      ],
+      "angular_velocity": [
+        0.0693653305812805,
+        0.01782059393566254,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.0782747333674405,
+        0.09202318473658705,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4463048,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.23657163876851073,
+        0.22199704512629473,
+        1.3997672704865312,
+        -0.13010222856743467,
+        -0.09462191158599918,
+        1.158055563561879
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4466083,
+    "data_type": "system_state",
+    "data": {
+      "step": 32,
+      "simulation_time": 0.64,
+      "battery_voltage": 23.68,
+      "cpu_temperature": 45.99854990257204,
+      "memory_usage": 37.954177889900606,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.467102,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.26289200401315904,
+        0.13949555301961455,
+        1.32,
+        -0.262892004013159,
+        -0.1394955530196144,
+        1.32
+      ],
+      "velocities": [
+        -0.4540421410193522,
+        -1.5084257941056751,
+        2.0,
+        0.4540421410193524,
+        1.5084257941056753,
+        2.0
+      ],
+      "efforts": [
+        2.6289200401315904,
+        1.3949555301961456,
+        13.200000000000001,
+        -2.62892004013159,
+        -1.3949555301961438,
+        13.200000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4671302,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.16425233099048098,
+        0.9864183553463477
+      ],
+      "angular_velocity": [
+        0.06753328081210246,
+        0.016047180490360472,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.08058128714273254,
+        0.09152411726209175,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4671576,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.45606818739898747,
+        0.03483718654211407,
+        1.3228547882037716,
+        -0.10713492081726503,
+        -0.1248707320200161,
+        1.1488940859260728
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4671683,
+    "data_type": "system_state",
+    "data": {
+      "step": 33,
+      "simulation_time": 0.66,
+      "battery_voltage": 23.67,
+      "cpu_temperature": 46.029313043849406,
+      "memory_usage": 38.15594223177402,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4876912,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2532983776506045,
+        0.10907162069827116,
+        1.36,
+        -0.2532983776506045,
+        -0.10907162069827121,
+        1.36
+      ],
+      "velocities": [
+        -0.5050048568107742,
+        -1.532966464910954,
+        2.0,
+        0.5050048568107741,
+        1.532966464910954,
+        2.0
+      ],
+      "efforts": [
+        2.532983776506045,
+        1.0907162069827117,
+        13.600000000000001,
+        -2.532983776506045,
+        -1.090716206982712,
+        13.600000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4877324,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.16918234906699603,
+        0.9855847669095608
+      ],
+      "angular_velocity": [
+        0.06565857557529564,
+        0.014250963123498809,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.08287511619865684,
+        0.09101059706849957,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4877584,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.41183703902809476,
+        0.20253332939547614,
+        1.2362394638984915,
+        -0.343475236031945,
+        -0.3653149951886324,
+        1.49029169932102
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.4877677,
+    "data_type": "system_state",
+    "data": {
+      "step": 34,
+      "simulation_time": 0.68,
+      "battery_voltage": 23.66,
+      "cpu_temperature": 46.06003554961028,
+      "memory_usage": 32.19032331043481,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5082726,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.2427050983124842,
+        0.07821723252011549,
+        1.4000000000000001,
+        -0.24270509831248427,
+        -0.07821723252011556,
+        1.4000000000000001
+      ],
+      "velocities": [
+        -0.553974549147137,
+        -1.551457217424989,
+        2.0,
+        0.5539745491471368,
+        1.551457217424989,
+        2.0
+      ],
+      "efforts": [
+        2.4270509831248424,
+        0.7821723252011549,
+        14.000000000000002,
+        -2.427050983124843,
+        -0.7821723252011556,
+        14.000000000000002
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5083046,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.17410813759359597,
+        0.9847265389049334
+      ],
+      "angular_velocity": [
+        0.06374239897486897,
+        0.012434494358242738,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.08515585831301455,
+        0.09048270524660196,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5083337,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.15054001585022087,
+        0.15869444295410862,
+        1.477302484883619,
+        -0.37896423851873,
+        -0.16846282374878155,
+        1.3800921364130008
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5083463,
+    "data_type": "system_state",
+    "data": {
+      "step": 35,
+      "simulation_time": 0.7000000000000001,
+      "battery_voltage": 23.65,
+      "cpu_temperature": 46.09071620698271,
+      "memory_usage": 36.333303531597075,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5288885,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.23115397283273675,
+        0.047054156659257176,
+        1.44,
+        -0.23115397283273686,
+        -0.047054156659257454,
+        1.44
+      ],
+      "velocities": [
+        -0.6007579570249137,
+        -1.5638250770952289,
+        2.0,
+        0.6007579570249134,
+        1.5638250770952289,
+        2.0
+      ],
+      "efforts": [
+        2.3115397283273675,
+        0.47054156659257174,
+        14.399999999999999,
+        -2.311539728327369,
+        -0.4705415665925745,
+        14.399999999999999
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.528929,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.17902957342582418,
+        0.9838436927881214
+      ],
+      "angular_velocity": [
+        0.06178596130903344,
+        0.010600355496102738,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.08742315333018658,
+        0.08994052515663711,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5289662,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.16881272558095614,
+        -0.07706521566497986,
+        1.309046945532927,
+        -0.33551173943425994,
+        -0.08230084930390419,
+        1.4529337444304016
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5289836,
+    "data_type": "system_state",
+    "data": {
+      "step": 36,
+      "simulation_time": 0.72,
+      "battery_voltage": 23.64,
+      "cpu_temperature": 46.1213538047469,
+      "memory_usage": 36.28710414416386,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5495245,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.21869058822642343,
+        0.015705379539064118,
+        1.48,
+        -0.21869058822642345,
+        -0.01570537953906418,
+        1.48
+      ],
+      "velocities": [
+        -0.6451704477065168,
+        -1.5700212336298927,
+        2.0,
+        0.6451704477065167,
+        1.5700212336298927,
+        2.0
+      ],
+      "efforts": [
+        2.1869058822642344,
+        0.15705379539064118,
+        14.8,
+        -2.1869058822642344,
+        -0.1570537953906418,
+        14.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5495777,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.18394653352804122,
+        0.9829362506302315
+      ],
+      "angular_velocity": [
+        0.059790498305751894,
+        0.008751152948763802,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.08967664321800645,
+        0.08938414241512638,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5496166,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.2527642312315315,
+        0.10658985417127163,
+        1.4348315023158906,
+        -0.17682600734265447,
+        0.2488620252433599,
+        1.409399204905259
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5496354,
+    "data_type": "system_state",
+    "data": {
+      "step": 37,
+      "simulation_time": 0.74,
+      "battery_voltage": 23.63,
+      "cpu_temperature": 46.151947133382954,
+      "memory_usage": 36.59969878000228,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.569988,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.20536413177860666,
+        -0.015705379539063997,
+        1.52,
+        -0.20536413177860668,
+        0.015705379539063934,
+        1.52
+      ],
+      "velocities": [
+        -0.6870367453813623,
+        -1.5700212336298927,
+        2.0,
+        0.6870367453813622,
+        1.5700212336298927,
+        2.0
+      ],
+      "efforts": [
+        2.0536413177860666,
+        -0.15705379539063996,
+        15.2,
+        -2.0536413177860666,
+        0.15705379539063935,
+        15.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.570014,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.18885889497650057,
+        0.9820042351172703
+      ],
+      "angular_velocity": [
+        0.05775727034222677,
+        0.00688951453423191,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.09191597212429757,
+        0.08881364488135446,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5700388,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.18381323603662691,
+        -0.003291735956372322,
+        1.6609774272257942,
+        -0.14522576207395346,
+        0.052595354973955497,
+        1.2794639824872105
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5700483,
+    "data_type": "system_state",
+    "data": {
+      "step": 38,
+      "simulation_time": 0.76,
+      "battery_voltage": 23.62,
+      "cpu_temperature": 46.18249498511862,
+      "memory_usage": 38.42359400898707,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.590687,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.19122719692460696,
+        -0.04705415665925705,
+        1.56,
+        -0.19122719692460688,
+        0.04705415665925721,
+        1.56
+      ],
+      "velocities": [
+        -0.7261916228994204,
+        -1.5638250770952289,
+        2.0,
+        0.7261916228994206,
+        1.5638250770952289,
+        2.0
+      ],
+      "efforts": [
+        1.9122719692460697,
+        -0.4705415665925705,
+        15.600000000000001,
+        -1.9122719692460688,
+        0.4705415665925721,
+        15.600000000000001
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.590719,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.19376653496242194,
+        0.9810476695495772
+      ],
+      "angular_velocity": [
+        0.05568756164881881,
+        0.005018085742560746,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.0941407864330665,
+        0.08822912264349533,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5907457,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.20532704208884808,
+        -0.08460248823252797,
+        1.4445938235720057,
+        -0.1431715332470098,
+        0.2597695604266291,
+        1.4881492546198734
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.5907552,
+    "data_type": "system_state",
+    "data": {
+      "step": 39,
+      "simulation_time": 0.78,
+      "battery_voltage": 23.61,
+      "cpu_temperature": 46.21299615397704,
+      "memory_usage": 31.13736425186991,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6115074,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.17633557568774197,
+        -0.07821723252011537,
+        1.6,
+        -0.176335575687742,
+        0.07821723252011531,
+        1.6
+      ],
+      "velocities": [
+        -0.7624805538472889,
+        -1.5514572174249892,
+        2.0,
+        0.7624805538472889,
+        1.5514572174249892,
+        2.0
+      ],
+      "efforts": [
+        1.7633557568774196,
+        -0.7821723252011537,
+        16.0,
+        -1.76335575687742,
+        0.7821723252011531,
+        16.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.611558,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.19866933079506122,
+        0.9800665778412416
+      ],
+      "angular_velocity": [
+        0.05358267949789966,
+        0.0031395259764656655,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.09635073482034306,
+        0.08763066800438636,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6116056,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.24696362596447693,
+        -0.06967738581704531,
+        1.4526483056525865,
+        -0.21538738361400467,
+        0.12220279481389579,
+        1.687201800935376
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6116247,
+    "data_type": "system_state",
+    "data": {
+      "step": 40,
+      "simulation_time": 0.8,
+      "battery_voltage": 23.6,
+      "cpu_temperature": 46.243449435824274,
+      "memory_usage": 31.638795887917986,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.63205,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.16074803849369898,
+        -0.10907162069827125,
+        1.6400000000000001,
+        -0.16074803849369912,
+        0.10907162069827098,
+        1.6400000000000001
+      ],
+      "velocities": [
+        -0.7957603223933523,
+        -1.532966464910954,
+        2.0,
+        0.7957603223933519,
+        1.5329664649109542,
+        2.0
+      ],
+      "efforts": [
+        1.6074803849369899,
+        -1.0907162069827125,
+        16.400000000000002,
+        -1.6074803849369912,
+        1.0907162069827097,
+        16.400000000000002
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6321032,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.203567159904778,
+        0.9790609845195051
+      ],
+      "angular_velocity": [
+        0.05144395337815064,
+        0.0012565047721668767,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.09854546830965832,
+        0.08701837546695257,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6321418,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.10241467490616565,
+        -0.24347618617074793,
+        1.6333231596938111,
+        -0.09193800459755838,
+        0.09340889329448039,
+        1.6824714790754203
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6321611,
+    "data_type": "system_state",
+    "data": {
+      "step": 41,
+      "simulation_time": 0.8200000000000001,
+      "battery_voltage": 23.59,
+      "cpu_temperature": 46.27385362841691,
+      "memory_usage": 33.16619990072351,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6523776,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.14452610223051468,
+        -0.13949555301961444,
+        1.68,
+        -0.14452610223051482,
+        0.13949555301961417,
+        1.68
+      ],
+      "velocities": [
+        -0.8258995884952387,
+        -1.5084257941056753,
+        2.0,
+        0.8258995884952386,
+        1.5084257941056756,
+        2.0
+      ],
+      "efforts": [
+        1.4452610223051467,
+        -1.3949555301961445,
+        16.8,
+        -1.4452610223051483,
+        1.3949555301961416,
+        16.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6524162,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.20845989984609956,
+        0.9780309147241483
+      ],
+      "angular_velocity": [
+        0.04927273415482916,
+        -0.0006283019941676215,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.10072464032715217,
+        0.08639234171928353,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.652451,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.1985421901521216,
+        -0.21154586589208152,
+        1.549167698591667,
+        -0.126558388291111,
+        0.07994919172715854,
+        1.5942248949553603
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6524649,
+    "data_type": "system_state",
+    "data": {
+      "step": 42,
+      "simulation_time": 0.84,
+      "battery_voltage": 23.58,
+      "cpu_temperature": 46.304207531449485,
+      "memory_usage": 31.299765357141823,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.673463,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.12773378746952185,
+        -0.16936896012264555,
+        1.72,
+        -0.12773378746952188,
+        0.1693689601226455,
+        1.72
+      ],
+      "velocities": [
+        -0.8527794062389659,
+        -1.4779320558252553,
+        2.0,
+        0.8527794062389659,
+        1.4779320558252553,
+        2.0
+      ],
+      "efforts": [
+        1.2773378746952186,
+        -1.6936896012264555,
+        17.2,
+        -1.2773378746952189,
+        1.6936896012264548,
+        17.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6735117,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.2133474283007823,
+        0.9769763942068623
+      ],
+      "angular_velocity": [
+        0.04707039321653325,
+        -0.002512215908988474,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.10288790675630129,
+        0.08575266561936523,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6736145,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.047851778888154936,
+        -0.2940136729502308,
+        1.7426617631209178,
+        -0.05575246232012819,
+        0.03862107325920319,
+        1.6358538640753513
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6736867,
+    "data_type": "system_state",
+    "data": {
+      "step": 43,
+      "simulation_time": 0.86,
+      "battery_voltage": 23.57,
+      "cpu_temperature": 46.33450994660188,
+      "memory_usage": 37.370413133576484,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.694048,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.11043736580540343,
+        -0.1985739453173902,
+        1.76,
+        -0.11043736580540335,
+        0.19857394531739034,
+        1.76
+      ],
+      "velocities": [
+        -0.8762936932641193,
+        -1.441605594923423,
+        2.0,
+        0.8762936932641194,
+        1.4416055949234228,
+        2.0
+      ],
+      "efforts": [
+        1.1043736580540344,
+        -1.985739453173902,
+        17.6,
+        -1.1043736580540335,
+        1.9857394531739034,
+        17.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.6940818,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.21822962308086932,
+        0.9758974493306055
+      ],
+      "angular_velocity": [
+        0.04483832160900322,
+        -0.00439255982753716,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.10503492599225915,
+        0.08509944817946918,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.694114,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.0941951238098641,
+        -0.3541001120768565,
+        1.6836946360592966,
+        -0.2102814578567434,
+        -0.029676999337412302,
+        1.529745187236303
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.694136,
+    "data_type": "system_state",
+    "data": {
+      "step": 44,
+      "simulation_time": 0.88,
+      "battery_voltage": 23.56,
+      "cpu_temperature": 46.364759677586626,
+      "memory_usage": 33.6256533248939,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7147315,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.09270509831248425,
+        -0.22699524986977335,
+        1.8,
+        -0.09270509831248429,
+        0.2269952498697733,
+        1.8
+      ],
+      "velocities": [
+        -0.8963496494224668,
+        -1.3995897753453765,
+        2.0,
+        0.8963496494224668,
+        1.3995897753453765,
+        2.0
+      ],
+      "efforts": [
+        0.9270509831248425,
+        -2.2699524986977333,
+        18.0,
+        -0.9270509831248429,
+        2.269952498697733,
+        18.0
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.714775,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.22310636213174545,
+        0.9747941070689433
+      ],
+      "angular_velocity": [
+        0.042577929156507266,
+        -0.006266661678215208,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.10716535899579933,
+        0.08443279255020152,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7148154,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.09810153418231629,
+        -0.1779827833227121,
+        1.8803746329733628,
+        -0.10157229880402004,
+        0.22372008761995607,
+        1.8152152999263678
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7148347,
+    "data_type": "system_state",
+    "data": {
+      "step": 45,
+      "simulation_time": 0.9,
+      "battery_voltage": 23.55,
+      "cpu_temperature": 46.39495553019615,
+      "memory_usage": 31.067655055101618,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7355464,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.07460696614945644,
+        -0.2545207078751856,
+        1.84,
+        -0.0746069661494566,
+        0.2545207078751854,
+        1.84
+      ],
+      "velocities": [
+        -0.9128681230177459,
+        -1.3520504143357883,
+        2.0,
+        0.9128681230177458,
+        1.3520504143357888,
+        2.0
+      ],
+      "efforts": [
+        0.7460696614945644,
+        -2.545207078751856,
+        18.400000000000002,
+        -0.746069661494566,
+        2.545207078751854,
+        18.400000000000002
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7355804,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.2279775235351884,
+        0.9736663950053749
+      ],
+      "angular_velocity": [
+        0.040290643571366275,
+        -0.00813185825974418,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.10927886934685382,
+        0.08375280400421418,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7356129,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.04898725081214428,
+        -0.3922193874485379,
+        1.9978805885788977,
+        -0.17430346892709936,
+        0.4062580363755572,
+        1.869505960208668
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7356308,
+    "data_type": "system_state",
+    "data": {
+      "step": 46,
+      "simulation_time": 0.92,
+      "battery_voltage": 23.54,
+      "cpu_temperature": 46.42509631234988,
+      "memory_usage": 30.778270970777424,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7563157,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.05621439437571737,
+        -0.2810416889260653,
+        1.8800000000000001,
+        -0.0562143943757174,
+        0.28104168892606524,
+        1.8800000000000001
+      ],
+      "velocities": [
+        -0.9257839231812491,
+        -1.2991751280338952,
+        2.0,
+        0.9257839231812491,
+        1.2991751280338952,
+        2.0
+      ],
+      "efforts": [
+        0.5621439437571737,
+        -2.8104168892606527,
+        18.8,
+        -0.562143943757174,
+        2.8104168892606523,
+        18.8
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7563627,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.2328429855124168,
+        0.972514341332643
+      ],
+      "angular_velocity": [
+        0.03797790955218011,
+        -0.009985499025720357,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.1113751232976376,
+        0.08305958991958128,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.756408,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.07027249052920773,
+        -0.2694682541242607,
+        1.8622538106082163,
+        0.019638669204446582,
+        0.30955343298172966,
+        1.8809837978019452
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.756426,
+    "data_type": "system_state",
+    "data": {
+      "step": 47,
+      "simulation_time": 0.9400000000000001,
+      "battery_voltage": 23.53,
+      "cpu_temperature": 46.45518083414136,
+      "memory_usage": 36.67403593161117,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7771225,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.03759997006929136,
+        -0.30645352682648813,
+        1.92,
+        -0.037599970069291395,
+        0.3064535268264881,
+        1.92
+      ],
+      "velocities": [
+        -0.9350460771503986,
+        -1.2411725910383107,
+        2.0,
+        0.9350460771503986,
+        1.241172591038311,
+        2.0
+      ],
+      "efforts": [
+        0.3759997006929136,
+        -3.064535268264881,
+        19.2,
+        -0.37599970069291394,
+        3.0645352682648808,
+        19.2
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7771552,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.23770262642713458,
+        0.9713379748520297
+      ],
+      "angular_velocity": [
+        0.03564118787132508,
+        -0.011824949851186234,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.11345378982535131,
+        0.08235325976284275,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7771914,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        -0.05522015594797239,
+        -0.3292026817566331,
+        1.9062324721823574,
+        -0.11231235758835986,
+        0.4888550500464103,
+        1.944726067595676
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.777202,
+    "data_type": "system_state",
+    "data": {
+      "step": 48,
+      "simulation_time": 0.96,
+      "battery_voltage": 23.52,
+      "cpu_temperature": 46.485207907885176,
+      "memory_usage": 36.18431106435668,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7977438,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "positions": [
+        0.018837155858794075,
+        -0.33065593266182586,
+        1.96,
+        -0.018837155858793978,
+        0.33065593266182597,
+        1.96
+      ],
+      "velocities": [
+        -0.940618031434954,
+        -1.178271712863717,
+        2.0,
+        0.940618031434954,
+        1.1782717128637166,
+        2.0
+      ],
+      "efforts": [
+        0.18837155858794075,
+        -3.3065593266182587,
+        19.6,
+        -0.18837155858793977,
+        3.3065593266182596,
+        19.6
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.797768,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.24255632478857206,
+        0.9701373249726354
+      ],
+      "angular_velocity": [
+        0.033281954452298666,
+        -0.013647596775866253,
+        0.5
+      ],
+      "linear_acceleration": [
+        0.11551454068445353,
+        0.0816339250717184,
+        9.81
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7977924,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "left_hip",
+        "left_knee",
+        "left_wheel",
+        "right_hip",
+        "right_knee",
+        "right_wheel"
+      ],
+      "commands": [
+        0.11932486488447382,
+        -0.3802403957596043,
+        1.748620717284062,
+        0.012006527128246038,
+        0.30562689373330104,
+        1.9582001642996996
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.7978022,
+    "data_type": "system_state",
+    "data": {
+      "step": 49,
+      "simulation_time": 0.98,
+      "battery_voltage": 23.51,
+      "cpu_temperature": 46.51517634816387,
+      "memory_usage": 39.13409778697381,
+      "control_frequency": 50.0,
+      "active_algorithm": "LQR_Controller"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8327284,
+    "data_type": "end_metadata",
+    "data": {
+      "session_id": "session_1770546540_111719",
+      "end_time": 1770546541.8327243,
+      "duration": 1.0683832168579102,
+      "total_points": 201,
+      "stats": {
+        "total_points": 201,
+        "joint_states": 50,
+        "imu_data": 50,
+        "control_commands": 50,
+        "system_states": 50,
+        "recording_duration": 1.0683832168579102
+      }
+    },
+    "metadata": null
+  }
+]

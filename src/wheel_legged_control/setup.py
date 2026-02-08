@@ -40,6 +40,7 @@ setup(
             'ros2_control_panel = wheel_legged_control.gui.ros2_control_panel:main',
             'gazebo_simulator = wheel_legged_control.core.gazebo_simulator:main',
             'joint_controller = wheel_legged_control.controllers.joint_controller:main',
+            'enhanced_joint_controller = wheel_legged_control.controllers.joint_controller_enhanced:main',
             'joint_controller_node = scripts.joint_controller_node:main',
             'imu_simulator_node = wheel_legged_control.core.imu_simulator_node:main',
             'imu_publisher_node = scripts.imu_publisher_node:main',
