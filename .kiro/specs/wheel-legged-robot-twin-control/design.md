@@ -29,7 +29,9 @@ graph TB
     end
     
     subgraph "仿真环境层"
+        SM[仿真管理器]
         GZ[Gazebo仿真]
+        MJ[MuJoCo仿真]
         URDF[机器人模型]
         IMU[传感器仿真]
     end
@@ -46,12 +48,14 @@ graph TB
     CM --> JC
     DM --> DR
     AM --> JC
-    DTM --> GZ
+    DTM --> SM
     JC --> Topics
     SS --> Topics
     DR --> Topics
-    GZ --> URDF
-    GZ --> IMU
+    SM --> GZ
+    SM --> MJ
+    SM --> URDF
+    SM --> IMU
 ```
 
 ### 核心组件说明
@@ -61,6 +65,7 @@ graph TB
 3. **状态同步器 (State Synchronizer)**: 实现虚实状态同步的仿真版本
 4. **控制管理器 (Control Manager)**: 协调各模块工作，管理系统状态
 5. **算法管理器 (Algorithm Manager)**: 支持多种控制算法的动态加载和切换
+6. **仿真管理器 (Simulation Manager)**: 统一管理Gazebo和MuJoCo仿真后端
 
 ## 组件与接口
 
@@ -124,6 +129,28 @@ class AlgorithmManager:
 - LQR线性二次调节器
 - 自定义控制算法
 - 算法性能对比分析
+
+### 仿真管理器 (Simulation Manager)
+
+**职责**: 提供统一的仿真后端接口，支持Gazebo和MuJoCo的无缝切换
+
+**核心接口**:
+```python
+class SimulationManager:
+    def set_backend(self, backend: str) -> bool  # "gazebo" or "mujoco"
+    def load_robot_model(self, urdf_path: str) -> bool
+    def step_simulation(self, dt: float) -> SimulationState
+    def set_joint_positions(self, positions: Dict[str, float]) -> None
+    def get_joint_states(self) -> JointState
+    def get_sensor_data(self, sensor_name: str) -> SensorData
+    def reset_simulation(self) -> None
+    def enable_parallel_simulation(self, num_envs: int) -> bool
+```
+
+**后端特性对比**:
+- **Gazebo**: 可视化友好、ROS2集成、适合原型开发
+- **MuJoCo**: 高性能、高精度接触、适合RL训练和批量仿真
+- **统一接口**: 相同的控制逻辑可在两个后端间无缝切换
 
 ### 状态同步器 (State Synchronizer)
 
@@ -356,6 +383,14 @@ class RecoveryAction:
 ### 属性 12: 运动学双向转换往返一致性
 *对于任何*有效的关节状态，执行关节空间到任务空间再到关节空间的双向转换后，应该得到等价的原始关节状态
 **验证需求: 需求 8.3**
+
+### 属性 13: 多仿真后端行为一致性
+*对于任何*相同的控制输入和初始状态，在Gazebo和MuJoCo两种仿真后端中执行相同的运动序列应该产生一致的机器人行为
+**验证需求: 需求 12.3**
+
+### 属性 14: 仿真管理器接口统一性
+*对于任何*仿真后端切换操作，仿真管理器应当提供统一的接口，使得上层控制逻辑无需修改即可在不同后端间切换
+**验证需求: 需求 12.6**
 
 ## 测试策略
 
