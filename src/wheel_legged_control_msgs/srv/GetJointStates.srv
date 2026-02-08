@@ -1,0 +1,11 @@
+# 获取关节状态服务
+
+# 请求
+string[] joint_names  # 空列表表示获取所有关节
+
+---
+
+# 响应
+bool success
+string message
+sensor_msgs/JointState joint_state

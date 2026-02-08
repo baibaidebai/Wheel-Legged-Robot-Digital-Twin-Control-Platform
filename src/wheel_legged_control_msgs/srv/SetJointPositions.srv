@@ -1,0 +1,14 @@
+# 设置关节位置服务
+
+# 请求
+string[] joint_names
+float64[] positions
+float64 execution_time  # 执行时间，0表示立即执行
+bool wait_for_completion  # 是否等待执行完成
+
+---
+
+# 响应
+bool success
+string message
+float64 actual_execution_time  # 实际执行时间

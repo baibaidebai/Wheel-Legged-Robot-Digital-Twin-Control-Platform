@@ -139,6 +139,12 @@ class JointControllerNode(Node):
         self.current_trajectory = None
         self.trajectory_lock = threading.Lock()
         
+        # 控制器状态
+        self.controller_enabled = True
+        
+        # 创建服务
+        self.setup_services()
+        
         self.get_logger().info('关节控制器节点已启动')
         self.get_logger().info(f'控制关节: {self.joint_names}')
     
@@ -238,6 +244,34 @@ class JointControllerNode(Node):
             qos_profile
         )
     
+    def setup_services(self):
+        """设置ROS2服务"""
+        # 导入服务类型
+        from std_srvs.srv import Trigger, SetBool
+        
+        # 紧急停止服务
+        self.emergency_stop_service = self.create_service(
+            Trigger,
+            '/joint_controller/emergency_stop',
+            self.emergency_stop_service_callback
+        )
+        
+        # 复位服务
+        self.reset_service = self.create_service(
+            Trigger,
+            '/joint_controller/reset',
+            self.reset_service_callback
+        )
+        
+        # 使能服务
+        self.enable_service = self.create_service(
+            SetBool,
+            '/joint_controller/enable',
+            self.enable_service_callback
+        )
+        
+        self.get_logger().info('ROS2服务已创建')
+    
     def joint_command_callback(self, msg: Float64MultiArray):
         """
         处理关节位置指令
@@ -298,6 +332,10 @@ class JointControllerNode(Node):
     
     def control_loop(self):
         """主控制循环"""
+        # 检查控制器是否启用
+        if not self.controller_enabled:
+            return
+        
         current_time = self.get_clock().now()
         dt = 1.0 / self.control_frequency
         
@@ -515,6 +553,66 @@ class JointControllerNode(Node):
         
         home_positions = {name: 0.0 for name in self.joint_names}
         self.set_joint_positions(home_positions)
+    
+    def emergency_stop_service_callback(self, request, response):
+        """紧急停止服务回调"""
+        try:
+            self.emergency_stop()
+            response.success = True
+            response.message = "紧急停止执行成功"
+            self.get_logger().info("通过服务执行紧急停止")
+        except Exception as e:
+            response.success = False
+            response.message = f"紧急停止失败: {str(e)}"
+            self.get_logger().error(f"紧急停止服务失败: {e}")
+        
+        return response
+    
+    def reset_service_callback(self, request, response):
+        """复位服务回调"""
+        try:
+            self.reset_to_home()
+            response.success = True
+            response.message = "复位执行成功"
+            self.get_logger().info("通过服务执行复位")
+        except Exception as e:
+            response.success = False
+            response.message = f"复位失败: {str(e)}"
+            self.get_logger().error(f"复位服务失败: {e}")
+        
+        return response
+    
+    def enable_service_callback(self, request, response):
+        """使能服务回调"""
+        try:
+            self.controller_enabled = request.data
+            if request.data:
+                response.message = "控制器已启用"
+                self.get_logger().info("控制器已启用")
+            else:
+                response.message = "控制器已禁用"
+                self.get_logger().info("控制器已禁用")
+                # 禁用时停止当前运动
+                self.emergency_stop()
+            
+            response.success = True
+        except Exception as e:
+            response.success = False
+            response.message = f"设置使能状态失败: {str(e)}"
+            self.get_logger().error(f"使能服务失败: {e}")
+        
+        return response
+    
+    def enable(self):
+        """启用控制器"""
+        self.controller_enabled = True
+        self.get_logger().info("控制器已启用")
+    
+    def disable(self):
+        """禁用控制器"""
+        self.controller_enabled = False
+        self.emergency_stop()
+        self.get_logger().info("控制器已禁用")
 
 
 def main(args=None):

@@ -1,0 +1,13 @@
+# 运动一致性验证服务
+
+# 请求
+sensor_msgs/JointState joint_state
+
+---
+
+# 响应
+bool success
+string message
+bool is_valid
+float64 consistency_error
+string[] violated_constraints

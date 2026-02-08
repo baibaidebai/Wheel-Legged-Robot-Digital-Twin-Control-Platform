@@ -128,6 +128,94 @@ wheel-legged-robot-twin-control/
 - C++: 遵循Google C++风格指南
 - 提交信息: 使用约定式提交格式
 
+### Git提交规范
+
+本项目严格遵循**约定式提交(Conventional Commits)**规范，确保提交历史清晰可读。
+
+#### 提交消息格式
+
+```
+<类型>[可选的作用域]: <描述>
+
+[可选的正文]
+
+[可选的脚注]
+```
+
+#### 提交类型
+
+- `feat`: 新功能
+- `fix`: 修复bug
+- `docs`: 文档更新
+- `style`: 代码格式修改（不影响功能）
+- `refactor`: 代码重构（既不是新功能也不是修复bug）
+- `perf`: 性能优化
+- `test`: 添加或修改测试
+- `build`: 构建系统或外部依赖变更
+- `ci`: CI配置文件和脚本变更
+- `chore`: 其他不修改src或test文件的变更
+- `revert`: 回滚之前的提交
+
+#### 作用域示例
+
+- `joint-controller`: 关节控制器
+- `digital-twin`: 数字孪生映射器
+- `gui`: 用户界面
+- `gazebo`: Gazebo仿真
+- `imu`: IMU传感器
+- `config`: 配置文件
+- `test`: 测试相关
+
+#### 提交示例
+
+```bash
+# 新功能
+git commit -m "feat(joint-controller): 实现PID控制算法
+
+- 添加比例、积分、微分控制
+- 支持参数动态调整
+- 包含积分饱和保护机制
+
+满足需求: 需求 2.1, 2.2"
+
+# 修复bug
+git commit -m "fix(digital-twin): 修复奇异位形处理bug
+
+修复雅可比矩阵奇异值分解时的数值稳定性问题"
+
+# 文档更新
+git commit -m "docs: 更新API文档和使用示例"
+
+# 测试
+git commit -m "test(joint-controller): 添加PID控制器单元测试
+
+- 测试比例、积分、微分控制
+- 验证输出限制和积分饱和保护
+- 覆盖率达到95%"
+```
+
+#### 提交规范检查
+
+项目使用pre-commit钩子自动检查提交格式：
+
+```bash
+# 安装pre-commit
+pip install pre-commit
+
+# 安装钩子
+pre-commit install
+
+# 手动运行检查
+pre-commit run --all-files
+```
+
+#### 分支命名规范
+
+- 功能分支: `feature/功能名称` (如 `feature/joint-controller`)
+- 修复分支: `fix/问题描述` (如 `fix/pid-overflow`)
+- 发布分支: `release/版本号` (如 `release/v1.0.0`)
+- 热修复分支: `hotfix/问题描述` (如 `hotfix/critical-bug`)
+
 ## 测试
 
 ```bash
