@@ -67,11 +67,13 @@ def generate_launch_description():
         description='Initial z position of the robot'
     )
     
-    # URDF文件路径
-    urdf_file = PathJoinSubstitution([pkg_wheel_legged_control, 'urdf', 'wheel_legged_robot_base.urdf.xacro'])
+    # URDF文件路径 - 使用内部模型
+    urdf_file = PathJoinSubstitution([pkg_wheel_legged_control, 'urdf', 'wheel_legged_robot_gazebo.urdf'])
     
-    # 机器人描述
-    robot_description = Command(['xacro ', urdf_file])
+    # 机器人描述 - 使用xacro处理URDF文件
+    robot_description_content = Command([
+        'xacro ', urdf_file
+    ])
     
     # 启动Gazebo服务器
     start_gazebo_server_cmd = ExecuteProcess(
@@ -93,7 +95,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
-            'robot_description': robot_description
+            'robot_description': robot_description_content
         }]
     )
     

@@ -492,7 +492,7 @@ if __name__ == "__main__":
     # 测试代码
     try:
         # 测试加载现有的机器人模型
-        robot_dir = "src/robot/urdf/RM_Serial_Wheeled-leg_Robot"
+        robot_dir = "src/model/RM_Serial_Wheeled-leg_Robot"
         if os.path.exists(robot_dir):
             robot_model = load_robot_from_directory(robot_dir)
             

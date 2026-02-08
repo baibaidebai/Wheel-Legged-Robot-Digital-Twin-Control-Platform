@@ -4,4 +4,6 @@
 基于PyQt5的控制面板和可视化组件。
 """
 
-__all__ = []
+from .control_panel import ControlPanelMainWindow
+
+__all__ = ['ControlPanelMainWindow']

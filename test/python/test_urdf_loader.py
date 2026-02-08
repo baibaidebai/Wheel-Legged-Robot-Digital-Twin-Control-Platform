@@ -223,7 +223,7 @@ class TestURDFLoader:
 
 def test_load_real_robot_model():
     """测试加载真实的机器人模型"""
-    robot_dir = "src/robot/urdf/RM_Serial_Wheeled-leg_Robot"
+    robot_dir = "src/model/RM_Serial_Wheeled-leg_Robot"
     
     if os.path.exists(robot_dir):
         try:
