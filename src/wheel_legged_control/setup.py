@@ -41,6 +41,7 @@ setup(
             'joint_controller = wheel_legged_control.controllers.joint_controller:main',
             'joint_controller_node = wheel_legged_control.core.joint_controller_node:main',
             'imu_simulator_node = wheel_legged_control.core.imu_simulator_node:main',
+            'imu_publisher_node = wheel_legged_control.sensors.imu_publisher_node:main',
             'state_synchronizer_node = wheel_legged_control.core.state_synchronizer_node:main',
         ],
     },
