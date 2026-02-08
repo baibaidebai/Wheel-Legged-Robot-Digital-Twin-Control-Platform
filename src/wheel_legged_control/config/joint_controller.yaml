@@ -1,0 +1,77 @@
+# 关节控制器配置文件
+
+joint_controller:
+  ros__parameters:
+    # 控制频率 (Hz)
+    control_frequency: 100.0
+    
+    # 关节名称列表
+    joint_names: [
+      "lf0_joint",      # 左前腿关节0
+      "lf1_joint",      # 左前腿关节1
+      "rf0_joint",      # 右前腿关节0
+      "rf1_joint",      # 右前腿关节1
+      "l_wheel_joint",  # 左轮关节
+      "r_wheel_joint"   # 右轮关节
+    ]
+    
+    # PID控制增益参数
+    control_gains:
+      kp: 15.0          # 比例增益
+      ki: 0.2           # 积分增益
+      kd: 0.8           # 微分增益
+      max_integral: 2.0 # 积分限幅
+      max_output: 30.0  # 输出限幅 (N·m)
+    
+    # 关节限制参数
+    joint_limits:
+      min_position: -3.14159  # 最小位置 (rad)
+      max_position: 3.14159   # 最大位置 (rad)
+      max_velocity: 1000.0    # 最大速度 (rad/s)
+      max_effort: 30.0        # 最大力矩 (N·m)
+    
+    # 特定关节的个性化配置
+    joint_specific:
+      # 腿部关节配置
+      lf0_joint:
+        min_position: -1.57   # -90度
+        max_position: 1.57    # +90度
+        max_velocity: 10.0
+      
+      lf1_joint:
+        min_position: -2.09   # -120度
+        max_position: 0.52    # +30度
+        max_velocity: 10.0
+      
+      rf0_joint:
+        min_position: -1.57   # -90度
+        max_position: 1.57    # +90度
+        max_velocity: 10.0
+      
+      rf1_joint:
+        min_position: -2.09   # -120度
+        max_position: 0.52    # +30度
+        max_velocity: 10.0
+      
+      # 轮子关节配置（连续旋转）
+      l_wheel_joint:
+        min_position: -1000000.0  # 无限制
+        max_position: 1000000.0   # 无限制
+        max_velocity: 100.0       # 高速旋转
+      
+      r_wheel_joint:
+        min_position: -1000000.0  # 无限制
+        max_position: 1000000.0   # 无限制
+        max_velocity: 100.0       # 高速旋转
+    
+    # 安全参数
+    safety:
+      emergency_stop_deceleration: 50.0  # 紧急停止减速度 (rad/s²)
+      position_tolerance: 0.01           # 位置容差 (rad)
+      velocity_tolerance: 0.1            # 速度容差 (rad/s)
+      
+    # 轨迹执行参数
+    trajectory:
+      interpolation_method: "linear"     # 插值方法
+      goal_tolerance: 0.05              # 目标容差 (rad)
+      goal_time_tolerance: 1.0          # 目标时间容差 (s)
