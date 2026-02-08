@@ -12,6 +12,10 @@ matplotlib==3.10.8     # 绘图库，用于数据可视化和图表生成
 # torch>=1.9.0         # PyTorch深度学习框架 (用于PPO训练)
 # gym>=0.21.0          # OpenAI Gym环境接口
 
+# 物理仿真库 - Physics Simulation
+mujoco>=3.0.0          # MuJoCo物理引擎 (用于高性能仿真和强化学习)
+# dm-control>=1.0.0    # DeepMind控制套件 (可选，提供额外的RL环境)
+
 # ROS2相关 (系统级安装，不通过pip)
 # ROS2 Related (System-level installation, not via pip)
 # rclpy              # ROS2 Python客户端库

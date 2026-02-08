@@ -68,7 +68,7 @@
     - 添加后端切换和配置管理功能
     - _需求: 需求 12.1, 12.2_
   
-  - [ ] 3.4 集成MuJoCo物理引擎
+  - [-] 3.4 集成MuJoCo物理引擎
     - 安装和配置MuJoCo Python绑定(mujoco-py或dm_control)
     - 实现URDF到MuJoCo XML的模型转换
     - 配置MuJoCo仿真参数和求解器设置
