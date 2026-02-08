@@ -32,6 +32,8 @@ find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(pybind11_vendor REQUIRED)
 find_package(pybind11 REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(TINYXML2 REQUIRED tinyxml2)
 
 # 包含目录
 include_directories(
@@ -41,14 +43,13 @@ include_directories(
 
 # C++库 - 数字孪生映射器
 add_library(digital_twin_mapper SHARED
-  src/digital_twin_mapper/constraint_analyzer.cpp
-  src/digital_twin_mapper/kinematic_solver.cpp
   src/digital_twin_mapper/digital_twin_mapper.cpp
 )
 
 target_include_directories(digital_twin_mapper PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
+  ${TINYXML2_INCLUDE_DIRS}
 )
 
 ament_target_dependencies(digital_twin_mapper
@@ -61,6 +62,8 @@ ament_target_dependencies(digital_twin_mapper
   urdf
   Eigen3
 )
+
+target_link_libraries(digital_twin_mapper ${TINYXML2_LIBRARIES})
 
 # Python绑定
 pybind11_add_module(digital_twin_mapper_py
