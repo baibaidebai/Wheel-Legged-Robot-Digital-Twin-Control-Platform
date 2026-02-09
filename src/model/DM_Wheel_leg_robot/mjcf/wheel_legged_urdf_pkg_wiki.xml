@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="wheel_legged_urdf_pkg">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/base_link.STL" />
+    <mesh name="left_front_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_front_motor_link.STL" />
+    <mesh name="left_l1_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_l1_link.STL" />
+    <mesh name="left_back_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_back_motor_link.STL" />
+    <mesh name="left_l4_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_l4_link.STL" />
+    <mesh name="left_l3_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_l3_link.STL" />
+    <mesh name="left_wheel_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/left_wheel_motor_link.STL" />
+    <mesh name="right_front_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_front_motor_link.STL" />
+    <mesh name="right_l1_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_l1_link.STL" />
+    <mesh name="right_back_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_back_motor_link.STL" />
+    <mesh name="right_l4_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_l4_link.STL" />
+    <mesh name="right_l3_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_l3_link.STL" />
+    <mesh name="right_wheel_motor_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/right_wheel_motor_link.STL" />
+    <mesh name="imu_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/imu_link.STL" />
+    <mesh name="lidar_link" content_type="model/stl" file="/home/lxh/workspace/Wheel-Legged Robot Digital Twin Control Platform/src/model/DM_Wheel_leg_robot/urdf/../meshes/lidar_link.STL" />
+  </asset>
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="0.00121783 -0.000210352 -2.21299e-05" quat="0.000976279 0.705876 -0.00106356 0.708334" mass="2.00186" diaginertia="0.00881403 0.00564171 0.00494171" />
+      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="base_link" />
+      <body name="left_front_motor_link" pos="0.042498 0.1395 0.00013155" quat="0.707105 -0.707107 -0.00117051 -0.00117051">
+        <inertial pos="0.0624437 0.000619326 0.0200325" quat="-0.00364572 0.689091 0.00346833 0.724657" mass="0.141618" diaginertia="0.000451664 0.000434087 2.90772e-05" />
+        <joint name="left_front_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+        <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_front_motor_link" />
+        <body name="left_l1_link" pos="0.14999 0.0015005 0.0238">
+          <inertial pos="-0.0951055 0.0731775 -0.0163" quat="0.227736 0.66943 -0.227736 0.66943" mass="0.177913" diaginertia="0.00109443 0.00106756 3.34802e-05" />
+          <joint name="left_l1_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+          <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_l1_link" />
+        </body>
+      </body>
+      <body name="left_back_motor_link" pos="-0.042501 0.1395 -0.00014986" quat="0.707105 -0.707107 -0.00117051 -0.00117051">
+        <inertial pos="-0.0749796 0.00369282 0.00747311" quat="0.0174332 0.707153 -0.0174461 0.706631" mass="0.11566" diaginertia="0.000338117 0.000320491 2.19202e-05" />
+        <joint name="left_back_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+        <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_back_motor_link" />
+        <body name="left_l4_link" pos="-0.14982 0.0073876 0.0062">
+          <inertial pos="0.128061 0.0924384 0.0178379" quat="-0.219451 0.666643 0.215468 0.678971" mass="0.248962" diaginertia="0.00202615 0.00195138 9.20923e-05" />
+          <joint name="left_l4_joint_link" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+          <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_l4_link" />
+          <body name="left_l3_link" pos="0.1946 0.14047 0.0088" quat="-3.67321e-06 0 0 1">
+            <inertial pos="-0.000243308 0.000117252 0.0403173" quat="0.326251 0.627076 -0.325076 0.628221" mass="0.115219" diaginertia="8.66986e-05 4.98449e-05 4.85324e-05" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_l3_link" />
+            <body name="left_wheel_motor_link" pos="0 0 0.0565" quat="-3.67321e-06 0 0 1">
+              <inertial pos="1.13168e-07 1.25858e-07 -0.0049972" quat="0.277254 0.650484 -0.277254 0.650484" mass="0.842051" diaginertia="0.00474413 0.00251026 0.00251012" />
+              <joint name="left_wheel_joint_link" pos="0 0 0" axis="0 0 -1" />
+              <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_wheel_motor_link" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_front_motor_link" pos="0.042501 -0.1395 0.00013156" quat="0.707105 0.707108 0 0">
+        <inertial pos="0.0623057 0.00415661 0.0200325" quat="-0.0240776 0.688719 0.0228974 0.724267" mass="0.141618" diaginertia="0.000451664 0.000434087 2.90772e-05" />
+        <joint name="right_front_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+        <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_front_motor_link" />
+        <body name="right_l1_link" pos="0.14967 0.0099718 0.0238" quat="0.999999 0 0 0.00165535">
+          <inertial pos="-0.0932955 -0.0754715 -0.0163" quat="-0.235869 0.666608 0.235869 0.666608" mass="0.177913" diaginertia="0.00109443 0.00106756 3.34802e-05" />
+          <joint name="right_l1_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+          <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_l1_link" />
+        </body>
+      </body>
+      <body name="right_back_motor_link" pos="-0.042498 -0.1395 -0.00014985" quat="0.707105 0.707107 -0.00117051 0.00117051">
+        <inertial pos="-0.0750172 -0.00291295 0.00747311" quat="-0.0137591 0.707234 0.0137693 0.706712" mass="0.11566" diaginertia="0.000338117 0.000320491 2.19202e-05" />
+        <joint name="right_back_joint_link" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+        <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_back_motor_link" />
+        <body name="right_l4_link" pos="-0.14989 -0.0058294 0.0062">
+          <inertial pos="0.130296 -0.0892597 0.0178379" quat="0.211083 0.669244 -0.207249 0.681619" mass="0.248962" diaginertia="0.00202615 0.00195138 9.20923e-05" />
+          <joint name="right_l4_joint_link" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" actuatorfrcrange="-111 111" />
+          <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_l4_link" />
+          <body name="right_l3_link" pos="0.198 -0.13564 0.0088">
+            <inertial pos="-2.80714e-05 -0.000268624 0.0403173" quat="0.626635 0.326185 -0.628256 0.325924" mass="0.115219" diaginertia="8.66986e-05 4.98449e-05 4.85324e-05" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_l3_link" />
+            <body name="right_wheel_motor_link" pos="0 0 0.0565">
+              <inertial pos="-6.16439e-08 -1.5763e-07 -0.0049972" quat="0.156466 0.689578 -0.156466 0.689578" mass="0.842052" diaginertia="0.00474413 0.00251026 0.00251012" />
+              <joint name="right_wheel_joint_link" pos="0 0 0" axis="0 0 -1" />
+              <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="right_wheel_motor_link" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="imu_link" pos="0.0086888 0.0615 0.021391" quat="0.999999 0 -0.00165535 0">
+        <inertial pos="-0.00295011 6.01879e-05 -0.00226781" quat="0.500827 0.500827 -0.499172 0.499172" mass="0.000634229" diaginertia="2.47222e-08 1.61792e-08 9.6997e-09" />
+        <geom type="mesh" rgba="1 1 1 1" mesh="imu_link" />
+      </body>
+      <body name="laser" pos="0.0450665 -0.000722222 0.10385" quat="0.999999 0 -0.00165536 0">
+        <inertial pos="-0.000295667 0 -0.00821757" quat="0.369989 0.603054 -0.369548 0.602385" mass="0.0619662" diaginertia="1.86074e-05 1.51833e-05 1.48942e-05" />
+        <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="lidar_link" />
+      </body>
+    </body>
+    <geom name="ground_plane" type="plane" size="5 5 10" material="MatPlane" rgba="1 1 1 1" />
+    <light pos="0 0 1000" castshadow="true" />
+  </worldbody>
+  <asset>
+    <texture name="texplane" builtin="checker" height="512" width="512" rgb1=".2 .3 .4" rgb2=".1 .15 .2" type="2d" />
+    <material name="MatPlane" reflectance="0.5" shininess="0.01" specular="0.1" texrepeat="1 1" texture="texplane" texuniform="true" />
+  </asset>
+</mujoco>

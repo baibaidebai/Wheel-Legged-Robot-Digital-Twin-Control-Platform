@@ -107,7 +107,7 @@ class GazeboLauncher:
         
         tk.Radiobutton(
             mode_frame,
-            text="安全模式 (推荐虚拟机)",
+            text="Gazebo - 安全模式 (推荐虚拟机)",
             variable=self.mode_var,
             value="safe",
             font=("Arial", 10)
@@ -115,7 +115,7 @@ class GazeboLauncher:
         
         tk.Radiobutton(
             mode_frame,
-            text="简单模式",
+            text="Gazebo - 简单模式",
             variable=self.mode_var,
             value="simple",
             font=("Arial", 10)
@@ -123,9 +123,17 @@ class GazeboLauncher:
         
         tk.Radiobutton(
             mode_frame,
-            text="标准模式",
+            text="Gazebo - 标准模式",
             variable=self.mode_var,
             value="standard",
+            font=("Arial", 10)
+        ).pack(anchor=tk.W, pady=3)
+        
+        tk.Radiobutton(
+            mode_frame,
+            text="MuJoCo - 原生URDF支持",
+            variable=self.mode_var,
+            value="mujoco",
             font=("Arial", 10)
         ).pack(anchor=tk.W, pady=3)
         
@@ -207,13 +215,71 @@ class GazeboLauncher:
         ).pack(side=tk.LEFT, padx=5)
         
     def launch_gazebo(self):
-        """启动Gazebo"""
+        """启动Gazebo或MuJoCo"""
         model = self.model_var.get()
         mode = self.mode_var.get()
         software_render = self.software_render_var.get()
         
         # 确认对话框
         model_name = "RM串联轮腿机器人" if model == "RM_Serial_Wheeled-leg_Robot" else "DM轮腿机器人"
+        
+        if mode == "mujoco":
+            mode_name = "MuJoCo"
+            self.launch_mujoco(model, model_name)
+        else:
+            mode_name = {"safe": "Gazebo安全模式", "simple": "Gazebo简单模式", "standard": "Gazebo标准模式"}[mode]
+            self.launch_gazebo_sim(model, model_name, mode, software_render)
+    
+    def launch_mujoco(self, model, model_name):
+        """启动MuJoCo"""
+        # 检查MuJoCo是否可用
+        try:
+            import subprocess
+            result = subprocess.run(
+                ["python3", "-c", "import mujoco"],
+                capture_output=True,
+                text=True
+            )
+            if result.returncode != 0:
+                messagebox.showerror(
+                    "MuJoCo未安装",
+                    "MuJoCo未安装或不可用。\n\n"
+                    "安装命令:\n"
+                    "pip install mujoco\n\n"
+                    "或使用Gazebo模式。"
+                )
+                return
+        except Exception as e:
+            messagebox.showerror("错误", f"检查MuJoCo时出错：\n\n{str(e)}")
+            return
+        
+        msg = f"即将启动MuJoCo仿真：\n\n"
+        msg += f"机器人：{model_name}\n"
+        msg += f"仿真器：MuJoCo (原生URDF支持)\n\n"
+        msg += "确认启动？"
+        
+        if not messagebox.askyesno("确认", msg):
+            return
+        
+        try:
+            messagebox.showinfo("启动中", f"正在启动 MuJoCo...\n\n{model_name}\n\nMuJoCo窗口将打开。")
+            
+            # 准备命令
+            model_arg = "rm" if model == "RM_Serial_Wheeled-leg_Robot" else "dm"
+            cmd = f'python3 tools/launch_mujoco.py --model {model_arg}'
+            
+            # 启动MuJoCo
+            terminal_cmd = f'gnome-terminal -- bash -c "{cmd}; echo; echo \'按Enter关闭...\'; read"'
+            
+            subprocess.Popen(terminal_cmd, shell=True)
+            
+            messagebox.showinfo("成功", "MuJoCo已启动！\n\n查看新打开的窗口。")
+            
+        except Exception as e:
+            messagebox.showerror("失败", f"启动MuJoCo出错：\n\n{str(e)}")
+    
+    def launch_gazebo_sim(self, model, model_name, mode, software_render):
+        """启动Gazebo"""
         mode_name = {"safe": "安全模式", "simple": "简单模式", "standard": "标准模式"}[mode]
         
         msg = f"即将启动Gazebo仿真：\n\n"
@@ -266,24 +332,30 @@ class GazeboLauncher:
     
     def show_help(self):
         """显示帮助信息"""
-        help_text = """Gazebo启动器帮助
+        help_text = """Gazebo/MuJoCo启动器帮助
 
 【机器人模型】
 • RM串联轮腿机器人 - 推荐
 • DM轮腿机器人 - 需先修复
 
 【启动模式】
+Gazebo:
 • 安全模式 - 虚拟机推荐
 • 简单模式 - 快速测试
 • 标准模式 - 物理机
 
+MuJoCo:
+• 原生URDF支持
+• 高性能物理仿真
+• 适合强化学习训练
+
 【高级选项】
-• 软件渲染 - 解决闪屏问题
+• 软件渲染 - 解决Gazebo闪屏
 
 【常见问题】
-1. 闪屏 → 安全模式+软件渲染
+1. Gazebo闪屏 → 安全模式+软件渲染
 2. DM无法加载 → 运行修复脚本
-3. 窗口不开 → 检查Gazebo安装
+3. MuJoCo不可用 → pip install mujoco
 
 更多帮助：docs/guides/
         """

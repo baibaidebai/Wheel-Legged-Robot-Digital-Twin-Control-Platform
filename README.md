@@ -26,19 +26,22 @@
 
 图形界面可以：
 - 选择机器人模型（RM或DM）
+- 选择仿真器（Gazebo或MuJoCo）
 - 选择启动模式（安全/简单/标准）
 - 配置高级选项
-- 一键启动Gazebo
+- 一键启动
 
 ### 方法2：命令行启动
 
-#### 第一步：安装Gazebo（首次使用必须）
+#### Gazebo仿真
+
+**第一步：安装Gazebo（首次使用必须）**
 
 ```bash
 ./tools/install_gazebo.sh
 ```
 
-#### 第二步：启动仿真
+**第二步：启动仿真**
 
 ```bash
 # 安全模式（推荐虚拟机）
@@ -50,6 +53,58 @@
 # 标准模式
 ./tools/launch_gazebo.sh
 ```
+
+#### MuJoCo仿真（MJCF格式）⭐
+
+**要求：** MuJoCo 2.3.0+（你的版本：3.4.0 ✅）
+
+**第一步：转换URDF到MJCF（首次使用必须）**
+
+我们提供两种转换方案：
+
+**方案 A：Wiki-GRx-MJCF（推荐，保留真实外观）**
+```bash
+# 1. 安装工具（首次使用）
+cd ~/workspace
+git clone https://github.com/FFTAI/Wiki-MJCF.git
+cd "Wheel-Legged Robot Digital Twin Control Platform"
+source venv/bin/activate
+pip install -e ~/workspace/Wiki-GRx-MJCF
+
+# 2. 转换模型
+python3 tools/test_wiki_mjcf.py
+```
+
+**方案 B：内置工具（简单可靠）**
+```bash
+# 转换RM机器人模型
+python3 tools/convert_urdf_to_mjcf.py --model rm
+
+# 转换DM机器人模型
+python3 tools/convert_urdf_to_mjcf.py --model dm
+```
+
+📚 **详细对比**：查看 [docs/mujoco_conversion_comparison.md](docs/mujoco_conversion_comparison.md)
+
+**第二步：启动仿真**
+
+```bash
+# 命令行启动
+./tools/launch_mujoco.sh
+
+# 或直接使用Python
+python3 tools/launch_mujoco.py --model rm  # RM机器人
+python3 tools/launch_mujoco.py --model dm  # DM机器人
+
+# 使用 Wiki-GRx-MJCF 生成的文件（保留真实外观）
+python3 tools/launch_mujoco.py --mjcf "src/model/RM_Serial_Wheeled-leg_Robot/mjcf/RM_Serial_Wheeled-leg_Robot_wiki.xml"
+```
+
+**MuJoCo优势：**
+- ✅ 高性能物理仿真
+- ✅ 适合强化学习训练
+- ✅ 交互式可视化
+- ✅ 两种转换方案可选（真实外观 vs 简单可靠）
 
 📚 详细说明：
 - [简单安装指南](docs/guides/GAZEBO_INSTALL_SIMPLE.md) - 3分钟快速安装 ⭐
