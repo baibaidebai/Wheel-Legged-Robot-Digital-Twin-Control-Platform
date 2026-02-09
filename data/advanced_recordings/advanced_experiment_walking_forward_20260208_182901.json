@@ -1,0 +1,8759 @@
+[
+  {
+    "timestamp": 1770546541.8513262,
+    "data_type": "metadata",
+    "data": {
+      "session_id": "session_1770546541_111719",
+      "start_time": 1770546541.8512616,
+      "experiment_name": "walking_forward",
+      "robot_model": "wheel_legged_robot",
+      "config": {
+        "output_directory": "./data/advanced_recordings",
+        "filename_prefix": "advanced_experiment",
+        "auto_timestamp": true,
+        "save_rosbag": false,
+        "save_csv": true,
+        "save_json": true,
+        "record_joint_states": true,
+        "record_imu_data": true,
+        "record_control_commands": true,
+        "record_system_states": true,
+        "max_buffer_size": 1000,
+        "flush_interval": 0.5,
+        "compression": true,
+        "include_metadata": true,
+        "metadata_fields": [
+          "timestamp",
+          "session_id",
+          "robot_model",
+          "experiment_name"
+        ]
+      },
+      "experiment_phase": "walking_forward",
+      "expected_duration": 2.0,
+      "description": "前进行走",
+      "test_conditions": "室内平地",
+      "robot_configuration": "标准配置"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.85187,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.0,
+        0.5,
+        6.123233995736766e-17,
+        -0.5
+      ],
+      "velocities": [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -1.0
+      ],
+      "efforts": [
+        0.0,
+        7.5,
+        9.18485099360515e-16,
+        -7.5
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.851906,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.05982011421431607,
+        -0.1779849946233002,
+        -0.13282782910528024
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.870184267621623
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8519175,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.03044041291018494,
+        0.4273082241965226,
+        0.06932322425662067,
+        -0.5298912050229069
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8519313,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.0,
+      "step": 0,
+      "time": 0.0,
+      "battery_level": 100.0,
+      "motor_temperature": 43.6352803987089
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8723621,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.1243449435824274,
+        0.4842915805643156,
+        -0.12434494358242729,
+        -0.48429158056431554
+      ],
+      "velocities": [
+        0.2486898871648548,
+        0.9685831611286312,
+        -0.24868988716485457,
+        -0.9685831611286311
+      ],
+      "efforts": [
+        1.865174153736411,
+        7.264373708464734,
+        -1.8651741537364093,
+        -7.264373708464733
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8724058,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.08184029599270318,
+        -0.03908682655583517,
+        -0.018123721166588527
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.612237026738478
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.872414,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.04328326774978766,
+        0.5876318623031189,
+        -0.11691488922230442,
+        -0.5049495822797763
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.872429,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.01,
+      "step": 1,
+      "time": 0.02,
+      "battery_level": 99.9,
+      "motor_temperature": 41.07935221117201
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8954263,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.24087683705085766,
+        0.43815334002193185,
+        -0.2408768370508575,
+        -0.4381533400219319
+      ],
+      "velocities": [
+        0.4817536741017153,
+        0.8763066800438637,
+        -0.481753674101715,
+        -0.8763066800438638
+      ],
+      "efforts": [
+        3.613152555762865,
+        6.572300100328977,
+        -3.6131525557628623,
+        -6.572300100328978
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8955116,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.0070267239067207865,
+        0.039153198358372346,
+        -0.04676724175316582
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.869136024069041
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.895524,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.2624730361765285,
+        0.49252534356743155,
+        -0.2874045322844311,
+        -0.47156649779895704
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.8955462,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.02,
+      "step": 2,
+      "time": 0.04,
+      "battery_level": 99.8,
+      "motor_temperature": 43.69041644744459
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9166067,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.3422735529643443,
+        0.3644843137107057,
+        -0.34227355296434436,
+        -0.3644843137107058
+      ],
+      "velocities": [
+        0.6845471059286886,
+        0.7289686274214114,
+        -0.6845471059286887,
+        -0.7289686274214116
+      ],
+      "efforts": [
+        5.134103294465165,
+        5.467264705660586,
+        -5.134103294465166,
+        -5.467264705660587
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9166622,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.04543399932819631,
+        -0.013227387360288384,
+        0.02575725604286623
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.627056755316298
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.916673,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.2563043121354066,
+        0.34100903631631124,
+        -0.31670750714168083,
+        -0.3436291122729502
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.91669,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.03,
+      "step": 3,
+      "time": 0.06,
+      "battery_level": 99.7,
+      "motor_temperature": 47.73204141685673
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9373875,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.42216396275100754,
+        0.26791339748949833,
+        -0.4221639627510074,
+        -0.26791339748949855
+      ],
+      "velocities": [
+        0.8443279255020151,
+        0.5358267949789967,
+        -0.8443279255020149,
+        -0.5358267949789971
+      ],
+      "efforts": [
+        6.332459441265113,
+        4.018700962342475,
+        -6.332459441265112,
+        -4.0187009623424785
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.937438,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.06312302809971213,
+        -0.10259056283962567,
+        0.04649590975044848
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.209746199524677
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9374478,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.458195734518957,
+        0.19869806818368024,
+        -0.4533125576155321,
+        -0.24997969729920896
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.937461,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.04,
+      "step": 4,
+      "time": 0.08,
+      "battery_level": 99.6,
+      "motor_temperature": 47.46962327089509
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9577262,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.47552825814757677,
+        0.15450849718747375,
+        -0.47552825814757677,
+        -0.1545084971874738
+      ],
+      "velocities": [
+        0.9510565162951535,
+        0.3090169943749475,
+        -0.9510565162951535,
+        -0.3090169943749476
+      ],
+      "efforts": [
+        7.132923872213651,
+        2.3176274578121063,
+        -7.132923872213651,
+        -2.317627457812107
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.957783,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.04566122731758963,
+        -0.17995237397560293,
+        -0.026177999378916007
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.28472768620692
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.957793,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4757275432095075,
+        0.16831089791374473,
+        -0.4255107974483219,
+        -0.15717942904290466
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9578075,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.05,
+      "step": 5,
+      "time": 0.1,
+      "battery_level": 99.5,
+      "motor_temperature": 48.88998653192654
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9782338,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4990133642141358,
+        0.03139525976465679,
+        -0.4990133642141358,
+        -0.03139525976465663
+      ],
+      "velocities": [
+        0.9980267284282716,
+        0.06279051952931358,
+        -0.9980267284282716,
+        -0.06279051952931326
+      ],
+      "efforts": [
+        7.485200463212037,
+        0.47092889646985187,
+        -7.485200463212037,
+        -0.4709288964698495
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.978319,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.20352665837139408,
+        0.0839588661789509,
+        0.09555751013639488
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.216294773226704
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9783347,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.520699796291382,
+        0.058127072174147185,
+        -0.4588195586488816,
+        0.031266984702244184
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9783623,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.06,
+      "step": 6,
+      "time": 0.12,
+      "battery_level": 99.4,
+      "motor_temperature": 40.18627868257179
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9995272,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4911436253643443,
+        -0.09369065729286238,
+        -0.4911436253643443,
+        0.09369065729286254
+      ],
+      "velocities": [
+        0.9822872507286886,
+        -0.18738131458572477,
+        -0.9822872507286886,
+        0.18738131458572507
+      ],
+      "efforts": [
+        7.3671543804651645,
+        -1.4053598593929357,
+        -7.3671543804651645,
+        1.405359859392938
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9995897,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.17213225118702286,
+        -0.05530061135848422,
+        0.028040912704397947
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.354619380574245
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9996064,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5643157908562365,
+        -0.11467482255743175,
+        -0.4866817932439354,
+        0.030981719827100337
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546541.9996276,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.07,
+      "step": 7,
+      "time": 0.14,
+      "battery_level": 99.3,
+      "motor_temperature": 44.15173568215091
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0200698,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.45241352623300973,
+        -0.21288964578253633,
+        -0.4524135262330098,
+        0.21288964578253627
+      ],
+      "velocities": [
+        0.9048270524660195,
+        -0.42577929156507266,
+        -0.9048270524660196,
+        0.42577929156507255
+      ],
+      "efforts": [
+        6.786202893495146,
+        -3.193344686738045,
+        -6.786202893495147,
+        3.193344686738044
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0201273,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.04193934027107172,
+        -0.09686989182417731,
+        0.1546454201078026
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.361335294214777
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.020139,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5166263491441379,
+        -0.3399080860830218,
+        -0.5020182943713445,
+        0.23704558976415582
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0201573,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.08,
+      "step": 8,
+      "time": 0.16,
+      "battery_level": 99.2,
+      "motor_temperature": 40.146528859889344
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0418153,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.3852566213878946,
+        -0.3187119948743448,
+        -0.3852566213878948,
+        0.3187119948743446
+      ],
+      "velocities": [
+        0.7705132427757893,
+        -0.6374239897486896,
+        -0.7705132427757896,
+        0.6374239897486892
+      ],
+      "efforts": [
+        5.778849320818419,
+        -4.780679923115172,
+        -5.778849320818422,
+        4.780679923115169
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0420544,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.09194510759224374,
+        -0.03875498965935532,
+        -0.08837883240723358
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.134489786370267
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0420818,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.3700530929221073,
+        -0.30303990211580994,
+        -0.3220196341847077,
+        0.3611014884315157
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.042147,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.09,
+      "step": 9,
+      "time": 0.18,
+      "battery_level": 99.1,
+      "motor_temperature": 40.901913123834596
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0624537,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.2938926261462366,
+        -0.40450849718747367,
+        -0.2938926261462367,
+        0.4045084971874736
+      ],
+      "velocities": [
+        0.5877852522924732,
+        -0.8090169943749473,
+        -0.5877852522924734,
+        0.8090169943749472
+      ],
+      "efforts": [
+        4.408389392193549,
+        -6.067627457812105,
+        -4.40838939219355,
+        6.0676274578121046
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0625315,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.011886550565573445,
+        0.0068877088275007495,
+        0.006772598316279016
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.03256567834836
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0625434,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.21817700671674362,
+        -0.410772055902778,
+        -0.3288287779708382,
+        0.3290891306852612
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0625606,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.1,
+      "step": 10,
+      "time": 0.2,
+      "battery_level": 99.0,
+      "motor_temperature": 45.79159489015766
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0832171,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.18406227634233907,
+        -0.46488824294412573,
+        -0.18406227634233893,
+        0.46488824294412573
+      ],
+      "velocities": [
+        0.36812455268467814,
+        -0.9297764858882515,
+        -0.36812455268467786,
+        0.9297764858882515
+      ],
+      "efforts": [
+        2.760934145135086,
+        -6.973323644161886,
+        -2.760934145135084,
+        6.973323644161886
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.083279,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.005834414179276282,
+        0.14559419525234055,
+        0.017535056349651905
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.98248157042828
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.0832927,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.19719833910986345,
+        -0.4156994580145269,
+        -0.11476768222524218,
+        0.4716049284980766
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.083312,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.11,
+      "step": 11,
+      "time": 0.22,
+      "battery_level": 98.9,
+      "motor_temperature": 41.166282346367986
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1036398,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.06266661678215227,
+        -0.4960573506572389,
+        -0.06266661678215232,
+        0.4960573506572389
+      ],
+      "velocities": [
+        0.12533323356430454,
+        -0.9921147013144778,
+        -0.12533323356430465,
+        0.9921147013144778
+      ],
+      "efforts": [
+        0.939999251732284,
+        -7.440860259858583,
+        -0.9399992517322848,
+        7.440860259858583
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.10373,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.01734831757288679,
+        0.023126205322789754,
+        -0.06876071978988903
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.609029786364315
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1037467,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.04668585751272009,
+        -0.3937887536490703,
+        -0.10765547848910174,
+        0.5729161820852147
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1037757,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.12,
+      "step": 12,
+      "time": 0.24,
+      "battery_level": 98.8,
+      "motor_temperature": 40.17916063101861
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1242328,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.06266661678215214,
+        -0.49605735065723894,
+        0.06266661678215209,
+        0.49605735065723894
+      ],
+      "velocities": [
+        -0.12533323356430429,
+        -0.9921147013144779,
+        0.12533323356430418,
+        0.9921147013144779
+      ],
+      "efforts": [
+        -0.9399992517322822,
+        -7.440860259858584,
+        0.9399992517322813,
+        7.440860259858584
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1243348,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.031305149590004126,
+        0.007463682026204653,
+        -0.0398719500879763
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.19538608727609
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1243515,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.12234749557042669,
+        -0.5165153159636031,
+        0.07690736092406097,
+        0.4333855665062673
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.124384,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.13,
+      "step": 13,
+      "time": 0.26,
+      "battery_level": 98.7,
+      "motor_temperature": 46.85624300070557
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1453204,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.18406227634233915,
+        -0.4648882429441256,
+        0.1840622763423391,
+        0.46488824294412584
+      ],
+      "velocities": [
+        -0.3681245526846783,
+        -0.9297764858882512,
+        0.3681245526846782,
+        0.9297764858882517
+      ],
+      "efforts": [
+        -2.7609341451350873,
+        -6.973323644161884,
+        2.7609341451350864,
+        6.973323644161888
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1455197,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.14411796603337204,
+        0.12420502456949145,
+        -0.030444319183157088
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.299429707475946
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1455326,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.18649825859892447,
+        -0.461538504349237,
+        0.13665720235499526,
+        0.4965627671084062
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1455503,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.14,
+      "step": 14,
+      "time": 0.28,
+      "battery_level": 98.6,
+      "motor_temperature": 48.048979431935365
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1661916,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.2938926261462365,
+        -0.4045084971874738,
+        0.29389262614623646,
+        0.40450849718747384
+      ],
+      "velocities": [
+        -0.587785252292473,
+        -0.8090169943749476,
+        0.5877852522924729,
+        0.8090169943749477
+      ],
+      "efforts": [
+        -4.4083893921935475,
+        -6.067627457812106,
+        4.408389392193547,
+        6.067627457812107
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1662462,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.10241966718028982,
+        0.12008799182983837,
+        0.02649615897126579
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.321119712475243
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.166259,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.3246526148885852,
+        -0.5126917252632784,
+        0.1771170173173261,
+        0.38800508832530484
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1662772,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.15,
+      "step": 15,
+      "time": 0.3,
+      "battery_level": 98.5,
+      "motor_temperature": 46.100634563042384
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1869583,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.3852566213878947,
+        -0.3187119948743448,
+        0.3852566213878946,
+        0.3187119948743449
+      ],
+      "velocities": [
+        -0.7705132427757894,
+        -0.6374239897486896,
+        0.7705132427757893,
+        0.6374239897486897
+      ],
+      "efforts": [
+        -5.77884932081842,
+        -4.780679923115172,
+        5.778849320818419,
+        4.780679923115173
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1870155,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.12426503785197329,
+        -0.05549914345563402,
+        -0.185441553645058
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        8.828881048332818
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1870272,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.356225815312772,
+        -0.22928809626122015,
+        0.3841241132374307,
+        0.33490641402716204
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.1870446,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.16,
+      "step": 16,
+      "time": 0.32,
+      "battery_level": 98.4,
+      "motor_temperature": 48.17745582026751
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.207613,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4524135262330099,
+        -0.2128896457825361,
+        0.45241352623300984,
+        0.21288964578253616
+      ],
+      "velocities": [
+        -0.9048270524660198,
+        -0.4257792915650722,
+        0.9048270524660197,
+        0.4257792915650723
+      ],
+      "efforts": [
+        -6.786202893495148,
+        -3.1933446867380417,
+        6.7862028934951475,
+        3.1933446867380426
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2077017,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.03682775702738242,
+        -0.09806533861168977,
+        0.03792292232660148
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.728837913521705
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2077134,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.43394172675537723,
+        -0.15681893629606267,
+        0.40099621370730754,
+        0.21870484199577564
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.207738,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.17,
+      "step": 17,
+      "time": 0.34,
+      "battery_level": 98.3,
+      "motor_temperature": 46.75963328655818
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2280912,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.49114362536434436,
+        -0.09369065729286234,
+        0.4911436253643443,
+        0.09369065729286197
+      ],
+      "velocities": [
+        -0.9822872507286887,
+        -0.18738131458572468,
+        0.9822872507286886,
+        0.18738131458572393
+      ],
+      "efforts": [
+        -7.367154380465165,
+        -1.405359859392935,
+        7.3671543804651645,
+        1.4053598593929295
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2281365,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.014396357698688479,
+        -0.0739509777774425,
+        0.17122096845288207
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.598969288618221
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2281456,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4823622992149885,
+        -0.11000476706304012,
+        0.52706737197837,
+        0.12258778509807862
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.22816,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.18,
+      "step": 18,
+      "time": 0.36,
+      "battery_level": 98.2,
+      "motor_temperature": 46.273506448744094
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2486844,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4990133642141358,
+        0.03139525976465639,
+        0.4990133642141358,
+        -0.031395259764656326
+      ],
+      "velocities": [
+        -0.9980267284282716,
+        0.06279051952931278,
+        0.9980267284282716,
+        -0.06279051952931265
+      ],
+      "efforts": [
+        -7.485200463212037,
+        0.4709288964698458,
+        7.485200463212037,
+        -0.47092889646984487
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2487545,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.057528045761730665,
+        -0.22047220627318287,
+        0.23479753064814035
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.074245194690274
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2487657,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.49143570015048693,
+        0.03908922630550882,
+        0.5149258093577146,
+        0.02179280844735098
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2487843,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.19,
+      "step": 19,
+      "time": 0.38,
+      "battery_level": 98.1,
+      "motor_temperature": 47.06654265449878
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2698493,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4755282581475768,
+        0.1545084971874736,
+        0.4755282581475768,
+        -0.15450849718747353
+      ],
+      "velocities": [
+        -0.9510565162951536,
+        0.3090169943749472,
+        0.9510565162951536,
+        -0.30901699437494706
+      ],
+      "efforts": [
+        -7.132923872213652,
+        2.3176274578121037,
+        7.132923872213652,
+        -2.3176274578121028
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2698996,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.1289533859361148,
+        -0.06564003802203887,
+        0.05104551918015038
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.413547773301412
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.269912,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.48061126179680025,
+        0.18528245138956656,
+        0.43279734482865573,
+        -0.1874384492117146
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2699296,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.2,
+      "step": 20,
+      "time": 0.4,
+      "battery_level": 98.0,
+      "motor_temperature": 47.18395502848515
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2903514,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.42216396275100776,
+        0.267913397489498,
+        0.422163962751008,
+        -0.2679133974894983
+      ],
+      "velocities": [
+        -0.8443279255020155,
+        0.535826794978996,
+        0.844327925502016,
+        -0.5358267949789965
+      ],
+      "efforts": [
+        -6.332459441265116,
+        4.01870096234247,
+        6.33245944126512,
+        -4.018700962342474
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2904072,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.09346038755491382,
+        0.0892030230278722,
+        -0.16750604144254863
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        8.333666490754519
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2904158,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.41682699276335833,
+        0.2767825292172159,
+        0.5286259349353247,
+        -0.3100337149054274
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.2904313,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.21,
+      "step": 21,
+      "time": 0.42,
+      "battery_level": 97.9,
+      "motor_temperature": 40.380325598383735
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3111467,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.3422735529643445,
+        0.3644843137107056,
+        0.3422735529643442,
+        -0.3644843137107053
+      ],
+      "velocities": [
+        -0.684547105928689,
+        0.7289686274214112,
+        0.6845471059286884,
+        -0.7289686274214106
+      ],
+      "efforts": [
+        -5.1341032944651674,
+        5.467264705660584,
+        5.134103294465163,
+        -5.467264705660579
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3112054,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.04602490527897138,
+        -0.08592285992869095,
+        0.0795029278691553
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.846825687808284
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.311215,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.40300116072715425,
+        0.3201199425188872,
+        0.3415725468927815,
+        -0.3884120210039678
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3112323,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.22,
+      "step": 22,
+      "time": 0.44,
+      "battery_level": 97.8,
+      "motor_temperature": 49.547110512455994
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3318522,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.24087683705085766,
+        0.4381533400219318,
+        0.2408768370508581,
+        -0.43815334002193196
+      ],
+      "velocities": [
+        -0.4817536741017153,
+        0.8763066800438636,
+        0.4817536741017162,
+        -0.8763066800438639
+      ],
+      "efforts": [
+        -3.613152555762865,
+        6.5723001003289765,
+        3.6131525557628716,
+        -6.572300100328979
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3319063,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.012809316489632828,
+        -0.07166580514699587,
+        0.14357562831472356
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.469001198029169
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.331918,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.22925417572678913,
+        0.36835842290572146,
+        0.23291798199907515,
+        -0.4179084971960943
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3319342,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.23,
+      "step": 23,
+      "time": 0.46,
+      "battery_level": 97.7,
+      "motor_temperature": 45.30092821893746
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.353249,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.12434494358242767,
+        0.4842915805643155,
+        0.12434494358242774,
+        -0.4842915805643155
+      ],
+      "velocities": [
+        -0.24868988716485535,
+        0.968583161128631,
+        0.2486898871648555,
+        -0.968583161128631
+      ],
+      "efforts": [
+        -1.865174153736415,
+        7.264373708464732,
+        1.8651741537364162,
+        -7.264373708464732
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3532884,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.006948469781096461,
+        0.05233358567114015,
+        0.10528191232437834
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        8.897481466886177
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3532994,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.11499128993130842,
+        0.4212598496571148,
+        0.12458910593310529,
+        -0.4743210177119412
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3533149,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.24,
+      "step": 24,
+      "time": 0.48,
+      "battery_level": 97.6,
+      "motor_temperature": 41.87363046176958
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3743877,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -1.2246467991473532e-16,
+        0.5,
+        1.8369701987210297e-16,
+        -0.5
+      ],
+      "velocities": [
+        -2.4492935982947064e-16,
+        1.0,
+        3.6739403974420594e-16,
+        -1.0
+      ],
+      "efforts": [
+        -1.83697019872103e-15,
+        7.5,
+        2.7554552980815444e-15,
+        -7.5
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3747563,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.13136075845910408,
+        -0.12552837879433243,
+        -0.040798820289753006
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.109278810548975
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.374793,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.0036803751196039397,
+        0.529373064093998,
+        0.058588921589434344,
+        -0.47153499580056957
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3748949,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.25,
+      "step": 25,
+      "time": 0.5,
+      "battery_level": 97.5,
+      "motor_temperature": 41.13193968329841
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.395139,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.12434494358242744,
+        0.48429158056431554,
+        -0.12434494358242738,
+        -0.4842915805643156
+      ],
+      "velocities": [
+        0.24868988716485488,
+        0.9685831611286311,
+        -0.24868988716485477,
+        -0.9685831611286312
+      ],
+      "efforts": [
+        1.8651741537364115,
+        7.264373708464733,
+        -1.8651741537364108,
+        -7.264373708464734
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3951955,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.0635009836522336,
+        -0.018210941781190818,
+        0.08182576671429721
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.100160267836502
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3952053,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.07286898636728115,
+        0.5212856407986296,
+        -0.20186710444519645,
+        -0.5231602285548959
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.3952203,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.26,
+      "step": 26,
+      "time": 0.52,
+      "battery_level": 97.4,
+      "motor_temperature": 45.0824785408116
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.415865,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.24087683705085783,
+        0.4381533400219317,
+        -0.24087683705085777,
+        -0.43815334002193174
+      ],
+      "velocities": [
+        0.48175367410171566,
+        0.8763066800438634,
+        -0.48175367410171555,
+        -0.8763066800438635
+      ],
+      "efforts": [
+        3.613152555762867,
+        6.572300100328976,
+        -3.6131525557628668,
+        -6.572300100328976
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4159355,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.032307162181424,
+        0.05592469127633364,
+        -0.028971243199856514
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.29732563661314
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.415949,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.1519124583807157,
+        0.40769252264395767,
+        -0.25401555248809815,
+        -0.48896697599430794
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4159672,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.27,
+      "step": 27,
+      "time": 0.54,
+      "battery_level": 97.3,
+      "motor_temperature": 44.267970047502914
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4364326,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.34227355296434464,
+        0.3644843137107055,
+        -0.3422735529643446,
+        -0.36448431371070555
+      ],
+      "velocities": [
+        0.6845471059286893,
+        0.728968627421411,
+        -0.6845471059286892,
+        -0.7289686274214111
+      ],
+      "efforts": [
+        5.134103294465169,
+        5.4672647056605825,
+        -5.134103294465168,
+        -5.467264705660583
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.436476,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.016993716826932466,
+        -0.03353999022039964,
+        0.09843835322428841
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.02861181208347
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4364843,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4136051062756187,
+        0.32076781385397113,
+        -0.26662511633989294,
+        -0.3892492333519704
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.436498,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.28,
+      "step": 28,
+      "time": 0.56,
+      "battery_level": 97.2,
+      "motor_temperature": 41.533025815571634
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4567916,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.42216396275100737,
+        0.2679133974894986,
+        -0.4221639627510073,
+        -0.26791339748949866
+      ],
+      "velocities": [
+        0.8443279255020147,
+        0.5358267949789972,
+        -0.8443279255020146,
+        -0.5358267949789973
+      ],
+      "efforts": [
+        6.332459441265111,
+        4.018700962342479,
+        -6.33245944126511,
+        -4.01870096234248
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4568455,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.24820712073240228,
+        0.03824485935741024,
+        -0.007524799014282592
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.452586673740631
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4568565,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.3597954850717827,
+        0.2215079728152113,
+        -0.40785652558365354,
+        -0.2177948894296679
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4568737,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.29,
+      "step": 29,
+      "time": 0.58,
+      "battery_level": 97.1,
+      "motor_temperature": 48.01115090789919
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4777784,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.47552825814757677,
+        0.1545084971874739,
+        -0.4755282581475767,
+        -0.15450849718747395
+      ],
+      "velocities": [
+        0.9510565162951535,
+        0.3090169943749478,
+        -0.9510565162951534,
+        -0.3090169943749479
+      ],
+      "efforts": [
+        7.132923872213651,
+        2.3176274578121085,
+        -7.1329238722136505,
+        -2.317627457812109
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4780264,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.015230918468349081,
+        -0.02778606017593655,
+        -0.002725670184391235
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.887043465048428
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4780574,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.42828732943778236,
+        0.06318162116403403,
+        -0.4336952139980461,
+        -0.21875309889196715
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.478132,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.3,
+      "step": 30,
+      "time": 0.6,
+      "battery_level": 97.0,
+      "motor_temperature": 47.65646647773232
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4984424,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4990133642141358,
+        0.031395259764656694,
+        -0.4990133642141358,
+        -0.031395259764656756
+      ],
+      "velocities": [
+        0.9980267284282716,
+        0.06279051952931339,
+        -0.9980267284282716,
+        -0.06279051952931351
+      ],
+      "efforts": [
+        7.485200463212037,
+        0.4709288964698504,
+        -7.485200463212037,
+        -0.47092889646985137
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4984958,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.15885949390828435,
+        0.09853681591499355,
+        -0.11342830403563789
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        8.926617509451049
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.498525,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4541960522322084,
+        0.036753936639840924,
+        -0.4913672628642223,
+        0.02724093910076894
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.4985414,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.31,
+      "step": 31,
+      "time": 0.62,
+      "battery_level": 96.9,
+      "motor_temperature": 44.36235600173876
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5192068,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4911436253643443,
+        -0.09369065729286248,
+        -0.4911436253643443,
+        0.09369065729286243
+      ],
+      "velocities": [
+        0.9822872507286886,
+        -0.18738131458572496,
+        -0.9822872507286886,
+        0.18738131458572485
+      ],
+      "efforts": [
+        7.3671543804651645,
+        -1.4053598593929373,
+        -7.3671543804651645,
+        1.4053598593929364
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5195706,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.009583280364108137,
+        -0.06104292125606497,
+        -0.12350844533285728
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.976585517889324
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5195928,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4955652043029665,
+        -0.12581211783557125,
+        -0.4437758147676616,
+        0.10629644269523497
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5196102,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.32,
+      "step": 32,
+      "time": 0.64,
+      "battery_level": 96.8,
+      "motor_temperature": 40.554983919385926
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.540675,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4524135262330096,
+        -0.21288964578253664,
+        -0.4524135262330096,
+        0.21288964578253658
+      ],
+      "velocities": [
+        0.9048270524660192,
+        -0.42577929156507327,
+        -0.9048270524660192,
+        0.42577929156507316
+      ],
+      "efforts": [
+        6.786202893495144,
+        -3.1933446867380497,
+        -6.786202893495144,
+        3.193344686738049
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5407643,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.2094557257838905,
+        -0.11703324498908539,
+        -0.1001866383269076
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.415824874531907
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5407798,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5237256736913912,
+        -0.24046783441097813,
+        -0.33949425040489273,
+        0.21456605406073362
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5408075,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.33,
+      "step": 33,
+      "time": 0.66,
+      "battery_level": 96.7,
+      "motor_temperature": 47.91281426553816
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5610628,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.3852566213878943,
+        -0.31871199487434526,
+        -0.3852566213878943,
+        0.3187119948743452
+      ],
+      "velocities": [
+        0.7705132427757886,
+        -0.6374239897486905,
+        -0.7705132427757886,
+        0.6374239897486904
+      ],
+      "efforts": [
+        5.778849320818415,
+        -4.780679923115179,
+        -5.778849320818415,
+        4.780679923115178
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.561105,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.022698591778593888,
+        0.12433378172155417,
+        0.06783756299050123
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.181444131515224
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5611124,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4399394229419492,
+        -0.27860266394663,
+        -0.3061110192626453,
+        0.26026087264442516
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5611246,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.34,
+      "step": 34,
+      "time": 0.68,
+      "battery_level": 96.6,
+      "motor_temperature": 40.63253379363462
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.58167,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.2938926261462367,
+        -0.4045084971874736,
+        -0.29389262614623674,
+        0.40450849718747356
+      ],
+      "velocities": [
+        0.5877852522924734,
+        -0.8090169943749472,
+        -0.5877852522924735,
+        0.8090169943749471
+      ],
+      "efforts": [
+        4.40838939219355,
+        -6.0676274578121046,
+        -4.408389392193551,
+        6.067627457812104
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5817337,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.15458935231492818,
+        -0.01594196233787434,
+        0.01031728800571042
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.856197664252694
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5817456,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.29397379070842294,
+        -0.40092822286914315,
+        -0.2987873750425445,
+        0.4231006164205715
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.5817666,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.35,
+      "step": 35,
+      "time": 0.7000000000000001,
+      "battery_level": 96.5,
+      "motor_temperature": 45.01569097156333
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6028793,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.184062276342339,
+        -0.4648882429441257,
+        -0.18406227634233904,
+        0.4648882429441257
+      ],
+      "velocities": [
+        0.368124552684678,
+        -0.9297764858882513,
+        -0.3681245526846781,
+        0.9297764858882513
+      ],
+      "efforts": [
+        2.7609341451350846,
+        -6.973323644161885,
+        -2.7609341451350855,
+        6.973323644161885
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6029296,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.05751132550625243,
+        -0.0035773922838047752,
+        -0.040103614117576465
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.893070038866181
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6029406,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.19926761694670603,
+        -0.4763008025670233,
+        -0.09057779223020157,
+        0.49964068408263207
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.602957,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.36,
+      "step": 36,
+      "time": 0.72,
+      "battery_level": 96.4,
+      "motor_temperature": 45.09020311340368
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6232095,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.06266661678215195,
+        -0.49605735065723894,
+        -0.062666616782152,
+        0.49605735065723894
+      ],
+      "velocities": [
+        0.1253332335643039,
+        -0.9921147013144779,
+        -0.125333233564304,
+        0.9921147013144779
+      ],
+      "efforts": [
+        0.9399992517322793,
+        -7.440860259858584,
+        -0.93999925173228,
+        7.440860259858584
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6232567,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.021985836666331617,
+        -0.07642350692991423,
+        -0.05834768766125913
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.818023550782366
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6232648,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.09779479827040272,
+        -0.505591582444338,
+        -0.10542475216663658,
+        0.4481073251644804
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6232789,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.37,
+      "step": 37,
+      "time": 0.74,
+      "battery_level": 96.3,
+      "motor_temperature": 41.717539891559824
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6435728,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.06266661678215159,
+        -0.496057350657239,
+        0.06266661678215152,
+        0.496057350657239
+      ],
+      "velocities": [
+        -0.12533323356430318,
+        -0.992114701314478,
+        0.12533323356430304,
+        0.992114701314478
+      ],
+      "efforts": [
+        -0.9399992517322738,
+        -7.440860259858585,
+        0.9399992517322728,
+        7.440860259858585
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6436343,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.11713775770936333,
+        0.035334437435888204,
+        0.04773127710974753
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.59016200723499
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6436458,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.08530942869072823,
+        -0.5531497003573338,
+        0.11071605488741984,
+        0.48370024813957224
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6436667,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.38,
+      "step": 38,
+      "time": 0.76,
+      "battery_level": 96.2,
+      "motor_temperature": 42.45896002389376
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6640701,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.18406227634233863,
+        -0.46488824294412584,
+        0.18406227634233857,
+        0.4648882429441259
+      ],
+      "velocities": [
+        -0.36812455268467725,
+        -0.9297764858882517,
+        0.36812455268467714,
+        0.9297764858882518
+      ],
+      "efforts": [
+        -2.7609341451350793,
+        -6.973323644161888,
+        2.7609341451350784,
+        6.973323644161889
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.664161,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.1126752709982397,
+        -8.822494798043854e-06,
+        -0.13637050543355833
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.828537414115226
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6641738,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.2844468750294847,
+        -0.4690295323875593,
+        0.20795766922466105,
+        0.5396815298436964
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6641886,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.39,
+      "step": 39,
+      "time": 0.78,
+      "battery_level": 96.1,
+      "motor_temperature": 41.220485402296596
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6853418,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.2938926261462364,
+        -0.40450849718747384,
+        0.29389262614623635,
+        0.4045084971874739
+      ],
+      "velocities": [
+        -0.5877852522924728,
+        -0.8090169943749477,
+        0.5877852522924727,
+        0.8090169943749478
+      ],
+      "efforts": [
+        -4.408389392193546,
+        -6.067627457812107,
+        4.408389392193545,
+        6.067627457812108
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6854281,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.1722963091534432,
+        0.06698086196740972,
+        0.03537802471300619
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.55532900051566
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6854432,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.2065361240003164,
+        -0.46359104161714937,
+        0.259274116718888,
+        0.448770793581607
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.6854687,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.4,
+      "step": 40,
+      "time": 0.8,
+      "battery_level": 96.0,
+      "motor_temperature": 44.67129950496471
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7060752,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.3852566213878946,
+        -0.3187119948743449,
+        0.38525662138789457,
+        0.31871199487434493
+      ],
+      "velocities": [
+        -0.7705132427757893,
+        -0.6374239897486897,
+        0.7705132427757891,
+        0.6374239897486899
+      ],
+      "efforts": [
+        -5.778849320818419,
+        -4.780679923115173,
+        5.778849320818418,
+        4.780679923115174
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7061622,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.036935991966765704,
+        0.12249537247200314,
+        0.04036407088416978
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.142682367096448
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7061772,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.31856518359091673,
+        -0.37759884304453,
+        0.4380020187357646,
+        0.3443049939835364
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7062025,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.41,
+      "step": 41,
+      "time": 0.8200000000000001,
+      "battery_level": 95.9,
+      "motor_temperature": 40.02982869176486
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7268465,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.45241352623300946,
+        -0.21288964578253702,
+        0.4524135262330094,
+        0.21288964578253708
+      ],
+      "velocities": [
+        -0.9048270524660189,
+        -0.42577929156507405,
+        0.9048270524660188,
+        0.42577929156507416
+      ],
+      "efforts": [
+        -6.786202893495142,
+        -3.1933446867380555,
+        6.786202893495141,
+        3.1933446867380564
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7268908,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.0116172164390569,
+        -0.16935828475941778,
+        -0.08818686033822366
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.997077800660726
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.726899,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4288069156549932,
+        -0.19164859225174574,
+        0.44992117262349707,
+        0.22430666492225634
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7269125,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.42,
+      "step": 42,
+      "time": 0.84,
+      "battery_level": 95.8,
+      "motor_temperature": 46.31960986761329
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7473724,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.49114362536434425,
+        -0.0936906572928629,
+        0.49114362536434425,
+        0.09369065729286297
+      ],
+      "velocities": [
+        -0.9822872507286885,
+        -0.1873813145857258,
+        0.9822872507286885,
+        0.18738131458572593
+      ],
+      "efforts": [
+        -7.367154380465164,
+        -1.4053598593929435,
+        7.367154380465164,
+        1.4053598593929446
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7474551,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.1171495461523219,
+        -0.05491636856815096,
+        0.18926169488881037
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.121533321397296
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7474694,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.5282006332771262,
+        -0.11876489887124975,
+        0.5408544959527684,
+        -0.06240879424296486
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7474914,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.43,
+      "step": 43,
+      "time": 0.86,
+      "battery_level": 95.7,
+      "motor_temperature": 44.30474614606705
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7685437,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4990133642141358,
+        0.031395259764656264,
+        0.49901336421413583,
+        -0.0313952597646562
+      ],
+      "velocities": [
+        -0.9980267284282716,
+        0.06279051952931253,
+        0.9980267284282717,
+        -0.0627905195293124
+      ],
+      "efforts": [
+        -7.485200463212037,
+        0.4709288964698439,
+        7.4852004632120375,
+        -0.47092889646984304
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7685966,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.12255463217049758,
+        -0.15910484900356675,
+        -0.011751550060396028
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.305307202975449
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.768609,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.5435383105548617,
+        0.02595304911370216,
+        0.48453257271462924,
+        -0.04452505274828359
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7686234,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.44,
+      "step": 44,
+      "time": 0.88,
+      "battery_level": 95.6,
+      "motor_temperature": 43.88577635850655
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7889953,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4755282581475769,
+        0.15450849718747348,
+        0.4755282581475769,
+        -0.15450849718747256
+      ],
+      "velocities": [
+        -0.9510565162951538,
+        0.30901699437494695,
+        0.9510565162951538,
+        -0.3090169943749451
+      ],
+      "efforts": [
+        -7.132923872213653,
+        2.3176274578121023,
+        7.132923872213653,
+        -2.3176274578120886
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7890406,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.12758566834904503,
+        0.14174414645362748,
+        -0.041191915916913256
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.043720706425681
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7890494,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4842181444074595,
+        0.15727654941160238,
+        0.4442975338167011,
+        -0.13295241617962136
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.7890625,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.45,
+      "step": 45,
+      "time": 0.9,
+      "battery_level": 95.5,
+      "motor_temperature": 41.597415354749245
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8104353,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.42216396275100754,
+        0.2679133974894982,
+        0.4221639627510076,
+        -0.2679133974894982
+      ],
+      "velocities": [
+        -0.8443279255020151,
+        0.5358267949789964,
+        0.8443279255020152,
+        -0.5358267949789964
+      ],
+      "efforts": [
+        -6.332459441265113,
+        4.018700962342473,
+        6.332459441265114,
+        -4.018700962342473
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8107312,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.14836590594912613,
+        -0.013145906451084103,
+        -0.006241111016497096
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.231634573240802
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8107653,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4315888569480332,
+        0.24629355962604832,
+        0.44934472736009046,
+        -0.23576575937076613
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.810846,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.46,
+      "step": 46,
+      "time": 0.92,
+      "battery_level": 95.4,
+      "motor_temperature": 49.388248229764145
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.831494,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.34227355296434425,
+        0.36448431371070583,
+        0.3422735529643443,
+        -0.3644843137107064
+      ],
+      "velocities": [
+        -0.6845471059286885,
+        0.7289686274214117,
+        0.6845471059286886,
+        -0.7289686274214128
+      ],
+      "efforts": [
+        -5.134103294465164,
+        5.467264705660588,
+        5.134103294465165,
+        -5.467264705660596
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8315516,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.019813837325028106,
+        0.012890414026529585,
+        0.15513841431872694
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.573183744078149
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8315644,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.3425215962090062,
+        0.41179441911100007,
+        0.4105560804674009,
+        -0.4197782073148421
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8315835,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.47,
+      "step": 47,
+      "time": 0.9400000000000001,
+      "battery_level": 95.3,
+      "motor_temperature": 40.37850374014035
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8521903,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.24087683705085816,
+        0.4381533400219315,
+        0.24087683705085822,
+        -0.4381533400219319
+      ],
+      "velocities": [
+        -0.4817536741017163,
+        0.876306680043863,
+        0.48175367410171643,
+        -0.8763066800438638
+      ],
+      "efforts": [
+        -3.6131525557628725,
+        6.572300100328973,
+        3.6131525557628734,
+        -6.572300100328978
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8522456,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.030509930610439242,
+        -0.0627828829400456,
+        -0.00747653526305364
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.740426040956853
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8522546,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.2250541537475605,
+        0.4034960638769064,
+        0.24379349019860033,
+        -0.49964861937737926
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.85227,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.48,
+      "step": 48,
+      "time": 0.96,
+      "battery_level": 95.2,
+      "motor_temperature": 43.84828941572357
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8747783,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.1243449435824278,
+        0.4842915805643154,
+        0.12434494358242786,
+        -0.4842915805643154
+      ],
+      "velocities": [
+        -0.2486898871648556,
+        0.9685831611286309,
+        0.2486898871648557,
+        -0.9685831611286309
+      ],
+      "efforts": [
+        -1.865174153736417,
+        7.264373708464731,
+        1.865174153736418,
+        -7.264373708464731
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8750255,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.04439482664867603,
+        -0.018224968334395103,
+        0.04128617181610061
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.553478226406527
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8750556,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.13827045618503112,
+        0.43726373703442845,
+        0.18951003372824754,
+        -0.4890142831270089
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8751214,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.49,
+      "step": 49,
+      "time": 0.98,
+      "battery_level": 95.1,
+      "motor_temperature": 47.86353202418421
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.895696,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -2.4492935982947064e-16,
+        0.5,
+        3.061616997868383e-16,
+        -0.5
+      ],
+      "velocities": [
+        -4.898587196589413e-16,
+        1.0,
+        6.123233995736766e-16,
+        -1.0
+      ],
+      "efforts": [
+        -3.67394039744206e-15,
+        7.5,
+        4.592425496802574e-15,
+        -7.5
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.895742,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.04408975212925939,
+        -0.09723789777846478,
+        0.12960815493562014
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.671271212901937
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8957503,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.007680565300857996,
+        0.5089154767338139,
+        0.05529460166979999,
+        -0.5014454956851517
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.8957639,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.5,
+      "step": 50,
+      "time": 1.0,
+      "battery_level": 95.0,
+      "motor_temperature": 46.58538675076921
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9162526,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.12434494358242733,
+        0.4842915805643156,
+        -0.12434494358242726,
+        -0.4842915805643156
+      ],
+      "velocities": [
+        0.24868988716485466,
+        0.9685831611286312,
+        -0.24868988716485452,
+        -0.9685831611286312
+      ],
+      "efforts": [
+        1.86517415373641,
+        7.264373708464734,
+        -1.8651741537364088,
+        -7.264373708464734
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.916339,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.07308810773420867,
+        0.06959607237055106,
+        0.012195864988298433
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.783243288650025
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.91635,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.12493113223302416,
+        0.4383938129005265,
+        -0.16760373807425102,
+        -0.4998012861343404
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9163744,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.51,
+      "step": 51,
+      "time": 1.02,
+      "battery_level": 94.9,
+      "motor_temperature": 43.26303160841805
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9368465,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.24087683705085772,
+        0.43815334002193174,
+        -0.24087683705085766,
+        -0.43815334002193135
+      ],
+      "velocities": [
+        0.48175367410171543,
+        0.8763066800438635,
+        -0.4817536741017153,
+        -0.8763066800438627
+      ],
+      "efforts": [
+        3.613152555762866,
+        6.572300100328976,
+        -3.613152555762865,
+        -6.57230010032897
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9368994,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.05020209973888471,
+        -0.035425347901602615,
+        -0.19320092449686194
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.953906564131714
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9369135,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.2598352252719719,
+        0.3862437316110084,
+        -0.1676523988029983,
+        -0.4599135738733556
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9369314,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.52,
+      "step": 52,
+      "time": 1.04,
+      "battery_level": 94.8,
+      "motor_temperature": 43.58559207126598
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9571185,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.34227355296434453,
+        0.3644843137107056,
+        -0.34227355296434386,
+        -0.36448431371070567
+      ],
+      "velocities": [
+        0.6845471059286891,
+        0.7289686274214112,
+        -0.6845471059286877,
+        -0.7289686274214113
+      ],
+      "efforts": [
+        5.134103294465168,
+        5.467264705660584,
+        -5.134103294465158,
+        -5.467264705660585
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9571698,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.03055048396922528,
+        -0.0015926433552452273,
+        0.06089021992038718
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.202669975744385
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.957184,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4108303804035795,
+        0.24920864926808506,
+        -0.3021095610949952,
+        -0.44203955278572726
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9572017,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.53,
+      "step": 53,
+      "time": 1.06,
+      "battery_level": 94.7,
+      "motor_temperature": 46.66648178131456
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.977509,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.42216396275100776,
+        0.26791339748949794,
+        -0.42216396275100776,
+        -0.2679133974894988
+      ],
+      "velocities": [
+        0.8443279255020155,
+        0.5358267949789959,
+        -0.8443279255020155,
+        -0.5358267949789975
+      ],
+      "efforts": [
+        6.332459441265116,
+        4.018700962342469,
+        -6.332459441265116,
+        -4.018700962342481
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.977601,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.05920332091987858,
+        -0.18404366289839968,
+        0.0005663974823569336
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.211842257816938
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9776163,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.47423333047601113,
+        0.27841274238167324,
+        -0.4801342157151493,
+        -0.2694493460026195
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9776416,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.54,
+      "step": 54,
+      "time": 1.08,
+      "battery_level": 94.6,
+      "motor_temperature": 49.943128030152145
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9981248,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.475528258147577,
+        0.15450849718747314,
+        -0.4755282581475772,
+        -0.1545084971874732
+      ],
+      "velocities": [
+        0.951056516295154,
+        0.3090169943749463,
+        -0.9510565162951544,
+        -0.3090169943749464
+      ],
+      "efforts": [
+        7.132923872213655,
+        2.317627457812097,
+        -7.1329238722136585,
+        -2.317627457812098
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.998181,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.026148426730376307,
+        0.16060525523172978,
+        0.09518291443371014
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.138802111278265
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9981933,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4709595326659304,
+        0.10207329275935496,
+        -0.54373944322533,
+        -0.13607955891095286
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546542.9982111,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.55,
+      "step": 55,
+      "time": 1.1,
+      "battery_level": 94.5,
+      "motor_temperature": 45.22582829023023
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0188727,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.49901336421413583,
+        0.03139525976465593,
+        -0.49901336421413583,
+        -0.031395259764655105
+      ],
+      "velocities": [
+        0.9980267284282717,
+        0.06279051952931186,
+        -0.9980267284282717,
+        -0.06279051952931021
+      ],
+      "efforts": [
+        7.4852004632120375,
+        0.47092889646983893,
+        -7.4852004632120375,
+        -0.47092889646982655
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0189195,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.16046610675240733,
+        0.04086644646506735,
+        -0.11747565313797002
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.938882516323469
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0189278,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4399147129443603,
+        0.07133933052122943,
+        -0.46086925232931664,
+        -0.009824062479259928
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0189412,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.56,
+      "step": 56,
+      "time": 1.12,
+      "battery_level": 94.4,
+      "motor_temperature": 47.34467858151466
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0411327,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4911436253643443,
+        -0.09369065729286236,
+        -0.49114362536434436,
+        0.09369065729286317
+      ],
+      "velocities": [
+        0.9822872507286886,
+        -0.1873813145857247,
+        -0.9822872507286887,
+        0.18738131458572635
+      ],
+      "efforts": [
+        7.3671543804651645,
+        -1.4053598593929353,
+        -7.367154380465165,
+        1.4053598593929477
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.041198,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.01024438743049584,
+        0.0011570965359209266,
+        0.05070713174657681
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.389658013124208
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0412104,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.40884018463418853,
+        -0.1048470590170943,
+        -0.4354011141763678,
+        0.05031610052388599
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0412333,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.57,
+      "step": 57,
+      "time": 1.1400000000000001,
+      "battery_level": 94.3,
+      "motor_temperature": 48.93195113719205
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.061465,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.45241352623301,
+        -0.21288964578253491,
+        -0.45241352623301007,
+        0.21288964578253647
+      ],
+      "velocities": [
+        0.90482705246602,
+        -0.42577929156506983,
+        -0.9048270524660201,
+        0.42577929156507294
+      ],
+      "efforts": [
+        6.78620289349515,
+        -3.1933446867380235,
+        -6.786202893495151,
+        3.193344686738047
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0615108,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.06267465094335678,
+        -0.014127369121528103,
+        -0.1501700315821356
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.578179136585904
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.061519,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.449197789007971,
+        -0.24222069593564952,
+        -0.4304386194323231,
+        0.24691637100051236
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0615325,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.58,
+      "step": 58,
+      "time": 1.16,
+      "battery_level": 94.2,
+      "motor_temperature": 40.70349955498227
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0827055,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.3852566213878949,
+        -0.3187119948743445,
+        -0.3852566213878955,
+        0.31871199487434443
+      ],
+      "velocities": [
+        0.7705132427757898,
+        -0.637423989748689,
+        -0.770513242775791,
+        0.6374239897486889
+      ],
+      "efforts": [
+        5.7788493208184235,
+        -4.7806799231151675,
+        -5.778849320818432,
+        4.780679923115167
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.08277,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.09044587883979995,
+        -0.07329441045158086,
+        -0.15511105582865925
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.170722559297177
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0827873,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4759378698269,
+        -0.3179628302955805,
+        -0.43802223416402214,
+        0.37602047582316245
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.0828097,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.59,
+      "step": 59,
+      "time": 1.18,
+      "battery_level": 94.1,
+      "motor_temperature": 45.263539013792524
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1031036,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.2938926261462368,
+        -0.40450849718747406,
+        -0.29389262614623685,
+        0.40450849718747295
+      ],
+      "velocities": [
+        0.5877852522924736,
+        -0.8090169943749481,
+        -0.5877852522924737,
+        0.8090169943749459
+      ],
+      "efforts": [
+        4.408389392193552,
+        -6.067627457812111,
+        -4.408389392193553,
+        6.067627457812094
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.103145,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.07249103948486367,
+        0.2814787865644919,
+        -0.15447864042733955
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.01165172806712
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.103153,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.44936021279730043,
+        -0.3680876345314357,
+        -0.29609811948260295,
+        0.3733669221821824
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1031651,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.6,
+      "step": 60,
+      "time": 1.2,
+      "battery_level": 94.0,
+      "motor_temperature": 46.74296545426364
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1234262,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.1840622763423391,
+        -0.4648882429441257,
+        -0.18406227634233832,
+        0.4648882429441256
+      ],
+      "velocities": [
+        0.3681245526846782,
+        -0.9297764858882513,
+        -0.36812455268467664,
+        0.9297764858882512
+      ],
+      "efforts": [
+        2.7609341451350864,
+        -6.973323644161885,
+        -2.760934145135075,
+        6.973323644161884
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1234722,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.030703830590922833,
+        -0.2028749878506386,
+        0.0009776340432682948
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.92336136958278
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1234827,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.11425463099860755,
+        -0.5306061852134657,
+        -0.3623631227314127,
+        0.4833421073491558
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1234987,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.61,
+      "step": 61,
+      "time": 1.22,
+      "battery_level": 93.9,
+      "motor_temperature": 45.553100922477746
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1436896,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.06266661678215207,
+        -0.4960573506572388,
+        -0.06266661678215213,
+        0.49605735065723905
+      ],
+      "velocities": [
+        0.12533323356430415,
+        -0.9921147013144777,
+        -0.12533323356430426,
+        0.9921147013144781
+      ],
+      "efforts": [
+        0.939999251732281,
+        -7.4408602598585825,
+        -0.9399992517322819,
+        7.440860259858586
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1437585,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.004948265947970014,
+        -0.11311064464985479,
+        0.008560209086267496
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.080915859844962
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1437724,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.017653865440952293,
+        -0.5595962869376221,
+        -0.1725151648359039,
+        0.5609820471500268
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1437905,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.62,
+      "step": 62,
+      "time": 1.24,
+      "battery_level": 93.8,
+      "motor_temperature": 47.74155418187967
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.164551,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.06266661678215146,
+        -0.4960573506572391,
+        0.06266661678215141,
+        0.4960573506572389
+      ],
+      "velocities": [
+        -0.12533323356430293,
+        -0.9921147013144782,
+        0.12533323356430282,
+        0.9921147013144778
+      ],
+      "efforts": [
+        -0.939999251732272,
+        -7.440860259858587,
+        0.9399992517322711,
+        7.440860259858583
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1645942,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.06447408012690707,
+        0.026226751346407534,
+        0.005297960065863592
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.71399020622347
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1646018,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.11751286010439457,
+        -0.4212582233150103,
+        0.13142016676316776,
+        0.5106363375062252
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1646154,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.63,
+      "step": 63,
+      "time": 1.26,
+      "battery_level": 93.7,
+      "motor_temperature": 44.36404903813576
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1852975,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.18406227634233935,
+        -0.46488824294412523,
+        0.1840622763423393,
+        0.4648882429441259
+      ],
+      "velocities": [
+        -0.3681245526846787,
+        -0.9297764858882505,
+        0.3681245526846786,
+        0.9297764858882518
+      ],
+      "efforts": [
+        -2.7609341451350904,
+        -6.973323644161878,
+        2.7609341451350895,
+        6.973323644161889
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.185384,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.070475004086208,
+        -0.18893495942776126,
+        0.03641215108983887
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.113013765409288
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.185397,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.17111405000731403,
+        -0.33758183087208526,
+        0.17611368286125542,
+        0.4711909258473623
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.1854203,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.64,
+      "step": 64,
+      "time": 1.28,
+      "battery_level": 93.6,
+      "motor_temperature": 41.60144287221365
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2061741,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.2938926261462363,
+        -0.4045084971874734,
+        0.29389262614623624,
+        0.4045084971874745
+      ],
+      "velocities": [
+        -0.5877852522924726,
+        -0.8090169943749468,
+        0.5877852522924725,
+        0.809016994374949
+      ],
+      "efforts": [
+        -4.408389392193544,
+        -6.067627457812101,
+        4.408389392193543,
+        6.067627457812118
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2062154,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.16981363403525507,
+        0.009007852186707448,
+        -0.03528460154756657
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.538385961029231
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.206224,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.24328079748296313,
+        -0.4519140954213101,
+        0.27048297985259534,
+        0.4548741244063066
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2062366,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.65,
+      "step": 65,
+      "time": 1.3,
+      "battery_level": 93.5,
+      "motor_temperature": 40.50684394338514
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.226486,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.38525662138789507,
+        -0.318711994874345,
+        0.38525662138789507,
+        0.31871199487434365
+      ],
+      "velocities": [
+        -0.7705132427757901,
+        -0.63742398974869,
+        0.7705132427757901,
+        0.6374239897486873
+      ],
+      "efforts": [
+        -5.778849320818426,
+        -4.780679923115175,
+        5.778849320818426,
+        4.780679923115155
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.226537,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.008875208834511782,
+        0.014382613221373809,
+        0.023644559243678573
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.912655413183332
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2265487,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.38791681643172865,
+        -0.3714069180394195,
+        0.39990346750103345,
+        0.33380876771119855
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2265651,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.66,
+      "step": 66,
+      "time": 1.32,
+      "battery_level": 93.4,
+      "motor_temperature": 47.59428063649143
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2471268,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4524135262330098,
+        -0.21288964578253713,
+        0.45241352623300973,
+        0.21288964578253558
+      ],
+      "velocities": [
+        -0.9048270524660196,
+        -0.42577929156507427,
+        0.9048270524660195,
+        0.42577929156507116
+      ],
+      "efforts": [
+        -6.786202893495147,
+        -3.193344686738057,
+        6.786202893495146,
+        3.1933446867380337
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.247183,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.09891942154356814,
+        0.06429723305289368,
+        0.053171582104336305
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.4533196308449
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2471957,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4590955128453586,
+        -0.2934900777917953,
+        0.34979608054451017,
+        0.13658022832015815
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.247223,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.67,
+      "step": 67,
+      "time": 1.34,
+      "battery_level": 93.3,
+      "motor_temperature": 41.577369603906064
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2675111,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4911436253643445,
+        -0.0936906572928604,
+        0.4911436253643445,
+        0.0936906572928622
+      ],
+      "velocities": [
+        -0.982287250728689,
+        -0.1873813145857208,
+        0.982287250728689,
+        0.1873813145857244
+      ],
+      "efforts": [
+        -7.367154380465168,
+        -1.405359859392906,
+        7.367154380465168,
+        1.405359859392933
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2675576,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.11474659816877252,
+        0.09418221362063257,
+        -0.3375157889568078
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.471109727002348
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2675667,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4381613836049153,
+        -0.04457670139748192,
+        0.6430721109728605,
+        0.11979625662326145
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2675812,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.68,
+      "step": 68,
+      "time": 1.36,
+      "battery_level": 93.2,
+      "motor_temperature": 41.99417936146736
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2882562,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4990133642141358,
+        0.031395259764657915,
+        0.4990133642141358,
+        -0.03139525976465608
+      ],
+      "velocities": [
+        -0.9980267284282716,
+        0.06279051952931583,
+        0.9980267284282716,
+        -0.06279051952931217
+      ],
+      "efforts": [
+        -7.485200463212037,
+        0.47092889646986874,
+        7.485200463212037,
+        -0.47092889646984126
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2883,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.009783110323379572,
+        0.11983915470964449,
+        0.062335700682706253
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.905660806697158
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2883081,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.587682450265627,
+        0.11936758813144865,
+        0.5197172597988035,
+        -0.00814760713645445
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.2883217,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.69,
+      "step": 69,
+      "time": 1.3800000000000001,
+      "battery_level": 93.1,
+      "motor_temperature": 47.4558092290719
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3101506,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4755282581475769,
+        0.1545084971874742,
+        0.47552825814757693,
+        -0.15450849718747245
+      ],
+      "velocities": [
+        -0.9510565162951538,
+        0.3090169943749484,
+        0.9510565162951539,
+        -0.3090169943749449
+      ],
+      "efforts": [
+        -7.132923872213653,
+        2.317627457812113,
+        7.132923872213654,
+        -2.317627457812087
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3102205,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.04964720352596125,
+        0.03085523203590715,
+        -0.08488492264903476
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.011028256903275
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3102343,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.47624240138451845,
+        0.10439311679405827,
+        0.38042719891543697,
+        -0.15799629794367484
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3102562,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.7,
+      "step": 70,
+      "time": 1.4000000000000001,
+      "battery_level": 93.0,
+      "motor_temperature": 49.68019609108818
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.330531,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4221639627510081,
+        0.26791339748949816,
+        0.42216396275100815,
+        -0.2679133974894966
+      ],
+      "velocities": [
+        -0.8443279255020162,
+        0.5358267949789963,
+        0.8443279255020163,
+        -0.5358267949789932
+      ],
+      "efforts": [
+        -6.332459441265121,
+        4.018700962342472,
+        6.332459441265122,
+        -4.018700962342449
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3305984,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.1633465547062021,
+        -0.02969301992442787,
+        -0.09815111156514672
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.439967494445856
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.33061,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.4816202970229731,
+        0.23163264056701705,
+        0.4226282970938054,
+        -0.21076971949250425
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3306286,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.71,
+      "step": 71,
+      "time": 1.42,
+      "battery_level": 92.9,
+      "motor_temperature": 49.288140591867055
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.351081,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.3422735529643443,
+        0.3644843137107051,
+        0.34227355296434436,
+        -0.36448431371070633
+      ],
+      "velocities": [
+        -0.6845471059286886,
+        0.7289686274214102,
+        0.6845471059286887,
+        -0.7289686274214127
+      ],
+      "efforts": [
+        -5.134103294465165,
+        5.467264705660576,
+        5.134103294465166,
+        -5.467264705660595
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3511431,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.047959881740310045,
+        0.13734807250837597,
+        0.03283208829064179
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.273243809945448
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3511548,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.32493566072715485,
+        0.36859583351123576,
+        0.3100654939934269,
+        -0.4216789150807384
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3511791,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.72,
+      "step": 72,
+      "time": 1.44,
+      "battery_level": 92.8,
+      "motor_temperature": 46.02225882302318
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3713667,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.24087683705085827,
+        0.438153340021931,
+        0.24087683705085833,
+        -0.43815334002193185
+      ],
+      "velocities": [
+        -0.48175367410171654,
+        0.876306680043862,
+        0.48175367410171666,
+        -0.8763066800438637
+      ],
+      "efforts": [
+        -3.6131525557628743,
+        6.572300100328965,
+        3.6131525557628748,
+        -6.572300100328977
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.371418,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.09063993017775131,
+        0.0221479464706419,
+        -0.01595511322997302
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.751762239528695
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3714306,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.292614742625921,
+        0.4331106826688695,
+        0.2398073904230515,
+        -0.4402745081952789
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3714476,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.73,
+      "step": 73,
+      "time": 1.46,
+      "battery_level": 92.7,
+      "motor_temperature": 46.62639632301584
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3929136,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.12434494358242705,
+        0.48429158056431587,
+        0.12434494358242712,
+        -0.4842915805643154
+      ],
+      "velocities": [
+        -0.2486898871648541,
+        0.9685831611286317,
+        0.24868988716485424,
+        -0.9685831611286309
+      ],
+      "efforts": [
+        -1.8651741537364057,
+        7.264373708464738,
+        1.8651741537364068,
+        -7.264373708464731
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3929555,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.030751106521025397,
+        0.07022791778301046,
+        -0.17932688276654596
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.890219260221722
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3929863,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.0330542335599712,
+        0.47931582898668523,
+        0.13779456432106874,
+        -0.5143684708460636
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.3930027,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.74,
+      "step": 74,
+      "time": 1.48,
+      "battery_level": 92.6,
+      "motor_temperature": 44.88500649682461
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4144597,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -3.6739403974420594e-16,
+        0.5,
+        4.286263797015736e-16,
+        -0.5
+      ],
+      "velocities": [
+        -7.347880794884119e-16,
+        1.0,
+        8.572527594031472e-16,
+        -1.0
+      ],
+      "efforts": [
+        -5.510910596163089e-15,
+        7.5,
+        6.429395695523604e-15,
+        -7.5
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.414548,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.1131982855966603,
+        0.10410599147007325,
+        0.13326134912116092
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.582935207562755
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4145653,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.07052484820563072,
+        0.48468150929810655,
+        0.016436071422329456,
+        -0.5074936642238599
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4145935,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.75,
+      "step": 75,
+      "time": 1.5,
+      "battery_level": 92.5,
+      "motor_temperature": 45.09379809113989
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.434995,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.12434494358242634,
+        0.4842915805643156,
+        -0.12434494358242629,
+        -0.4842915805643161
+      ],
+      "velocities": [
+        0.24868988716485269,
+        0.9685831611286312,
+        -0.24868988716485257,
+        -0.9685831611286322
+      ],
+      "efforts": [
+        1.865174153736395,
+        7.264373708464734,
+        -1.8651741537363944,
+        -7.264373708464741
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4350355,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.030100671111390725,
+        -0.1054311307710874,
+        0.03968729873262908
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.635588470839236
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4350436,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.20815254081494014,
+        0.48860031303124135,
+        -0.12714480682470503,
+        -0.49995304846943933
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4350564,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.76,
+      "step": 76,
+      "time": 1.52,
+      "battery_level": 92.4,
+      "motor_temperature": 40.20620680153792
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4555223,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.2408768370508576,
+        0.43815334002193224,
+        -0.24087683705085755,
+        -0.4381533400219314
+      ],
+      "velocities": [
+        0.4817536741017152,
+        0.8763066800438645,
+        -0.4817536741017151,
+        -0.8763066800438628
+      ],
+      "efforts": [
+        3.613152555762864,
+        6.572300100328984,
+        -3.613152555762863,
+        -6.572300100328971
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4555664,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.2334750235165982,
+        0.06148332821471852,
+        -0.09456572659406842
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.844838180324087
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4555743,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.20536422602591076,
+        0.3750213856094873,
+        -0.26330441258262766,
+        -0.39162607792602544
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4555874,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.77,
+      "step": 77,
+      "time": 1.54,
+      "battery_level": 92.3,
+      "motor_temperature": 47.78020484421389
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4775743,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.3422735529643438,
+        0.3644843137107069,
+        -0.34227355296434375,
+        -0.3644843137107057
+      ],
+      "velocities": [
+        0.6845471059286876,
+        0.7289686274214138,
+        -0.6845471059286875,
+        -0.7289686274214114
+      ],
+      "efforts": [
+        5.134103294465157,
+        5.467264705660603,
+        -5.134103294465156,
+        -5.467264705660586
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4776351,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.08472855673606033,
+        0.1889522144996748,
+        -0.08020931220496592
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.250762820914465
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4776468,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.275629253040513,
+        0.3609045509318918,
+        -0.21107815323859339,
+        -0.3725208011411521
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.477666,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.78,
+      "step": 78,
+      "time": 1.56,
+      "battery_level": 92.2,
+      "motor_temperature": 42.55107746897308
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4978387,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.4221639627510077,
+        0.26791339748949733,
+        -0.4221639627510077,
+        -0.2679133974894989
+      ],
+      "velocities": [
+        0.8443279255020154,
+        0.5358267949789947,
+        -0.8443279255020154,
+        -0.5358267949789978
+      ],
+      "efforts": [
+        6.332459441265115,
+        4.01870096234246,
+        -6.332459441265115,
+        -4.018700962342483
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4978814,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.05723927016482183,
+        0.14338717328371928,
+        -0.07948077649871105
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.42353960466394
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4978898,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.3682851678506169,
+        0.18015190093069405,
+        -0.39929950580485296,
+        -0.27666651307318163
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.4979024,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.79,
+      "step": 79,
+      "time": 1.58,
+      "battery_level": 92.1,
+      "motor_temperature": 44.31117452190131
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5184293,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.47552825814757665,
+        0.15450849718747328,
+        -0.47552825814757665,
+        -0.15450849718747503
+      ],
+      "velocities": [
+        0.9510565162951533,
+        0.30901699437494656,
+        -0.9510565162951533,
+        -0.30901699437495006
+      ],
+      "efforts": [
+        7.13292387221365,
+        2.3176274578120992,
+        -7.13292387221365,
+        -2.3176274578121254
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.518515,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.07840275078142227,
+        0.06335886462486195,
+        -0.15682476657438071
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.28781467039287
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5185275,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5204635104517824,
+        0.1283233213046622,
+        -0.47556422606695764,
+        -0.1788807088523085
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5185463,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.8,
+      "step": 80,
+      "time": 1.6,
+      "battery_level": 92.0,
+      "motor_temperature": 49.92058407634064
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5388658,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.49901336421413583,
+        0.03139525976465694,
+        -0.49901336421413583,
+        -0.03139525976465522
+      ],
+      "velocities": [
+        0.9980267284282717,
+        0.06279051952931387,
+        -0.9980267284282717,
+        -0.06279051952931045
+      ],
+      "efforts": [
+        7.4852004632120375,
+        0.47092889646985403,
+        -7.4852004632120375,
+        -0.47092889646982833
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5389187,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.08383158318067596,
+        0.08171464506951526,
+        0.08380797093306444
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.719318741422203
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5389314,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5329589633226551,
+        0.024794420941348833,
+        -0.5245088019485681,
+        -0.07627425733200854
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5389488,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.81,
+      "step": 81,
+      "time": 1.62,
+      "battery_level": 91.9,
+      "motor_temperature": 44.06383788694026
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.55915,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.49114362536434436,
+        -0.09369065729286137,
+        -0.49114362536434436,
+        0.09369065729286305
+      ],
+      "velocities": [
+        0.9822872507286887,
+        -0.18738131458572274,
+        -0.9822872507286887,
+        0.1873813145857261
+      ],
+      "efforts": [
+        7.367154380465165,
+        -1.4053598593929206,
+        -7.367154380465165,
+        1.4053598593929457
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5592074,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.12316101239123407,
+        0.013787719972666616,
+        -0.07065958827871294
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.359473949475834
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5592248,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.4686855747560087,
+        -0.087437725228768,
+        -0.48085837618396615,
+        0.11475979791401911
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.559247,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.82,
+      "step": 82,
+      "time": 1.6400000000000001,
+      "battery_level": 91.8,
+      "motor_temperature": 43.98607474509018
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5799127,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.45241352623300934,
+        -0.21288964578253802,
+        -0.45241352623300934,
+        0.21288964578253636
+      ],
+      "velocities": [
+        0.9048270524660187,
+        -0.42577929156507605,
+        -0.9048270524660187,
+        0.4257792915650727
+      ],
+      "efforts": [
+        6.78620289349514,
+        -3.19334468673807,
+        -6.78620289349514,
+        3.1933446867380453
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5799854,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.0358170823931457,
+        -0.05712845601394265,
+        -0.08370975025584783
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.218521086798736
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.5800018,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.5348912079147143,
+        -0.1938734874070105,
+        -0.4373856046996222,
+        0.23179789248214056
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.580024,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.83,
+      "step": 83,
+      "time": 1.6600000000000001,
+      "battery_level": 91.7,
+      "motor_temperature": 40.8407490045307
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6005583,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.38525662138789557,
+        -0.318711994874343,
+        -0.38525662138789557,
+        0.3187119948743443
+      ],
+      "velocities": [
+        0.7705132427757911,
+        -0.637423989748686,
+        -0.7705132427757911,
+        0.6374239897486886
+      ],
+      "efforts": [
+        5.778849320818433,
+        -4.7806799231151444,
+        -5.778849320818433,
+        4.780679923115165
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6006007,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.017948373079304816,
+        -0.021321914580764326,
+        -0.006806682506540317
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.46679014876879
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.60061,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.3897369924042561,
+        -0.3753498075451622,
+        -0.4043582230484861,
+        0.3243317874304091
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6006238,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.84,
+      "step": 84,
+      "time": 1.68,
+      "battery_level": 91.6,
+      "motor_temperature": 43.03193003900613
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6211314,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.2938926261462369,
+        -0.40450849718747395,
+        -0.29389262614623696,
+        0.4045084971874729
+      ],
+      "velocities": [
+        0.5877852522924738,
+        -0.8090169943749479,
+        -0.5877852522924739,
+        0.8090169943749458
+      ],
+      "efforts": [
+        4.408389392193554,
+        -6.067627457812109,
+        -4.408389392193555,
+        6.067627457812093
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6211834,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.0032950967805988464,
+        0.10781391476139407,
+        -0.10785354673303178
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.538769055453606
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6211922,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.33152568515220165,
+        -0.4612876144616392,
+        -0.24508138773068686,
+        0.3294493420890584
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6212058,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.85,
+      "step": 85,
+      "time": 1.7,
+      "battery_level": 91.5,
+      "motor_temperature": 46.19645367860181
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6420143,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.18406227634234004,
+        -0.4648882429441256,
+        -0.1840622763423401,
+        0.46488824294412495
+      ],
+      "velocities": [
+        0.3681245526846801,
+        -0.9297764858882512,
+        -0.3681245526846802,
+        0.9297764858882499
+      ],
+      "efforts": [
+        2.7609341451351006,
+        -6.973323644161884,
+        -2.7609341451351015,
+        6.973323644161875
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6420813,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.15145284849311735,
+        -0.05208254236647312,
+        -0.08304621016554517
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.300668683920355
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6420946,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.21825526805725526,
+        -0.5186796546757559,
+        -0.18203126286011853,
+        0.43904773961380755
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6421168,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.86,
+      "step": 86,
+      "time": 1.72,
+      "battery_level": 91.4,
+      "motor_temperature": 44.962017300168384
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6623976,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        0.0626666167821522,
+        -0.49605735065723877,
+        -0.06266661678215225,
+        0.496057350657239
+      ],
+      "velocities": [
+        0.1253332335643044,
+        -0.9921147013144775,
+        -0.1253332335643045,
+        0.992114701314478
+      ],
+      "efforts": [
+        0.9399992517322829,
+        -7.440860259858582,
+        -0.9399992517322838,
+        7.440860259858585
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6624696,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.0429528746132391,
+        0.040408298516073256,
+        -0.1241023652836323
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.95910619166052
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.662484,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.09694929034759783,
+        -0.4177727103650939,
+        -0.06471686651821573,
+        0.45661235019038976
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.662526,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.87,
+      "step": 87,
+      "time": 1.74,
+      "battery_level": 91.3,
+      "motor_temperature": 42.544363606325426
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.683079,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.06266661678215134,
+        -0.4960573506572391,
+        0.06266661678215128,
+        0.49605735065723894
+      ],
+      "velocities": [
+        -0.12533323356430268,
+        -0.9921147013144782,
+        0.12533323356430257,
+        0.9921147013144779
+      ],
+      "efforts": [
+        -0.9399992517322701,
+        -7.440860259858587,
+        0.9399992517322693,
+        7.440860259858584
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6831634,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.08747944957332326,
+        0.2581042546910727,
+        -0.20439702277695626
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.526623939802526
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.683176,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        0.05050143624285537,
+        -0.4679783818363834,
+        0.05918865862179874,
+        0.5529774888988165
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.6831992,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.88,
+      "step": 88,
+      "time": 1.76,
+      "battery_level": 91.2,
+      "motor_temperature": 48.069103454145875
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7041638,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.18406227634233924,
+        -0.4648882429441253,
+        0.18406227634233918,
+        0.46488824294412595
+      ],
+      "velocities": [
+        -0.3681245526846785,
+        -0.9297764858882506,
+        0.36812455268467836,
+        0.9297764858882519
+      ],
+      "efforts": [
+        -2.7609341451350886,
+        -6.973323644161879,
+        2.7609341451350877,
+        6.973323644161889
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.704254,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.19965172537783055,
+        0.08400388122606949,
+        0.057050251413253456
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.96923070457301
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7042692,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.18645986346790797,
+        -0.3475467724727206,
+        0.2882223084692585,
+        0.4288341552612893
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7042992,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.89,
+      "step": 89,
+      "time": 1.78,
+      "battery_level": 91.1,
+      "motor_temperature": 45.52128889802026
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7250094,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.29389262614623624,
+        -0.40450849718747345,
+        0.2938926261462362,
+        0.40450849718747456
+      ],
+      "velocities": [
+        -0.5877852522924725,
+        -0.8090169943749469,
+        0.5877852522924724,
+        0.8090169943749491
+      ],
+      "efforts": [
+        -4.408389392193543,
+        -6.067627457812102,
+        4.408389392193543,
+        6.067627457812119
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.725063,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.05540463421246622,
+        0.0804589377214552,
+        0.08695227954403681
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.567641784934617
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7250745,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.3602016883121453,
+        -0.3907514635150537,
+        0.3541523588505212,
+        0.4242627935378939
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7250924,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.9,
+      "step": 90,
+      "time": 1.8,
+      "battery_level": 91.0,
+      "motor_temperature": 40.61709623289766
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7459822,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.385256621387895,
+        -0.3187119948743451,
+        0.38525662138789496,
+        0.31871199487434376
+      ],
+      "velocities": [
+        -0.77051324277579,
+        -0.6374239897486902,
+        0.7705132427757899,
+        0.6374239897486875
+      ],
+      "efforts": [
+        -5.778849320818425,
+        -4.780679923115176,
+        5.778849320818424,
+        4.780679923115157
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7460682,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.10601000748148343,
+        -0.11786429516272941,
+        0.051046308596684103
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.33738511360309
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7460797,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.3636488312019734,
+        -0.3823518549006969,
+        0.3805544756485256,
+        0.324139722704971
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7461004,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.91,
+      "step": 91,
+      "time": 1.82,
+      "battery_level": 90.9,
+      "motor_temperature": 46.69456247115962
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.76636,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.45241352623300973,
+        -0.21288964578253725,
+        0.4524135262330097,
+        0.2128896457825357
+      ],
+      "velocities": [
+        -0.9048270524660195,
+        -0.4257792915650745,
+        0.9048270524660194,
+        0.4257792915650714
+      ],
+      "efforts": [
+        -6.786202893495146,
+        -3.1933446867380586,
+        6.786202893495145,
+        3.1933446867380355
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7664049,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.017093891160600134,
+        -0.07409122539911396,
+        -0.1579058535432553
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.889364407676872
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7664135,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.422884359728642,
+        -0.21306036197594835,
+        0.5063973192336678,
+        0.2629516343753505
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7664266,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.92,
+      "step": 92,
+      "time": 1.84,
+      "battery_level": 90.8,
+      "motor_temperature": 44.71147126871111
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7868989,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4911436253643445,
+        -0.09369065729286052,
+        0.4911436253643445,
+        0.09369065729286233
+      ],
+      "velocities": [
+        -0.982287250728689,
+        -0.18738131458572105,
+        0.982287250728689,
+        0.18738131458572466
+      ],
+      "efforts": [
+        -7.367154380465168,
+        -1.4053598593929078,
+        7.367154380465168,
+        1.4053598593929348
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7869446,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.018898934548769508,
+        -0.04064701317329916,
+        0.11288827692866737
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.885976962767804
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.7869532,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.45901409813317795,
+        -0.09997751151723086,
+        0.4738366653565398,
+        0.021324756858853308
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.786971,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.93,
+      "step": 93,
+      "time": 1.86,
+      "battery_level": 90.7,
+      "motor_temperature": 47.32133141123586
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8076742,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.4990133642141358,
+        0.03139525976465779,
+        0.4990133642141358,
+        -0.03139525976465596
+      ],
+      "velocities": [
+        -0.9980267284282716,
+        0.06279051952931558,
+        0.9980267284282716,
+        -0.06279051952931192
+      ],
+      "efforts": [
+        -7.485200463212037,
+        0.47092889646986685,
+        7.485200463212037,
+        -0.4709288964698394
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8077416,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.07400016460816909,
+        -0.02387668623685466,
+        0.04597201848266846
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.451313114973598
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8077533,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.5872921214551412,
+        0.06268773171876271,
+        0.5881354232227851,
+        -0.0927351308861876
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8077734,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.94,
+      "step": 94,
+      "time": 1.8800000000000001,
+      "battery_level": 90.6,
+      "motor_temperature": 41.03072614504801
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8289838,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.47552825814757693,
+        0.1545084971874741,
+        0.47552825814757693,
+        -0.15450849718747234
+      ],
+      "velocities": [
+        -0.9510565162951539,
+        0.3090169943749482,
+        0.9510565162951539,
+        -0.3090169943749447
+      ],
+      "efforts": [
+        -7.132923872213654,
+        2.317627457812111,
+        7.132923872213654,
+        -2.317627457812085
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8291366,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.09178622034237757,
+        0.11963565998141135,
+        -0.042191224932743826
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.349464047487531
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8291545,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.41368160841352375,
+        0.20592655166638613,
+        0.5228145971592586,
+        -0.17586897929370843
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8291728,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.95,
+      "step": 95,
+      "time": 1.9000000000000001,
+      "battery_level": 90.5,
+      "motor_temperature": 49.27746808448562
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8496795,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.42216396275100815,
+        0.26791339748949805,
+        0.4221639627510082,
+        -0.2679133974894965
+      ],
+      "velocities": [
+        -0.8443279255020163,
+        0.5358267949789961,
+        0.8443279255020164,
+        -0.535826794978993
+      ],
+      "efforts": [
+        -6.332459441265122,
+        4.0187009623424705,
+        6.332459441265123,
+        -4.0187009623424474
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8497653,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.022991154483935673,
+        -0.12962426629972376,
+        -0.19623540072097442
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.2686354954903
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.849778,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.37631261255150433,
+        0.21081206380924775,
+        0.4952151024111575,
+        -0.28067323019108004
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8498023,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.96,
+      "step": 96,
+      "time": 1.92,
+      "battery_level": 90.4,
+      "motor_temperature": 48.61660558867379
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.870612,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.3422735529643444,
+        0.36448431371070505,
+        0.3422735529643445,
+        -0.3644843137107062
+      ],
+      "velocities": [
+        -0.6845471059286888,
+        0.7289686274214101,
+        0.684547105928689,
+        -0.7289686274214124
+      ],
+      "efforts": [
+        -5.134103294465167,
+        5.467264705660575,
+        5.1341032944651674,
+        -5.467264705660593
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8706942,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.23800906494144783,
+        0.046437341190137954,
+        0.012763635949227366
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        9.656513975422778
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8707108,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.3963384439669114,
+        0.37022089546574094,
+        0.3344801549098472,
+        -0.32011854172741694
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8707373,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.97,
+      "step": 97,
+      "time": 1.94,
+      "battery_level": 90.3,
+      "motor_temperature": 46.683202513224614
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8909168,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.24087683705085838,
+        0.43815334002193096,
+        0.2408768370508584,
+        -0.4381533400219318
+      ],
+      "velocities": [
+        -0.48175367410171677,
+        0.8763066800438619,
+        0.4817536741017168,
+        -0.8763066800438636
+      ],
+      "efforts": [
+        -3.6131525557628756,
+        6.572300100328964,
+        3.613152555762876,
+        -6.5723001003289765
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8909576,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        -0.20634495586747192,
+        -0.01623541426104461,
+        -0.02949853285577312
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.27716497988227
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.890965,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.23785254998702615,
+        0.49957193346172385,
+        0.22100984279273828,
+        -0.41887394220995855
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.8909774,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.98,
+      "step": 98,
+      "time": 1.96,
+      "battery_level": 90.2,
+      "motor_temperature": 46.9107339075126
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.911841,
+    "data_type": "joint_state",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "positions": [
+        -0.12434494358242718,
+        0.4842915805643158,
+        0.12434494358242723,
+        -0.48429158056431537
+      ],
+      "velocities": [
+        -0.24868988716485435,
+        0.9685831611286316,
+        0.24868988716485446,
+        -0.9685831611286307
+      ],
+      "efforts": [
+        -1.8651741537364077,
+        7.2643737084647375,
+        1.8651741537364084,
+        -7.26437370846473
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.911898,
+    "data_type": "imu_data",
+    "data": {
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angular_velocity": [
+        0.20392648196805482,
+        0.09875337047438967,
+        0.11729613063729714
+      ],
+      "linear_acceleration": [
+        0.0,
+        0.0,
+        10.04170194491933
+      ]
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.9119117,
+    "data_type": "control_command",
+    "data": {
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4"
+      ],
+      "commands": [
+        -0.07904832186745703,
+        0.3995225363725484,
+        0.04572158715613878,
+        -0.4600460222196453
+      ],
+      "command_type": "position"
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.9119334,
+    "data_type": "system_state",
+    "data": {
+      "experiment_phase": "walking_forward",
+      "phase_progress": 0.99,
+      "step": 99,
+      "time": 1.98,
+      "battery_level": 90.1,
+      "motor_temperature": 47.42327459158231
+    },
+    "metadata": null
+  },
+  {
+    "timestamp": 1770546543.956839,
+    "data_type": "end_metadata",
+    "data": {
+      "session_id": "session_1770546541_111719",
+      "end_time": 1770546543.9568346,
+      "duration": 2.105570077896118,
+      "total_points": 401,
+      "stats": {
+        "total_points": 401,
+        "joint_states": 100,
+        "imu_data": 100,
+        "control_commands": 100,
+        "system_states": 100,
+        "recording_duration": 2.105570077896118
+      }
+    },
+    "metadata": null
+  }
+]

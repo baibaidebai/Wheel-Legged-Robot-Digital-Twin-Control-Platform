@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="wl">
+  <compiler angle="radian" meshdir="meshes/" texturedir="textures/" />
+  <option timestep="0.001" gravity="0 0 -9.81" iterations="50" solver="Newton" />
+  <asset />
+  <worldbody>
+    <geom name="ground" type="plane" size="10 10 0.1" rgba="0.8 0.8 0.8 1" friction="1 0.1 0.1" />
+    <body name="base_link">
+      <inertial mass="8.8" pos="-0.0076 0.0067 0.123056" quat="1 0 0 0" diaginertia="0.326092 0.229526 0.220537" />
+      <geom name="base_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.79216 0.81961 0.93333 1" />
+      <geom name="base_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+      <joint name="lf0_Joint" type="hinge" axis="0 0 1" range="-0.3363 1.3479" pos="0.054 0.1705 0.131" />
+      <body name="lf0_Link">
+        <inertial mass="0.16" pos="0.05976637 -0.00048182 0.01198236" quat="1 0 0 0" diaginertia="0.00006424 0.00116066 0.00117029" />
+        <geom name="lf0_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        <geom name="lf0_Link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="lf1_Joint" type="hinge" axis="0 0 1" range="-1.0 1.25" pos="0.15 -0.00010199 0.0205" />
+        <body name="lf1_Link">
+          <inertial mass="0.36" pos="-0.00032544 0.15899848 0.00798168" quat="1 0 0 0" diaginertia="0.01248770 0.00011869 0.01251325" />
+          <geom name="lf1_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          <geom name="lf1_Link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+          <joint name="l_wheel_Joint" type="hinge" axis="0 0 1" range="-3.14 3.14" pos="1.857E-05 0.25 0.0275" />
+          <body name="l_wheel_Link">
+            <inertial mass="1.22" pos="-0.00004507 -0.00038447 0.02376028" quat="1 0 0 0" diaginertia="0.00174370 0.00176013 0.00173973" />
+            <geom name="l_wheel_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <geom name="l_wheel_Link_collision" pos="0 0 0.03" type="cylinder" size="0.0675 0.0125" />
+          </body>
+        </body>
+      </body>
+      <joint name="rf0_Joint" type="hinge" axis="0 0 1" range="-1.3479 0.3363" pos="0.054 -0.1705 0.131" />
+      <body name="rf0_Link">
+        <inertial mass="0.16" pos="0.05976637 -0.00048182 0.01198236" quat="1 0 0 0" diaginertia="0.00006424 0.00116066 0.00117029" />
+        <geom name="rf0_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        <geom name="rf0_Link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="rf1_Joint" type="hinge" axis="0 0 1" range="-1.25 1.0" pos="0.15 9.5536E-05 0.0205" />
+        <body name="rf1_Link">
+          <inertial mass="0.36" pos="0.00032544 -0.15899848 0.00798168" quat="1 0 0 0" diaginertia="0.01248770 0.00011869 0.01251325" />
+          <geom name="rf1_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          <geom name="rf1_Link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+          <joint name="r_wheel_Joint" type="hinge" axis="0 0 1" range="-3.14 3.14" pos="1.5909E-05 -0.25 0.0275" />
+          <body name="r_wheel_Link">
+            <inertial mass="1.22" pos="0.00038403 0.00004865 0.02376028" quat="1 0 0 0" diaginertia="0.00176009 0.00174374 0.00173973" />
+            <geom name="r_wheel_Link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <geom name="r_wheel_Link_collision" pos="0 0 0.03" type="cylinder" size="0.0675 0.0125" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="lf0_Joint_motor" joint="lf0_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="lf1_Joint_motor" joint="lf1_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="l_wheel_Joint_motor" joint="l_wheel_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="rf0_Joint_motor" joint="rf0_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="rf1_Joint_motor" joint="rf1_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="r_wheel_Joint_motor" joint="r_wheel_Joint" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+  </actuator>
+</mujoco>

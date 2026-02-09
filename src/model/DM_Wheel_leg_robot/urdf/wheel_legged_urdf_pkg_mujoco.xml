@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="wheel_legged_urdf_pkg">
+  <compiler angle="radian" meshdir="meshes/" texturedir="textures/" />
+  <option timestep="0.001" gravity="0 0 -9.81" iterations="50" solver="Newton" />
+  <asset />
+  <worldbody>
+    <geom name="ground" type="plane" size="10 10 0.1" rgba="0.8 0.8 0.8 1" friction="1 0.1 0.1" />
+    <body name="base_link">
+      <inertial mass="2.00185606218299" pos="0.00121782667412224 -0.000210352203166787 -2.21299226362964E-05" quat="1 0 0 0" diaginertia="0.00494176488313629 0.00564170400699066 0.00881398606635347" />
+      <geom name="base_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <geom name="base_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+      <joint name="left_front_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="0.042498 0.1395 0.00013155" />
+      <body name="left_front_motor_link">
+        <inertial mass="0.141618184762676" pos="0.0624436684240075 0.000619326059130704 0.0200324549537225" quat="1 0 0 0" diaginertia="3.01866212630707E-05 0.000434045739664063 0.000450595261060971" />
+        <geom name="left_front_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        <geom name="left_front_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="left_l1_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="0.14999 0.0015005 0.0238" />
+        <body name="left_l1_link">
+          <inertial mass="0.177912779401" pos="-0.095105462450709 0.0731775307867209 -0.0163" quat="1 0 0 0" diaginertia="0.000418025769227047 0.000683016195362116 0.00109442528532047" />
+          <geom name="left_l1_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+          <geom name="left_l1_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        </body>
+      </body>
+      <joint name="left_back_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="-0.042501 0.1395 -0.00014986" />
+      <body name="left_back_motor_link">
+        <inertial mass="0.115659747495916" pos="-0.0749796058107964 0.0036928214728846 0.00747310925542913" quat="1 0 0 0" diaginertia="2.26464431379227E-05 0.000319765274780509 0.000338116683794751" />
+        <geom name="left_back_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        <geom name="left_back_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="left_l4_joint_link" type="hinge" axis="0 0 1" range="-3.14 3.14" pos="-0.14982 0.0073876 0.0062" />
+        <body name="left_l4_link">
+          <inertial mass="0.248961638545411" pos="0.128060879717462 0.0924384050013035 0.0178378642085842" quat="1 0 0 0" diaginertia="0.000729426860709992 0.00131469091952802 0.00202550485596196" />
+          <geom name="left_l4_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+          <geom name="left_l4_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+          <joint name="left_l3_joint_link" type="hinge" pos="0.1946 0.14047 0.0088" />
+          <body name="left_l3_link">
+            <inertial mass="0.115219399015165" pos="-0.000243308150557599 0.000117251658979897 0.0403173391634845" quat="1 0 0 0" diaginertia="4.94098181788803E-05 4.89676896049995E-05 8.66983692952939E-05" />
+            <geom name="left_l3_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <geom name="left_l3_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+            <joint name="left_wheel_joint_link" type="hinge" axis="0 0 -1" pos="0 0 0.0565" />
+            <body name="left_wheel_motor_link">
+              <inertial mass="0.842051413621127" pos="1.13167687540439E-07 1.25858476307528E-07 -0.00499719779399502" quat="1 0 0 0" diaginertia="0.00251019461435954 0.00251018902018574 0.00474412594811298" />
+              <geom name="left_wheel_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+              <geom name="left_wheel_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <joint name="right_front_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="0.042501 -0.1395 0.00013156" />
+      <body name="right_front_motor_link">
+        <inertial mass="0.141618184759225" pos="0.0623057259191661 0.00415660632329509 0.0200324549608647" quat="1 0 0 0" diaginertia="3.19275897950573E-05 0.000432304770765368 0.000450595260936554" />
+        <geom name="right_front_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        <geom name="right_front_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="right_l1_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="0.14967 0.0099718 0.0238" />
+        <body name="right_l1_link">
+          <inertial mass="0.177912779401" pos="-0.0932955290225116 -0.0754714798080031 -0.0162999999999999" quat="1 0 0 0" diaginertia="0.000442512909634909 0.000658529054954254 0.00109442528532047" />
+          <geom name="right_l1_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+          <geom name="right_l1_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        </body>
+      </body>
+      <joint name="right_back_joint_link" type="hinge" axis="0 0 -1" range="-3.14 3.14" pos="-0.042498 -0.1395 -0.00014985" />
+      <body name="right_back_motor_link">
+        <inertial mass="0.115659747495916" pos="-0.075017236320334 -0.00291294758678277 0.00747310925542902" quat="1 0 0 0" diaginertia="2.23727688233546E-05 0.000320038949095077 0.000338116683794751" />
+        <geom name="right_back_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        <geom name="right_back_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+        <joint name="right_l4_joint_link" type="hinge" axis="0 0 1" range="-3.14 3.14" pos="-0.14989 -0.0058294 0.0062" />
+        <body name="right_l4_link">
+          <inertial mass="0.24896163452195" pos="0.130296403284804 -0.0892597043985118 0.0178378639085093" quat="1 0 0 0" diaginertia="0.000686392557995977 0.00135772521521225 0.00202550485005715" />
+          <geom name="right_l4_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+          <geom name="right_l4_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+          <joint name="right_l3_joint_link" type="hinge" pos="0.198 -0.13564 0.0088" />
+          <body name="right_l3_link">
+            <inertial mass="0.115219399567085" pos="-2.80713764217733E-05 -0.000268623950909944 0.0403173391022381" quat="1 0 0 0" diaginertia="4.94114719513777E-05 4.89660363029196E-05 8.66983696437399E-05" />
+            <geom name="right_l3_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <geom name="right_l3_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+            <joint name="right_wheel_joint_link" type="hinge" axis="0 0 -1" pos="0 0 0.0565" />
+            <body name="right_wheel_motor_link">
+              <inertial mass="0.842051685465564" pos="-6.16438811410977E-08 -1.57630152236576E-07 -0.00499719843039104" quat="1 0 0 0" diaginertia="0.002510149306242 0.0025102352737572 0.00474412701360746" />
+              <geom name="right_wheel_motor_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+              <geom name="right_wheel_motor_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+            </body>
+          </body>
+        </body>
+      </body>
+      <joint name="imu_joint_link" type="hinge" pos="0.0086888 0.0615 0.021391" />
+      <body name="imu_link">
+        <inertial mass="0.0006342289369769" pos="-0.00295011190315089 6.01878603506481E-05 -0.0022678069753778" quat="1 0 0 0" diaginertia="1.61792914987704E-08 9.69970107461154E-09 2.47220721297651E-08" />
+        <geom name="imu_link_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="1 1 1 1" />
+        <geom name="imu_link_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+      </body>
+      <joint name="lidar_joint_link" type="hinge" pos="0.0450664766561181 -0.000722222222221321 0.103849771542335" />
+      <body name="laser">
+        <inertial mass="0.0619661956356509" pos="-0.000295667186511292 2.02745806254789E-17 -0.00821757116891281" quat="1 0 0 0" diaginertia="1.51239273004584E-05 1.49535540724283E-05 1.86073781537633E-05" />
+        <geom name="laser_visual" pos="0 0 0" type="box" size="0.05 0.05 0.05" rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        <geom name="laser_collision" pos="0 0 0" type="box" size="0.05 0.05 0.05" />
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="left_front_joint_link_motor" joint="left_front_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="left_l1_joint_link_motor" joint="left_l1_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="left_back_joint_link_motor" joint="left_back_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="left_l4_joint_link_motor" joint="left_l4_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="left_wheel_joint_link_motor" joint="left_wheel_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="right_front_joint_link_motor" joint="right_front_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="right_l1_joint_link_motor" joint="right_l1_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="right_back_joint_link_motor" joint="right_back_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="right_l4_joint_link_motor" joint="right_l4_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+    <motor name="right_wheel_joint_link_motor" joint="right_wheel_joint_link" gear="1" ctrllimited="true" ctrlrange="-10 10" />
+  </actuator>
+</mujoco>

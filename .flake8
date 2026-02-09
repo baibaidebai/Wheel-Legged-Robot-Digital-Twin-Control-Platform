@@ -1,0 +1,53 @@
+[flake8]
+# Maximum line length (宽松设置)
+max-line-length = 127
+
+# Maximum complexity (宽松设置)
+max-complexity = 15
+
+# Exclude directories
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    venv,
+    .venv,
+    install,
+    log,
+    .pytest_cache,
+    *.egg-info,
+    test,
+    tests,
+    docs
+
+# Ignore specific errors (宽松设置，忽略常见的风格问题)
+ignore =
+    E203,  # whitespace before ':'
+    E501,  # line too long (handled by max-line-length)
+    W503,  # line break before binary operator
+    W504,  # line break after binary operator
+    E402,  # module level import not at top of file
+    E731,  # do not assign a lambda expression
+    F401,  # imported but unused (often needed for __init__.py)
+    F841,  # local variable assigned but never used
+    E722,  # do not use bare except
+    E741,  # ambiguous variable name
+
+# 只检查严重错误
+# E9: 运行时错误
+# F63: 语法错误
+# F7: 语法错误
+# F82: 未定义的名称
+per-file-ignores =
+    __init__.py:F401,F403
+
+# Show source code for each error
+show-source = True
+
+# Show statistics
+statistics = True
+
+# Count errors
+count = True
+

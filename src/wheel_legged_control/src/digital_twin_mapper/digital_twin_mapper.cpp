@@ -160,14 +160,24 @@ public:
         task_state.base_position = Eigen::Vector3d::Zero();
         task_state.base_orientation = Eigen::Quaterniond::Identity();
         
+        // 安全检查：确保关节角度向量大小正确
+        if (joint_angles.size() != static_cast<int>(joint_index_map_.size())) {
+            throw std::runtime_error("Joint angles vector size mismatch. Expected: " + 
+                                   std::to_string(joint_index_map_.size()) + 
+                                   ", Got: " + std::to_string(joint_angles.size()));
+        }
+        
         // 计算轮子位置
         for (const auto& wheel_constraint : constraint_model_.wheel_constraints) {
             auto it = joint_index_map_.find(wheel_constraint.wheel_name);
-            if (it != joint_index_map_.end() && it->second < joint_angles.size()) {
-                double angle = joint_angles[it->second];
-                // 简化的轮子位置计算
-                Eigen::Vector3d wheel_pos(0.3 * cos(angle), 0.3 * sin(angle), 0.1);
-                task_state.wheel_positions[wheel_constraint.wheel_name] = wheel_pos;
+            if (it != joint_index_map_.end()) {
+                int index = it->second;
+                if (index >= 0 && index < joint_angles.size()) {
+                    double angle = joint_angles[index];
+                    // 简化的轮子位置计算
+                    Eigen::Vector3d wheel_pos(0.3 * std::cos(angle), 0.3 * std::sin(angle), 0.1);
+                    task_state.wheel_positions[wheel_constraint.wheel_name] = wheel_pos;
+                }
             }
         }
         
@@ -183,16 +193,21 @@ public:
                 auto it1 = joint_index_map_.find(leg_constraint.joints[0]);
                 auto it2 = joint_index_map_.find(leg_constraint.joints[1]);
                 
-                if (it1 != joint_index_map_.end() && it2 != joint_index_map_.end() &&
-                    it1->second < joint_angles.size() && it2->second < joint_angles.size()) {
+                if (it1 != joint_index_map_.end() && it2 != joint_index_map_.end()) {
+                    int index1 = it1->second;
+                    int index2 = it2->second;
                     
-                    double q1 = joint_angles[it1->second];
-                    double q2 = joint_angles[it2->second];
-                    
-                    // 二连杆正运动学
-                    leg_end_pos.x() = link1_length * cos(q1) + link2_length * cos(q1 + q2);
-                    leg_end_pos.y() = link1_length * sin(q1) + link2_length * sin(q1 + q2);
-                    leg_end_pos.z() = 0.0;
+                    if (index1 >= 0 && index1 < joint_angles.size() &&
+                        index2 >= 0 && index2 < joint_angles.size()) {
+                        
+                        double q1 = joint_angles[index1];
+                        double q2 = joint_angles[index2];
+                        
+                        // 二连杆正运动学
+                        leg_end_pos.x() = link1_length * std::cos(q1) + link2_length * std::cos(q1 + q2);
+                        leg_end_pos.y() = link1_length * std::sin(q1) + link2_length * std::sin(q1 + q2);
+                        leg_end_pos.z() = 0.0;
+                    }
                 }
             }
             
@@ -317,28 +332,25 @@ public:
     }
     
     /**
-     * @brief 处理奇异位形
+     * @brief 处理奇异位形（简化版本）
      */
     Eigen::MatrixXd handle_singular_configuration(const Eigen::MatrixXd& jacobian) {
-        // 使用SVD分解处理奇异性
-        Eigen::JacobiSVD<Eigen::MatrixXd> svd(jacobian, Eigen::ComputeFullU | Eigen::ComputeFullV);
-        
-        Eigen::VectorXd singular_values = svd.singularValues();
-        double threshold = 1e-6;
-        
-        // 检查奇异值
-        for (int i = 0; i < singular_values.size(); ++i) {
-            if (singular_values[i] < threshold) {
-                singular_values[i] = threshold; // 正则化小奇异值
-            }
+        // 输入验证
+        if (jacobian.rows() == 0 || jacobian.cols() == 0) {
+            throw std::runtime_error("Invalid jacobian matrix dimensions");
         }
         
-        // 重构雅可比矩阵
-        Eigen::MatrixXd regularized_jacobian = svd.matrixU() * 
-                                              singular_values.asDiagonal() * 
-                                              svd.matrixV().transpose();
+        // 简化版本：直接返回带有小正则化项的矩阵
+        Eigen::MatrixXd regularized = jacobian;
+        double reg_factor = 1e-6;
         
-        return regularized_jacobian;
+        // 对角线正则化
+        int min_dim = std::min(jacobian.rows(), jacobian.cols());
+        for (int i = 0; i < min_dim; ++i) {
+            regularized(i, i) += reg_factor;
+        }
+        
+        return regularized;
     }
 };
 

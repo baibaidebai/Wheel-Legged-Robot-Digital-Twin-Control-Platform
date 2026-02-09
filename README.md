@@ -1,259 +1,364 @@
 # 轮腿机器人孪生控制系统
 
+## 🚨 遇到问题？
+
+**Gazebo窗口没有打开？** → 查看 [docs/guides/QUICK_FIX.md](docs/guides/QUICK_FIX.md)
+
+**Gazebo闪屏/看不到模型？** → 查看 [docs/guides/GAZEBO_FLICKERING_FIX.md](docs/guides/GAZEBO_FLICKERING_FIX.md)
+
+**DM机器人无法加载？** → 运行 `python3 tools/fix_dm_urdf.py`
+
+**首次使用？** → 先阅读 [docs/guides/START_HERE.md](docs/guides/START_HERE.md)
+
+**查找文档？** → 查看 [docs/guides/DOCUMENTATION_INDEX.md](docs/guides/DOCUMENTATION_INDEX.md)
+
 ## 项目简介
 
-轮腿机器人孪生控制系统是一个基于ROS2的仿真控制平台，用于《轮腿机器人孪生控制方法的研究》大创项目。系统通过数字孪生技术实现对串联轮腿机器人的仿真控制，为后续硬件集成和强化学习算法研究提供基础平台。
+轮腿机器人孪生控制系统是一个基于ROS2和Gazebo的仿真控制平台，用于《轮腿机器人孪生控制方法的研究》大创项目。系统通过数字孪生技术实现对串联轮腿机器人的仿真控制，为后续硬件集成和强化学习算法研究提供基础平台。
+
+## 🚀 快速开始
+
+### 方法1：增强版GUI启动器（推荐）⭐⭐
+
+```bash
+./launch_enhanced.sh
+```
+
+增强版图形界面支持：
+- ✅ 选择任意模型文件夹
+- ✅ 选择URDF/MJCF文件
+- ✅ 选择世界文件
+- ✅ 配置仿真器参数
+- ✅ Gazebo和MuJoCo双支持
+
+📚 详细说明：[增强版GUI使用指南](docs/ENHANCED_GUI_GUIDE.md)
+
+### 方法1B：标准GUI启动器
+
+```bash
+./launch.sh
+```
+
+标准图形界面可以：
+- 选择机器人模型（RM或DM）
+- 选择仿真器（Gazebo或MuJoCo）
+- 选择启动模式（安全/简单/标准）
+- 配置高级选项
+- 一键启动
+
+### 方法2：命令行启动
+
+#### Gazebo仿真
+
+**第一步：安装Gazebo（首次使用必须）**
+
+```bash
+./tools/install_gazebo.sh
+```
+
+**第二步：启动仿真**
+
+```bash
+# 安全模式（推荐虚拟机）
+./tools/launch_gazebo_safe.sh
+
+# 简单模式
+./tools/launch_gazebo_simple.sh
+
+# 标准模式
+./tools/launch_gazebo.sh
+```
+
+#### MuJoCo仿真（MJCF格式）⭐
+
+**要求：** MuJoCo 2.3.0+（你的版本：3.4.0 ✅）
+
+**第一步：转换URDF到MJCF（首次使用必须）**
+
+我们提供两种转换方案：
+
+**方案 A：Wiki-GRx-MJCF（推荐，保留真实外观）**
+```bash
+# 1. 安装工具（首次使用）
+cd ~/workspace
+git clone https://github.com/FFTAI/Wiki-MJCF.git
+cd "Wheel-Legged Robot Digital Twin Control Platform"
+source venv/bin/activate
+pip install -e ~/workspace/Wiki-GRx-MJCF
+
+# 2. 转换模型
+python3 tools/test_wiki_mjcf.py
+```
+
+**方案 B：内置工具（简单可靠）**
+```bash
+# 转换RM机器人模型
+python3 tools/convert_urdf_to_mjcf.py --model rm
+
+# 转换DM机器人模型
+python3 tools/convert_urdf_to_mjcf.py --model dm
+```
+
+📚 **详细对比**：查看 [docs/MUJOCO_GUIDE.md](docs/MUJOCO_GUIDE.md)
+
+**第二步：启动仿真**
+
+```bash
+# 命令行启动
+./tools/launch_mujoco.sh
+
+# 或直接使用Python
+python3 tools/launch_mujoco.py --model rm  # RM机器人
+python3 tools/launch_mujoco.py --model dm  # DM机器人
+
+# 使用 Wiki-GRx-MJCF 生成的文件（保留真实外观）
+python3 tools/launch_mujoco.py --mjcf "src/model/RM_Serial_Wheeled-leg_Robot/mjcf/RM_Serial_Wheeled-leg_Robot_wiki.xml"
+```
+
+**MuJoCo优势：**
+- ✅ 高性能物理仿真
+- ✅ 适合强化学习训练
+- ✅ 交互式可视化
+- ✅ 两种转换方案可选（真实外观 vs 简单可靠）
+
+📚 详细说明：
+- [Gazebo 完整指南](docs/GAZEBO_GUIDE.md) - Gazebo 安装、启动和故障排除 ⭐
+- [MuJoCo 完整指南](docs/MUJOCO_GUIDE.md) - MuJoCo 集成和使用 ⭐
 
 ## 核心特性
 
-- 🤖 **基于URDF的轮腿混合运动数字孪生映射器** - 核心创新功能
-- 🎮 **PyQt5图形控制界面** - 直观的机器人控制面板
-- 📊 **实时IMU数据仿真与可视化** - 支持姿态控制算法开发
-- 🔄 **虚实状态同步模拟** - 为硬件集成做准备
-- 🧠 **多算法验证平台** - 支持强化学习、LQR等控制算法
-- 📹 **数据记录与回放** - ROS2 bag格式数据管理
+- 🤖 **完整的URDF机器人模型** - 支持RM和DM轮腿机器人
+- 🎮 **Gazebo物理仿真** - 真实的物理引擎和3D可视化
+- 📊 **ROS2集成** - 标准的机器人操作系统
+- 🔄 **多种控制算法** - LQR、PPO强化学习等
+- 🧠 **数字孪生映射** - 虚实状态同步
+- 📹 **数据记录与回放** - 完整的实验数据管理
 
-## 系统架构
+## 📋 系统要求
 
-```
-用户交互层    │  控制面板 (PyQt5) │ 命令行接口
-应用服务层    │  控制管理器 │ 数据管理器 │ 算法管理器  
-核心业务层    │  数字孪生映射器 │ 关节控制器 │ 状态同步器
-仿真环境层    │  Gazebo仿真 │ URDF模型 │ IMU传感器
-ROS2通信层   │  话题通信 │ 服务调用 │ 动作服务
-```
+- Ubuntu 24.04 LTS
+- ROS2 Jazzy
+- Gazebo Harmonic
+- Python 3.12+
 
-## 技术栈
+## 🔧 安装
 
-- **ROS2**: Humble/Foxy
-- **仿真**: Gazebo Classic
-- **编程语言**: Python 3.8+ (主要) + C++ (性能关键模块)
-- **GUI框架**: PyQt5
-- **测试框架**: pytest + Hypothesis (属性测试)
-- **版本控制**: Git (GitFlow工作流)
-
-## 快速开始
-
-### 环境要求
-
-- Ubuntu 20.04/22.04
-- ROS2 Humble 或 Foxy
-- Python 3.8+
-- Gazebo Classic
-- PyQt5
-
-### 安装依赖
+### 1. 安装Gazebo
 
 ```bash
-# 安装ROS2依赖
-sudo apt update
-sudo apt install ros-humble-desktop ros-humble-gazebo-ros-pkgs
-sudo apt install python3-colcon-common-extensions
-
-# 安装Python依赖
-pip3 install PyQt5 numpy scipy matplotlib hypothesis pytest
-
-# 安装C++依赖
-sudo apt install libeigen3-dev pybind11-dev
+sudo apt-get update
+sudo apt-get install ros-jazzy-ros-gz
 ```
 
-### 构建项目
+或安装完整版：
 
 ```bash
-# 克隆项目
-git clone <repository-url>
-cd wheel-legged-robot-twin-control
+sudo apt-get install gz-harmonic
+```
 
-# 构建ROS2工作空间
-colcon build --symlink-install
+### 2. 安装Python依赖
 
-# 设置环境
+```bash
+pip install -r requirements.txt
+```
+
+### 3. 构建ROS2包（可选）
+
+```bash
+colcon build
 source install/setup.bash
 ```
 
-### 运行系统
-
-```bash
-# 启动完整系统
-ros2 launch wheel_legged_control system_launch.py
-
-# 或分别启动各组件
-ros2 run wheel_legged_control gazebo_simulator
-ros2 run wheel_legged_control control_panel
-```
-
-## 项目结构
+## 📁 项目结构
 
 ```
-wheel-legged-robot-twin-control/
-├── src/                          # 源代码
-│   ├── wheel_legged_control/      # 主要ROS2包
-│   │   ├── wheel_legged_control/  # Python模块
-│   │   │   ├── core/             # 核心业务逻辑
-│   │   │   ├── gui/              # PyQt5界面
-│   │   │   ├── algorithms/       # 控制算法
-│   │   │   └── utils/            # 工具函数
-│   │   ├── src/                  # C++源码
-│   │   │   └── digital_twin_mapper/ # 数字孪生映射器
-│   │   ├── launch/               # 启动文件
-│   │   ├── config/               # 配置文件
-│   │   └── urdf/                 # 机器人模型
-│   └── robot/                    # 机器人相关文件
-│       └── urdf/                 # URDF模型文件
-├── test/                         # 测试文件
+Wheel-Legged Robot Digital Twin Control Platform/
+├── launch.sh                     # GUI启动器（推荐）⭐
+├── README.md                     # 项目说明
+├── requirements.txt              # Python依赖
+├── pytest.ini                    # 测试配置
+│
+├── tools/                        # 工具脚本
+│   ├── launch_gazebo_gui.py     # GUI启动器
+│   ├── launch_gazebo_safe.sh    # 安全模式启动
+│   ├── launch_gazebo_simple.sh  # 简单模式启动
+│   ├── launch_gazebo.sh         # 标准模式启动
+│   ├── install_gazebo.sh        # Gazebo安装脚本
+│   ├── check_gazebo.sh          # Gazebo诊断
+│   ├── check_opengl.sh          # OpenGL诊断
+│   └── fix_dm_urdf.py           # DM机器人修复
+│
 ├── docs/                         # 文档
-├── .kiro/specs/                  # 项目规范文档
-└── README.md
+│   ├── guides/                  # 使用指南
+│   │   ├── START_HERE.md        # 快速开始
+│   │   ├── QUICK_FIX.md         # 快速修复
+│   │   ├── QUICK_REFERENCE.md   # 快速参考
+│   │   ├── GAZEBO_QUICKSTART.md # Gazebo快速开始
+│   │   ├── INSTALL_GAZEBO.md    # 安装指南
+│   │   ├── GAZEBO_FLICKERING_FIX.md # 闪屏修复
+│   │   ├── DM_ROBOT_FIX.md      # DM机器人修复
+│   │   └── DOCUMENTATION_INDEX.md # 文档索引
+│   ├── GAZEBO_GUIDE.md          # Gazebo详细指南
+│   └── *.md                     # 其他文档
+│
+├── src/                          # 源代码
+│   ├── model/                   # 机器人URDF模型
+│   │   ├── RM_Serial_Wheeled-leg_Robot/  # RM机器人
+│   │   └── DM_Wheel_leg_robot/           # DM机器人
+│   └── wheel_legged_control/    # 控制系统代码
+│       └── wheel_legged_control/
+│           ├── algorithms/      # 控制算法（LQR、PPO）
+│           ├── controllers/     # 控制器实现
+│           ├── simulation/      # 仿真后端
+│           ├── data/           # 数据记录和回放
+│           └── sensors/        # 传感器仿真
+│
+├── scripts/                     # 演示脚本
+│   ├── demo_*.py               # 演示脚本
+│   └── gazebo/                 # Gazebo相关脚本
+│
+├── test/                        # 测试文件
+│   ├── python/                 # Python单元测试
+│   └── integration/            # 集成测试
+│
+└── data/                       # 实验数据
+    ├── demo_recordings/        # 演示录制
+    └── advanced_recordings/    # 高级实验数据
 ```
 
-## 开发指南
+## 🎮 功能特性
 
-### 分支策略
+### 仿真系统
+- ✅ Gazebo Harmonic物理仿真
+- ✅ 完整的URDF模型支持
+- ✅ STL网格文件渲染
+- ✅ 实时3D可视化
 
-- `main`: 稳定发布版本
-- `develop`: 开发集成分支  
-- `feature/*`: 功能开发分支
+### 控制算法
+- ✅ LQR线性二次调节器
+- ✅ PPO强化学习
+- ✅ 关节空间控制
+- ✅ 任务空间控制
 
-### 贡献流程
+### 数据管理
+- ✅ 实验数据记录
+- ✅ 数据回放功能
+- ✅ CSV格式导出
+- ✅ JSON元数据
 
-1. 从develop分支创建feature分支
-2. 开发并测试新功能
-3. 提交Pull Request到develop分支
-4. 代码审查通过后合并
-5. 定期将develop合并到main发布
+### ROS2集成
+- ✅ 标准ROS2消息
+- ✅ 服务接口
+- ✅ Launch文件
+- ✅ 参数配置
 
-### 代码规范
+## 📚 文档
 
-- Python: 遵循PEP 8规范
-- C++: 遵循Google C++风格指南
-- 提交信息: 使用约定式提交格式
+### 快速开始
+- [快速开始指南](docs/guides/START_HERE.md) - 立即开始 ⭐
+- [快速参考](docs/guides/QUICK_REFERENCE.md) - 常用命令速查
+- [增强版GUI使用指南](docs/ENHANCED_GUI_GUIDE.md) - 增强版启动器 ⭐⭐
 
-### Git提交规范
+### 仿真指南
+- [Gazebo 完整指南](docs/GAZEBO_GUIDE.md) - Gazebo 仿真 ⭐
+- [MuJoCo 完整指南](docs/MUJOCO_GUIDE.md) - MuJoCo 仿真 ⭐
 
-本项目严格遵循**约定式提交(Conventional Commits)**规范，确保提交历史清晰可读。
+### 其他文档
+- [文档索引](docs/guides/DOCUMENTATION_INDEX.md) - 所有文档
+- [项目状态](PROJECT_STATUS.md) - 开发进度
+- [贡献指南](CONTRIBUTING.md) - 如何贡献代码
+- [文件组织](docs/guides/FILE_ORGANIZATION.md) - 项目结构说明
 
-#### 提交消息格式
+## 🎯 使用示例
 
-```
-<类型>[可选的作用域]: <描述>
-
-[可选的正文]
-
-[可选的脚注]
-```
-
-#### 提交类型
-
-- `feat`: 新功能
-- `fix`: 修复bug
-- `docs`: 文档更新
-- `style`: 代码格式修改（不影响功能）
-- `refactor`: 代码重构（既不是新功能也不是修复bug）
-- `perf`: 性能优化
-- `test`: 添加或修改测试
-- `build`: 构建系统或外部依赖变更
-- `ci`: CI配置文件和脚本变更
-- `chore`: 其他不修改src或test文件的变更
-- `revert`: 回滚之前的提交
-
-#### 作用域示例
-
-- `joint-controller`: 关节控制器
-- `digital-twin`: 数字孪生映射器
-- `gui`: 用户界面
-- `gazebo`: Gazebo仿真
-- `imu`: IMU传感器
-- `config`: 配置文件
-- `test`: 测试相关
-
-#### 提交示例
+### 1. 启动Gazebo仿真（GUI）
 
 ```bash
-# 新功能
-git commit -m "feat(joint-controller): 实现PID控制算法
-
-- 添加比例、积分、微分控制
-- 支持参数动态调整
-- 包含积分饱和保护机制
-
-满足需求: 需求 2.1, 2.2"
-
-# 修复bug
-git commit -m "fix(digital-twin): 修复奇异位形处理bug
-
-修复雅可比矩阵奇异值分解时的数值稳定性问题"
-
-# 文档更新
-git commit -m "docs: 更新API文档和使用示例"
-
-# 测试
-git commit -m "test(joint-controller): 添加PID控制器单元测试
-
-- 测试比例、积分、微分控制
-- 验证输出限制和积分饱和保护
-- 覆盖率达到95%"
+./launch.sh
 ```
 
-#### 提交规范检查
+在图形界面中选择机器人模型和启动选项。
 
-项目使用pre-commit钩子自动检查提交格式：
+### 2. 启动Gazebo仿真（命令行）
 
 ```bash
-# 安装pre-commit
-pip install pre-commit
+# 安全模式（推荐虚拟机）
+./tools/launch_gazebo_safe.sh
 
-# 安装钩子
-pre-commit install
-
-# 手动运行检查
-pre-commit run --all-files
+# 简单模式
+./tools/launch_gazebo_simple.sh
 ```
 
-#### 分支命名规范
-
-- 功能分支: `feature/功能名称` (如 `feature/joint-controller`)
-- 修复分支: `fix/问题描述` (如 `fix/pid-overflow`)
-- 发布分支: `release/版本号` (如 `release/v1.0.0`)
-- 热修复分支: `hotfix/问题描述` (如 `hotfix/critical-bug`)
-
-## 测试
+### 3. 运行演示脚本
 
 ```bash
-# 运行所有测试
-colcon test
+# LQR控制器演示
+python3 scripts/demo_lqr_controller.py
 
-# 运行Python测试
-python -m pytest test/
+# PPO训练演示
+python3 scripts/demo_ppo_training.py
 
-# 运行属性测试
-python -m pytest test/ -m property_test
-
-# 生成测试覆盖率报告
-python -m pytest test/ --cov=wheel_legged_control --cov-report=html
+# 数据记录演示
+python3 scripts/demo_data_recorder.py
 ```
 
-## 文档
+### 3. 使用ROS2 Launch
 
-- [需求文档](.kiro/specs/wheel-legged-robot-twin-control/requirements.md)
-- [设计文档](.kiro/specs/wheel-legged-robot-twin-control/design.md)
-- [实施计划](.kiro/specs/wheel-legged-robot-twin-control/tasks.md)
-- [API文档](docs/api.md)
-- [用户手册](docs/user_guide.md)
+```bash
+source install/setup.bash
+ros2 launch wheel_legged_control system_launch.py
+```
 
-## 许可证
+## 🔬 研究方向
 
-本项目采用MIT许可证 - 详见 [LICENSE](LICENSE) 文件
+本项目支持以下研究方向：
 
-## 致谢
+1. **轮腿混合运动控制** - 研究轮式和腿式运动的协调控制
+2. **强化学习算法** - 基于PPO的自主学习控制
+3. **数字孪生技术** - 虚实映射和状态同步
+4. **传感器融合** - IMU、编码器等多传感器融合
+5. **鲁棒控制** - 应对不确定性和扰动的控制策略
 
-本项目是《轮腿机器人孪生控制方法的研究》大创项目的成果，感谢所有贡献者的努力。
+## 🤝 贡献
 
-## 联系方式
+欢迎贡献代码、报告问题或提出建议！
 
-- 项目负责人: [姓名]
-- 邮箱: [email]
-- 项目主页: [GitHub链接]
+查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详细信息。
+
+## 📄 许可证
+
+本项目采用开源许可证。
+
+## 🙏 致谢
+
+感谢所有贡献者和支持者！
+
+## 📞 联系方式
+
+如有问题或建议，请通过以下方式联系：
+
+- 提交Issue
+- Pull Request
+- 项目讨论区
 
 ---
 
-**【软著提示】**: 本项目的核心创新在于"基于URDF的轮腿混合运动数字孪生映射器"，解决了轮腿机器人闭环机构在URDF中的表达与控制映射问题，具备申请计算机软件著作权的技术独创性。
+## 🎉 开始你的仿真之旅
+
+**增强版GUI（推荐）：**
+```bash
+./launch_enhanced.sh
+```
+
+**标准GUI：**
+```bash
+./launch.sh
+```
+
+使用图形界面选择你的机器人模型，开始探索轮腿机器人的世界！🤖✨
+
+或者使用命令行：
+
+```bash
+./tools/launch_gazebo_safe.sh
+```

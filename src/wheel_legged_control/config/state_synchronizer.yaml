@@ -1,0 +1,65 @@
+# 状态同步器配置文件
+# 用于配置虚实状态同步系统的参数
+
+state_synchronizer_node:
+  ros__parameters:
+    # 网络延迟模拟参数
+    network_delay_mean: 0.05      # 平均网络延迟 (秒)
+    network_delay_std: 0.01       # 网络延迟标准差 (秒)
+    packet_loss_rate: 0.01        # 丢包率 (0.0-1.0)
+    
+    # 同步控制参数
+    sync_frequency: 20.0          # 同步频率 (Hz)
+    max_sync_error: 0.1           # 最大允许同步误差 (弧度)
+    correction_gain: 0.5          # 校正增益 (0.0-1.0)
+    
+    # 质量监控参数
+    publish_quality_rate: 1.0     # 质量报告发布频率 (Hz)
+    auto_correction: true         # 是否启用自动校正
+    
+    # 日志级别
+    log_level: 'INFO'             # 日志级别: DEBUG, INFO, WARN, ERROR
+    
+    # 高级参数（通常不需要修改）
+    max_history_length: 1000      # 最大历史记录长度
+    state_buffer_size: 100        # 状态缓冲区大小
+    quality_window_size: 100      # 质量评估窗口大小
+
+# 仿真环境特定配置
+simulation:
+  # 物理系统仿真参数
+  physical_noise_scale: 0.01     # 物理系统噪声比例
+  sensor_noise_scale: 0.001     # 传感器噪声比例
+  
+  # 延迟仿真
+  physical_delay_mean: 0.001     # 物理系统平均延迟 (秒)
+  physical_delay_std: 0.0005     # 物理系统延迟标准差 (秒)
+
+# 话题配置
+topics:
+  # 虚拟状态话题
+  virtual_joint_states: '/virtual/joint_states'
+  virtual_imu_data: '/virtual/imu/data'
+  
+  # 物理状态话题
+  physical_joint_states: '/joint_states'
+  physical_imu_data: '/imu/data'
+  
+  # 输出话题
+  sync_quality_report: '/sync/quality_report'
+  sync_state: '/sync/state'
+  sync_errors: '/sync/errors'
+  correction_commands: '/sync/correction_commands'
+
+# 服务配置
+services:
+  reset_synchronizer: '/sync/reset'
+  get_quality_report: '/sync/get_quality_report'
+  set_auto_correction: '/sync/set_auto_correction'
+  export_data: '/sync/export_data'
+
+# 数据导出配置
+data_export:
+  default_export_path: '/tmp'
+  export_format: 'json'
+  max_export_states: 1000       # 最大导出状态数量
