@@ -84,7 +84,7 @@ python3 tools/convert_urdf_to_mjcf.py --model rm
 python3 tools/convert_urdf_to_mjcf.py --model dm
 ```
 
-📚 **详细对比**：查看 [docs/mujoco_conversion_comparison.md](docs/mujoco_conversion_comparison.md)
+📚 **详细对比**：查看 [docs/MUJOCO_GUIDE.md](docs/MUJOCO_GUIDE.md)
 
 **第二步：启动仿真**
 
@@ -107,9 +107,8 @@ python3 tools/launch_mujoco.py --mjcf "src/model/RM_Serial_Wheeled-leg_Robot/mjc
 - ✅ 两种转换方案可选（真实外观 vs 简单可靠）
 
 📚 详细说明：
-- [简单安装指南](docs/guides/GAZEBO_INSTALL_SIMPLE.md) - 3分钟快速安装 ⭐
-- [完整安装指南](docs/guides/INSTALL_GAZEBO.md) - 详细步骤和故障排除
-- [诊断工具](tools/check_gazebo.sh) - 检查安装状态
+- [Gazebo 完整指南](docs/GAZEBO_GUIDE.md) - Gazebo 安装、启动和故障排除 ⭐
+- [MuJoCo 完整指南](docs/MUJOCO_GUIDE.md) - MuJoCo 集成和使用 ⭐
 
 ## 核心特性
 
@@ -240,12 +239,19 @@ Wheel-Legged Robot Digital Twin Control Platform/
 
 ## 📚 文档
 
-- [快速开始](docs/guides/START_HERE.md) - 立即开始 ⭐
-- [Gazebo快速开始](docs/guides/GAZEBO_QUICKSTART.md) - 仿真入门 ⭐
+### 快速开始
+- [快速开始指南](docs/guides/START_HERE.md) - 立即开始 ⭐
+- [快速参考](docs/guides/QUICK_REFERENCE.md) - 常用命令速查
+
+### 仿真指南
+- [Gazebo 完整指南](docs/GAZEBO_GUIDE.md) - Gazebo 仿真 ⭐
+- [MuJoCo 完整指南](docs/MUJOCO_GUIDE.md) - MuJoCo 仿真 ⭐
+
+### 其他文档
 - [文档索引](docs/guides/DOCUMENTATION_INDEX.md) - 所有文档
-- [Gazebo详细指南](docs/GAZEBO_GUIDE.md) - 完整使用说明
 - [项目状态](PROJECT_STATUS.md) - 开发进度
 - [贡献指南](CONTRIBUTING.md) - 如何贡献代码
+- [文件组织](docs/guides/FILE_ORGANIZATION.md) - 项目结构说明
 
 ## 🎯 使用示例
 
