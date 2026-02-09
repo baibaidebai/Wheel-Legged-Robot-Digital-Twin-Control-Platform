@@ -22,7 +22,7 @@
     - 配置测试框架（pytest + gtest）
     - _需求: 需求 7.1, 11.3, 11.4_
   
-  - [ ] 1.3 建立CI/CD流水线
+  - [x] 1.3 建立CI/CD流水线
     - 配置GitHub Actions自动化测试
     - 设置代码质量检查（flake8、cppcheck）
     - 配置自动化构建和测试流程
