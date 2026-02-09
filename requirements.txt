@@ -29,6 +29,7 @@ mujoco>=3.0.0          # MuJoCo物理引擎 (用于高性能仿真和强化学�
 # 开发和测试工具 - Development and Testing Tools
 pytest>=6.0.0         # 测试框架
 pytest-cov>=2.0.0     # 测试覆盖率
+hypothesis>=6.0.0     # 基于属性的测试框架
 flake8>=3.8.0         # 代码风格检查
 
 # 文档生成 - Documentation
