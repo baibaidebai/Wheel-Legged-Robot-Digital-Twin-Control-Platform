@@ -33,6 +33,25 @@ except ImportError:
     GazeboSimulationBackend = None
     GAZEBO_BACKEND_AVAILABLE = False
 
+# 尝试导入并行后端（可选）
+try:
+    from .parallel_mujoco_backend import ParallelMuJoCoBackend, VectorizedMuJoCoEnvironment
+    PARALLEL_BACKEND_AVAILABLE = True
+except ImportError:
+    ParallelMuJoCoBackend = None
+    VectorizedMuJoCoEnvironment = None
+    PARALLEL_BACKEND_AVAILABLE = False
+
+# 尝试导入基准测试工具（可选）
+try:
+    from .benchmark import SimulationBenchmark, BenchmarkResult, run_quick_benchmark
+    BENCHMARK_AVAILABLE = True
+except ImportError:
+    SimulationBenchmark = None
+    BenchmarkResult = None
+    run_quick_benchmark = None
+    BENCHMARK_AVAILABLE = False
+
 __all__ = [
     'SimulationManager',
     'SimulationBackend', 
@@ -51,3 +70,9 @@ if MUJOCO_BACKEND_AVAILABLE:
 
 if GAZEBO_BACKEND_AVAILABLE:
     __all__.append('GazeboSimulationBackend')
+
+if PARALLEL_BACKEND_AVAILABLE:
+    __all__.extend(['ParallelMuJoCoBackend', 'VectorizedMuJoCoEnvironment'])
+
+if BENCHMARK_AVAILABLE:
+    __all__.extend(['SimulationBenchmark', 'BenchmarkResult', 'run_quick_benchmark'])

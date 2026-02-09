@@ -231,6 +231,7 @@ class SimulationManager:
         # 初始化后端
         success = self.backend.initialize(model_path)
         if success:
+            self._current_model_path = model_path  # 保存模型路径
             self.logger.info(f"✅ 仿真环境初始化成功")
         else:
             self.logger.error(f"❌ 仿真环境初始化失败")
@@ -441,6 +442,52 @@ class SimulationManager:
     def validate_current_config(self) -> Tuple[bool, List[str]]:
         """验证当前配置"""
         return self.config_manager.validate_config(self.config)
+    
+    def enable_parallel_simulation(self, num_envs: int, use_multiprocessing: bool = False) -> bool:
+        """
+        启用并行仿真模式
+        
+        Args:
+            num_envs: 并行环境数量
+            use_multiprocessing: 是否使用多进程（True）或多线程（False）
+            
+        Returns:
+            是否成功启用
+        """
+        if self.current_backend_type != SimulationBackend.MUJOCO:
+            self.logger.error("❌ 并行仿真目前仅支持MuJoCo后端")
+            return False
+        
+        try:
+            from .parallel_mujoco_backend import ParallelMuJoCoBackend
+            
+            # 保存当前模型路径（如果有）
+            model_path = getattr(self, '_current_model_path', None)
+            if not model_path:
+                self.logger.error("❌ 需要先初始化模型才能启用并行仿真")
+                return False
+            
+            # 关闭当前后端
+            if self.backend:
+                self.backend.close()
+            
+            # 创建并行后端
+            self.backend = ParallelMuJoCoBackend(self.config, num_envs, use_multiprocessing)
+            
+            # 初始化
+            if not self.backend.initialize(model_path):
+                self.logger.error("❌ 并行后端初始化失败")
+                return False
+            
+            self.logger.info(f"✅ 并行仿真已启用: {num_envs}个环境")
+            return True
+            
+        except ImportError as e:
+            self.logger.error(f"❌ 并行后端不可用: {e}")
+            return False
+        except Exception as e:
+            self.logger.error(f"❌ 启用并行仿真失败: {e}")
+            return False
     
     def get_system_status(self) -> Dict[str, Any]:
         """获取系统状态"""
