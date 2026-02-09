@@ -188,7 +188,59 @@ source venv/bin/activate
 pip install mujoco -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### 问题 3：STL 文件格式错误
+### 问题 3：MuJoCo 窗口无法显示 ⭐
+
+**症状**：
+- 窗口无法打开
+- Wayland相关警告
+- GLFW错误
+
+**诊断**：
+```bash
+python3 tools/diagnose_mujoco.py
+```
+
+**解决方案**：
+
+#### 方案 A：切换到 X11（推荐）
+
+1. 运行修复脚本：
+```bash
+./tools/fix_mujoco_display.sh
+```
+
+2. 或手动切换：
+   - 注销当前会话
+   - 在登录界面点击右下角齿轮图标
+   - 选择 "Ubuntu on Xorg"
+   - 重新登录
+
+#### 方案 B：使用软件渲染
+
+```bash
+# 临时设置
+export MUJOCO_GL=osmesa
+python3 tools/launch_mujoco.py --model rm --render osmesa
+
+# 或直接使用参数
+python3 tools/launch_mujoco.py --model rm --render osmesa
+```
+
+#### 方案 C：虚拟机配置
+
+**VMware用户**：
+1. 虚拟机 → 设置 → 显示
+2. 启用"加速3D图形"
+3. 图形内存设置为 2GB+
+4. 安装VMware Tools
+
+**VirtualBox用户**：
+1. 设置 → 显示
+2. 启用"3D加速"
+3. 显存设置为 128MB+
+4. 安装Guest Additions
+
+### 问题 4：STL 文件格式错误
 
 **错误信息**：
 ```
@@ -200,7 +252,7 @@ Error: perhaps this is an ASCII file?
 python3 tools/fix_dm_stl.py
 ```
 
-### 问题 4：三角面数超限
+### 问题 5：三角面数超限
 
 **错误信息**：
 ```
@@ -230,6 +282,11 @@ python3 tools/simplify_dm_mesh.py
 
 - **`launch_mujoco.py`** - MuJoCo 启动器
 - **`launch_mujoco.sh`** - Shell 启动脚本
+
+### 诊断工具
+
+- **`diagnose_mujoco.py`** - MuJoCo 环境诊断
+- **`fix_mujoco_display.sh`** - 显示问题修复
 
 ---
 

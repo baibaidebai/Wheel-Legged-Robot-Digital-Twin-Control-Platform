@@ -18,13 +18,28 @@
 
 ## 🚀 快速开始
 
-### 方法1：GUI启动器（推荐）⭐
+### 方法1：增强版GUI启动器（推荐）⭐⭐
+
+```bash
+./launch_enhanced.sh
+```
+
+增强版图形界面支持：
+- ✅ 选择任意模型文件夹
+- ✅ 选择URDF/MJCF文件
+- ✅ 选择世界文件
+- ✅ 配置仿真器参数
+- ✅ Gazebo和MuJoCo双支持
+
+📚 详细说明：[增强版GUI使用指南](docs/ENHANCED_GUI_GUIDE.md)
+
+### 方法1B：标准GUI启动器
 
 ```bash
 ./launch.sh
 ```
 
-图形界面可以：
+标准图形界面可以：
 - 选择机器人模型（RM或DM）
 - 选择仿真器（Gazebo或MuJoCo）
 - 选择启动模式（安全/简单/标准）
@@ -242,6 +257,7 @@ Wheel-Legged Robot Digital Twin Control Platform/
 ### 快速开始
 - [快速开始指南](docs/guides/START_HERE.md) - 立即开始 ⭐
 - [快速参考](docs/guides/QUICK_REFERENCE.md) - 常用命令速查
+- [增强版GUI使用指南](docs/ENHANCED_GUI_GUIDE.md) - 增强版启动器 ⭐⭐
 
 ### 仿真指南
 - [Gazebo 完整指南](docs/GAZEBO_GUIDE.md) - Gazebo 仿真 ⭐
@@ -329,6 +345,12 @@ ros2 launch wheel_legged_control system_launch.py
 
 ## 🎉 开始你的仿真之旅
 
+**增强版GUI（推荐）：**
+```bash
+./launch_enhanced.sh
+```
+
+**标准GUI：**
 ```bash
 ./launch.sh
 ```

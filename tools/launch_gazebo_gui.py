@@ -9,6 +9,7 @@ import os
 import subprocess
 import tkinter as tk
 from tkinter import ttk, messagebox
+from pathlib import Path
 
 class GazeboLauncher:
     def __init__(self, root):
@@ -232,30 +233,9 @@ class GazeboLauncher:
     
     def launch_mujoco(self, model, model_name):
         """启动MuJoCo"""
-        # 检查MuJoCo是否可用
-        try:
-            import subprocess
-            result = subprocess.run(
-                ["python3", "-c", "import mujoco"],
-                capture_output=True,
-                text=True
-            )
-            if result.returncode != 0:
-                messagebox.showerror(
-                    "MuJoCo未安装",
-                    "MuJoCo未安装或不可用。\n\n"
-                    "安装命令:\n"
-                    "pip install mujoco\n\n"
-                    "或使用Gazebo模式。"
-                )
-                return
-        except Exception as e:
-            messagebox.showerror("错误", f"检查MuJoCo时出错：\n\n{str(e)}")
-            return
-        
         msg = f"即将启动MuJoCo仿真：\n\n"
         msg += f"机器人：{model_name}\n"
-        msg += f"仿真器：MuJoCo (原生URDF支持)\n\n"
+        msg += f"仿真器：MuJoCo\n\n"
         msg += "确认启动？"
         
         if not messagebox.askyesno("确认", msg):
@@ -264,12 +244,20 @@ class GazeboLauncher:
         try:
             messagebox.showinfo("启动中", f"正在启动 MuJoCo...\n\n{model_name}\n\nMuJoCo窗口将打开。")
             
-            # 准备命令
+            # 检查是否在虚拟环境中
+            project_root = Path(__file__).parent.parent
+            venv_python = project_root / "venv" / "bin" / "python3"
+            if venv_python.exists():
+                python_cmd = str(venv_python)
+            else:
+                python_cmd = "python3"
+            
+            # 准备命令 - 使用引号处理空格
             model_arg = "rm" if model == "RM_Serial_Wheeled-leg_Robot" else "dm"
-            cmd = f'python3 tools/launch_mujoco.py --model {model_arg}'
+            cmd = f'cd "{project_root}" && "{python_cmd}" tools/launch_mujoco.py --model {model_arg}'
             
             # 启动MuJoCo
-            terminal_cmd = f'gnome-terminal -- bash -c "{cmd}; echo; echo \'按Enter关闭...\'; read"'
+            terminal_cmd = f'gnome-terminal -- bash -c \'{cmd}; echo; echo "按Enter关闭..."; read\''
             
             subprocess.Popen(terminal_cmd, shell=True)
             
