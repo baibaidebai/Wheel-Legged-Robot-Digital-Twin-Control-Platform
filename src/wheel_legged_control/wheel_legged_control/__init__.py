@@ -12,10 +12,12 @@ __email__ = "developer@example.com"
 # 导出主要模块
 from .core import *
 from .utils import *
+from .controllers import *
 
 __all__ = [
     "core",
     "gui", 
     "algorithms",
+    "controllers",
     "utils"
 ]

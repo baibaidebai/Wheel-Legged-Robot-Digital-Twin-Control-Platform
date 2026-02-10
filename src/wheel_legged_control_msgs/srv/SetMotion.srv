@@ -1,0 +1,13 @@
+# 设置运动模式服务
+
+# 请求
+string motion_name  # 运动模式名称: stand, walk, turn, jump
+float64 duration    # 持续时间，0表示使用默认时间
+bool immediate      # 是否立即执行
+
+---
+
+# 响应
+bool success
+string message
+float64 estimated_duration  # 预估持续时间
